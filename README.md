@@ -1,8 +1,6 @@
 # Front End Repo
 Repositório para Frontend
-
-Este repositório tem por objetivo acompanhar o desenvolvimento do aprendizado
-introdutório ao avançado em Front-End de Web Development.
+Este repositório tem por objetivo acompanhar o desenvolvimento do aprendizado introdutório ao avançado em Web Development.
 
 	- O arquivo .txt contém a matéria explicada em detalhes;
 	- Os códigos estão comentados descrevendo o fluxo do programa e a descrição narrativa da problemática;
