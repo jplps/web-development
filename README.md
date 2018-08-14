@@ -1,4 +1,4 @@
-# Front End Repo
+# Frontend Repo
 Repositório para Frontend
 Este repositório tem por objetivo acompanhar o desenvolvimento do aprendizado introdutório ao avançado em Web Development.
 
