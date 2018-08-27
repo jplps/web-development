@@ -1,5 +1,6 @@
 # Frontend Repo
 Repositório para Frontend
+
 Este repositório tem por objetivo acompanhar o desenvolvimento do aprendizado introdutório ao avançado em Web Development.
 
 	- O arquivo .txt contém a matéria explicada em detalhes;
