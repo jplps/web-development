@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+
+	<head> 
+	  <meta charset="utf-8"> 
+	  <title>Basic CSS</title> 
+	  
+<!-- Primeiro tipo de CSS: Icorporated (logo antes de fechar </head>) 
+*Menos vantajoso, aumenta muito o código e outras;-->
+	  <style>
+	  	body{
+	  		background-color:rgba(12,200,99,60%); /* Cor com transparência */
+	  		font-family:Calibri; /* Fonte (.ttf .otf entre outras) de tudo que estiver escrito em <body> */
+	  	}
+	  	h2{
+			text-align: right; /* Alinhamento de texto */
+			color:#d7da4c; /* Cor em hexadecimal (lembrando que quando há conflito de regras - valores diferentes - o atributo mais próximo da tag tem prioridade. No caso abaixo, o css inline é obedecido no primeiro h2) */
+	  	}
+		p, body{	/* Argumento border se suas características básicas: style, color e width
+			border-style: groove;
+			border-color: #3a596e;
+			border-width: 18px;
+
+			Modo compacto */
+			border: 20px groove #3a596e; /* O argumento border não é um elemento que sofre o efeito cascata: o efeito não se aplica para todos os elementos filhos */
+			border-top-color: aquamarine;	/* Configuração dos lados individualmente */
+			border-left-style: dashed;
+			border-right-width: 7px;
+			width: 80%;	/* Largura padrão é sempre 100% do elemento pai, nesse caso o elemento body e simultaneamente parágrafos "p" */
+			/*height: 30px; /* Sempre unidade absoluta: cm, mm, px. Altura é sempre um potencial problema de conflito, o navegador vazará os elementos que não couberem na altura definida */
+		}
+
+	  </style>
+
+<!-- CSS externo só pode ser chamado na seção da tag <head> do documento:
+	rel - relative, relacionado a (conteúdo);
+	href - referência, caminho do link; -->
+	<link rel="stylesheet" href="202prw.css">
+	</head> 
+	<body> 
+		<h1>Introduction to:<br>CSS</h1>	<!-- Tag <br>: quebra de linha -->
+	
+<!-- Segundo tipo de CSS: Inline -->
+		<h2 style="color:red; text-align:center;">Fundamentals</h2>
+
+<!-- Atributo Class: referencia o parágrafo através de um identificador na tag de abertura e utilizado no arquivo .css -->
+		<h2 class="butcherman">Advantages</h2>
+		
+		<p>CSS é a abreviação em inglês do termo Cascading	Style Sheet, ou, em português, folhas de estilo em cascata. “Folha de estilo em cascata é um mecanismo simples para adicionar estilos (fontes, cores, espaçamentos, etc...) a um documento HTML.” Estilização! Formatar alcança desde cores de fontes e tipos de letras, passando por definições de tamanho, opacidades, transparências, até a parte mais complexa do layout dos elementos (posicionamentos, camadas de conteúdo - eixos x, y, z...) em uma mesma página.</p>
+		
+		<p class="butcherman">CSS não é uma linguagem de programação, há divergências sobre aspectos de linguagem por diferentes autores, porém existe um conjunto de regras e sintaxes para dar sentido aos dados escritos. Sendo assim, pode ser considerada também uma linguagem de marcação. Separando estilo e significado semântico, o CSS ajuda no tamanho e complexidade de um arquivo html.</p>
+
+<!-- Atributo Id: deve ser único, não se repetirá -->
+		<p id="fontchanged">É a unidade básica de uma folha de estilo. Entenda-se por unidade básica a menor porção de código capaz de estilizar determinado elemento HTML. Veja, abaixo, os principais componentes de uma regra CSS. O agrupamento de diversas regras CSS compõem o que chamamos de folha de estilo.</p>
+	</body> 
+	
+</html> 
