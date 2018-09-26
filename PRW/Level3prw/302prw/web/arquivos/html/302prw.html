@@ -1,0 +1,41 @@
+<!--
+    Ex.2 - Documento web, utilizando padrões HTML5 contendo:
+- Imagens com atributos title e alt, local (web/imagens/ferias/2016) e remota;
+- Link para arquivo web/arquivos-aux/pdfs/manual.pdf;
+- Link para web/arquivos/html/cadastro.html;
+- Link para o sítio ifsc.edu.br, abrindo em nova aba;
+- Imagem funcionando como link para http://www.dominiopublico.gov.br/;
+-->
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title> Ex.: 2 </title> 
+    </head> 
+
+    <body> 
+<!-- Imagem Local -->		 
+        <p>This is a local Image</p>
+        <img src="../../imagens/ferias/2016/kill.jpg" alt="Metallica Album Cover" title="Kill'em All"><br>
+
+<!-- Imagem Remota -->
+        <p>This is a remote Image</p>
+        <img src="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.genius.com%2F1b9eaf986992a18c131557f3597a98b0.894x894x1.jpg" alt="Metallica Album Cover" title="Black"><br>
+
+<!-- Links Locais -->
+        <p>This is a practical <a href="../../arquivos/html/cadastro.html" title="Go to ../../arquivos/html/cadastro.html">example</a>
+        of the usage of the tag &lt;a&gt; witch guards the atributes for a local link (inside the same server).</p>
+
+        <p>This is a practical <a href="../../arquivos-aux/pdfs/manual.pdf" title="Go to ../../arquivos-aux/pdfs/manual.pdf">example</a>
+        of the usage of the tag &lt;a&gt; witch guards the atributes for a local link (inside the same server).</p>
+
+<!-- Link IFSC em nova aba -->
+        <p>This other <a href="http://www.ifsc.edu.br" title="Go to IFSC Website" target="_blank">example</a> is for a remote link,
+        where the reference is from an external source.</p>
+
+<!-- Link em Imagem -->
+        <p>This is a local Image with a remote link</p>
+        <a href="http://www.dominiopublico.gov.br/"><img src="../../imagens/dominio.png" alt="http://www.dominiopublico.gov.br/" title="Site: Domínio Público Brasil"></a>
+
+    </body> 
+</html> 

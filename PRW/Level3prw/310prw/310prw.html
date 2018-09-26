@@ -1,0 +1,72 @@
+<!--
+    Ex.10 - Documento web, utilizando padrões HTML5 contendo:
+- Dois links, dois parágrafos e duas listas não ordenadas;
+- Apenas o primeiro link com fundo modificado em estado hover;
+- Apenas um dos links sem sublinhado;
+- Imagem de fundo para um parágrafo;
+- Imagem diferente para outro parágrafo (utilizando ID);
+- Listas sem marcadores;
+- Primeira lista transformada usando numerador I;
+- Fonte padrão da segunda lista importada do Google fonts, de cor alterada;
+- Cor da letra do segundo link alterada em estado focus;
+- Imagem de fundo na página simulando:
+    . Imagem repete-se horizontalmente;
+    . Imagem repete-se verticalmente;
+    . Imagem posiciona-se no centro da página;
+    . Imagem se distancia da esquerda em 300px;
+    . Imagem se distancia do topo em 150px;
+
+Obs.: Uso de CSS externo.
+-->
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title> Ex.: 10 </title> 
+
+        <link rel="stylesheet" href="./310prw.css">
+    </head> 
+
+    <body> 
+        <!--Dois links, dois parágrafos e duas listas não ordenadas;-->
+        <a class="link1" href="" title="">LINK1</a>
+
+        <a class="link2" href="" title="">LINK2</a>
+
+        <p class="p1">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores 
+            architecto quod dicta soluta suscipit rem illum. Esse facilis accusamus 
+            dicta tenetur in iusto dolore, rerum nisi quod minima odit eaque!
+        </p>
+
+        <p id="p2">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores 
+            architecto quod dicta soluta suscipit rem illum. Esse facilis accusamus 
+            dicta tenetur in iusto dolore, rerum nisi quod minima odit eaque!
+        </p>
+
+        <ul id="nivel1">
+            <li>LIST1
+                <ul class="nivel2">
+                    <li>ITEM1</li>
+                    <li>ITEM2</li>
+                    <li>ITEM3</li>
+
+                </ul>
+
+            </li>
+
+            <li>LIST2
+                <ul class="nivel2">
+                    <li>ITEM1</li>
+                    <li>ITEM2</li>
+                    <li>ITEM3</li>
+
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </body> 
+</html> 
