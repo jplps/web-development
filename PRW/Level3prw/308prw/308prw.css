@@ -2,6 +2,7 @@
 .content{
     max-width: 80%; /*largura 80% da tela*/
     margin: auto; /*margem externa distribuida*/
+    padding-top: 90px;
 }
 
 body{
@@ -24,6 +25,7 @@ header{
     padding: 20px;
     font-size: 30px;
 }
+
 /*rodapé colorido azul e amarelo*/
 footer{
     text-align: right;/**/
@@ -31,6 +33,7 @@ footer{
     background-color: #eeff00;/**/
     margin: 0;
 }
+
 /**/
 p.foot{
     margin: 0;
@@ -42,17 +45,36 @@ p.foot{
     bottom: 0;
     width: 100%;
 }
+
 /**/
 .main{
     padding: 85px 10px;
 }
-/**/
+
 .menu{
     width: 20%;
     background-color: #ff0000;
     color: #eeff00;
     height: 200px;
+    float: left;
 }
+
+.section{
+    width: 80%;
+    float: right;
+    background-color: #0077ff;
+}
+
+.section p{
+    margin: 0;
+    padding: 20px;
+}
+
+.section h2{
+    margin: 0;
+    padding: 20px;
+}
+
 /**/
 ul{
     text-align: left;
