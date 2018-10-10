@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+form{
+    text-transform: capitalize;
+    width: 80%;
+    margin: auto;
+}
+
+input{
+    width: 150px;
+}

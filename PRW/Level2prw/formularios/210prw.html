@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Forms HTML5</title>
+
+        <!--Link CSS3-->
+        <link rel="stylesheet" href="./210prw.css">
+        
+    </head>
+
+    <body>
+        <!--Título, header-->
+        <h1>html5 & css3 forms</h1>
+
+        <!--
+            Tag mãe: <form>; Pode receber diversos atributos porém apenas um é obrigatório: action (que indica qual arquivo
+            no servidor receberá os dados do formulário e fará o seu processamento), e opcionais como method e enctype.
+            É uma tag que exige fechamento. Com o método post, as informações submetidas pelos formulários são encriptadas
+            quando são levadas pelo navegador para o servidor do sítio. Por padrão, method='GET', mas por razões de segurança,
+            sempre utilize POST. Já enctype é utilizado para permitir que o usuário faça qualquer tipo de upload para o 
+            servidor. Sem esse atributo o formulário não terá nenhum elemento que "suba" os dados.
+        -->
+        <form action="" method="POST" enctype="multipart/form-data">
+            <!--
+                Fieldset: exemplo de elemento estruturais, informativos, que não enviam nenhuma informação para o servidor.
+                Não precisa existir, mas é um elemento agrupador (como uma div).
+            -->
+            <fieldset>
+                <!--Sempre após <fieldset>, vem a tag filha <legend>-->
+                <legend>personal data</legend>
+
+                <!--
+                    Texto dentro de um formulário, somente através da tag <label>, com atributo "for" (em tags de texto para
+                    melhor a acessibilidade).
+                -->
+                <label for="aligna">name:</label>
+
+                <!--
+                    Elemento para entrada de texto: <input>. São vários, diferenciados pelo atributo "type". Todo o elemento que
+                    leva os dados para o servidor deve ter obrigatoriamente o atributo name, para que a comunicação entre o
+                    servidor e o código escrito tenha sucesso no recebimento desses dados. Outro atributo interessante é o
+                    placeholder, melhorando a visualização do conteúdo que deve ir na caixa. Já autofocus é um exemplo de atributo
+                    vazio (não precisa de parâmetros), que já seleciona a caixa de entrada no carregamento da página web (cuidado
+                    para não designar mais de um atributo autofocus). A tag input não tem fechamento.
+                -->
+                <input type="text" name="nome_usuario" placeholder="John Doe" autofocus>
+                <br>
+
+                <!--Informação obrigatória para envío dos dados com atributo "required"-->
+                <label for="aligna" id="email">e-address</label>
+                <input type="email" name="email" placeholder="j.d@what.com" required>
+                <label>*</label>
+                <br>
+
+                <label for="aligna">phone</label>
+                <input type="" name="mail" placeholder="540-47">
+                <br>
+
+                <!--O input do tipo data, mostra um calendário quando clicada a caixa de entrada de dados da label em questão-->
+                <label for="aligna">birth</label>
+                <input type="date" name="nascimento">
+                <br>
+
+            </fieldset>
+
+            <!--Botão para envío dos dados, com atributo "name" obrigatório-->
+            <button type="submit" name="enviodedados">send</button>
+        
+        </form>
+        
+    </body>
+</html>
