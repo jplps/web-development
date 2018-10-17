@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    width: 500px;
+    margin: 20px auto;
+    border-bottom: 1px solid #808080;
+    box-shadow: 0 2px 0 0 rgba(80, 80, 80, 0.3);
+
+    /*Fixação de Elemento - lembrar de definir a localização (top, left, right, bottom)*/
+    position: sticky;
+    top: 0;
+}
+
+/*Estilização dos FieldSets*/
+fieldset{
+    text-transform: capitalize;
+    margin: 20px 3%;
+    width: 40%;
+    height: 350px;
+}
+
+fieldset.left{
+    float: left;
+}
+
+fieldset.right{
+    float: right;
+}
+
+/*Para os botões não tomarem o espaço entre os "fieldsets" limpam-se ambos os lados:*/
+div.buttons{
+    clear: both;
+}
+
+#upld{
+    text-transform: uppercase;
+}
+
+textarea{
+    color: #808080;
+}
