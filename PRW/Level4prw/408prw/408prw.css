@@ -1,0 +1,29 @@
+/*Global*/
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+/*Específicos*/
+h2{
+    text-align: center;
+    border-bottom: 1px dotted #aaa;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    margin: 0;
+}
+
+table{
+    border: 1px dotted #aaa;
+    border-spacing: 0;
+    width: 80%;
+    margin: auto;
+}
+
+caption{
+    padding: 20px;
+}
+
+td, th{
+    border: 1px dotted #aaa;
+}

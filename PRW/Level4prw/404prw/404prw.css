@@ -1,0 +1,71 @@
+/*f) Fonte de toda a página importada do Google:*/
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+body{
+    font-family: 'Cinzel', serif;
+    padding: 0;
+    margin: 0;
+}
+
+/*g) Texto do cabeçalho centralizado na página
+  h) Sombra ao redor dos quatro lados do cabeçalho
+  i) Largura definida para <h1> = Largura da tela
+  j) Cor de fundo para o cabeçalho <h1>
+  k) Medidas ajustadas para a posição do cabeçalho*/
+header h1{
+    text-align: center;
+    box-shadow: 0 0 30px #888888;
+    width: 100%;
+    background-color: #888888;
+    margin: 0;
+}
+
+/*l) Texto do Título da lista centralizado
+*/
+#titulolista{
+    text-align: center;
+}
+
+/*m) Tipo de numerador e borda da lista mais externa
+  n) Largura da lista mais externa definida
+  o) Lista externa centralizada
+  p) Lista externa com imagem de fundo*/
+ol.nivel1{
+    list-style-type: upper-latin;
+    border: 1px solid #888888;
+    width: 300px;
+    margin: auto;
+    background-image: url("./img/black.jpg");
+    color: #888888;
+    background-repeat: no-repeat;
+}
+
+/*q) Imagem flutuada à direita para que o texto suba
+  r) Imagem afastada do texto em 30px*/
+.img1{
+    float: right;
+    padding-left: 30px;
+}
+
+/*s) Texto do último parágrafo (somente) justificado*/
+.justify{
+    text-align: justify;
+}
+
+/*t) Cor alterada da fonte do segundo parágrafo (ID)*/
+#colored{
+    color: #521b86;
+}
+
+/*u) Link estilizado sem sublinhado*/
+a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/*v) Link estilizado para o estado Hover: sublinhado e cor de fundo*/
+a:hover{
+    text-decoration: underline;
+    background-color: #888888;
+}

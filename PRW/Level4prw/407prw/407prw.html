@@ -1,0 +1,65 @@
+<!--
+    Ex.17 - Documento web, utilizando padrões HTML5 contendo:
+- Um parágrafo com fonte Arial Narrow em negrito, cor verde e tamanho 16;
+- Duas listas não ordenadas;
+- Primeira lista com cor de fundo;
+- Segunda lista de cor diferente da anterior;
+- Cor de fundo da página em azul claro;
+- Cor de fundo do parágrafo em verde claro;
+- Cor de fundo de um cabeçalho nível 4 como transparente;
+- Imagem de fundo fixa;
+- Duas <div>s dividindo o documento em duas colunas: uma contendo o parágrafo, outra, as listas;
+
+Obs.: Uso de CSS externo.
+-->
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title> Ex.: 17 </title> 
+
+        <link rel="stylesheet" href="407prw.css">
+
+    </head> 
+
+    <body> 
+        <header>
+            <h4 id="head1">Header 1</h2>
+        </header>
+
+        <div class="left">
+            <p class="changed">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos 
+                blanditiis et impedit harum quam? Iste obcaecati temporibus 
+                enim hic molestiae minus fugiat, totam placeat id et, soluta 
+                sed inventore cum.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos 
+                blanditiis et impedit harum quam? Iste obcaecati temporibus 
+                enim hic molestiae minus fugiat, totam placeat id et, soluta 
+                sed inventore cum.
+            </p>
+            
+        </div>
+
+        <div class="right">
+            <!--Duas listas não ordenadas;-->
+            <p>List 1</p>
+            <ul id="list1">
+                <li>ITEM 1</li>
+                <li>ITEM 2</li>
+                <li>ITEM 3</li>
+                <li>ITEM 4</li>
+            </ul>
+
+            <p>List 2</p>
+            <ul id="list2">
+                <li>ITEM 1</li>
+                <li>ITEM 2</li>
+                <li>ITEM 3</li>
+                <li>ITEM 4</li>
+            </ul>
+
+        </div>
+
+    </body> 
+</html> 

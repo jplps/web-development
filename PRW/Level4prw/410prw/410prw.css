@@ -1,0 +1,58 @@
+/*Global*/
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+h2{
+    text-align: center;
+    border-bottom: 2px dashed #b2b2b2;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/*Especificos:
+  Tabela centralizada horizontalmente na página;
+  Tabela com largura de 80%;
+  Borda de 3px;
+  Cor da borda externa em azul;*/
+table{
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    border: 3px solid blue;
+    margin-top: 20px;
+    border-spacing: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*Linhas internas de 3px de grossura;*/
+td, th{
+    border: 3px dotted #000;
+    padding: 20px;
+}
+
+.centered{
+    text-align: center;
+}
+
+/*Cor de fundo qualquer para linhas de cabeçalho;*/
+th{
+    background-color: #b2b2b2;
+}
+
+/*Imagem de fundo para a célula cujo conteúdo é "31%";*/
+#photoed{
+    background-image: url("./sublime.jpg");
+    background-size: 100%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+}
