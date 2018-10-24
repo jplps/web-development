@@ -36,7 +36,7 @@
                     Texto dentro de um formulário, somente através da tag <label>, com atributo "for" (em tags de texto para
                     melhor a acessibilidade).
                 -->
-                <label for="aligna">name:</label>
+                <label for="aligna">name</label>
 
                 <!--
                     Elemento para entrada de texto: <input>. São vários, diferenciados pelo atributo "type". Todo o elemento que
@@ -46,7 +46,7 @@
                     vazio (não precisa de parâmetros), que já seleciona a caixa de entrada no carregamento da página web (cuidado
                     para não designar mais de um atributo autofocus). A tag input não tem fechamento.
                 -->
-                <input type="text" name="nome_usuario" placeholder="John Doe" autofocus><br>
+                <input type="text" name="nomeusuario" placeholder="John Doe" autofocus><br>
 
                 <!--Informação obrigatória para envío dos dados com atributo "required"-->
                 <label for="aligna" id="email">e-address</label>
@@ -59,7 +59,7 @@
 
                 <!--O input do tipo data, mostra um calendário quando clicada a caixa de entrada de dados da label em questão-->
                 <label for="aligna">birth</label>
-                <input type="date" name="nascimento"><br>
+                <input type="date" name="birth"><br>
 
                 <label for="aligna">login</label>
                 <input type="text" name="login"><br>
@@ -68,9 +68,12 @@
                 <label for="aligna">passwd</label>
                 <input type="password" name="passwd"><br>
 
-                <!--UPLOAD DE ARQUIVOS: tipo "file" e atributo multiple para selecionar mais de um arquivo-->
-                <label for="" id="upld">upload</label>
-                <input type="file" name="uploadedfiles" multiple><br>
+                <!--Div para separar a próxima "linha" do bloco acima-->
+                <div class="linha1">
+                    <!--UPLOAD DE ARQUIVOS: tipo "file" e atributo multiple para selecionar mais de um arquivo-->
+                    <label for="" id="upld">upload</label>
+                    <input type="file" name="upload" multiple><br>
+                </div>
 
             </fieldset>
 
@@ -117,7 +120,7 @@
                 <br>
 
                 <br><label for="">suggestions</label><br>
-                <textarea name="suggestion" cols="20" rows="5">Text</textarea>
+                <textarea name="suggestion" cols="20" rows="5" placeholder="Text"></textarea>
 
             </fieldset>
 
@@ -130,7 +133,7 @@
                     o banco. Atributo "onclick" tem a ver com a linguagem javascript e o
                     valor "alert" interage rodando o aviso.
                 -->
-                <button type="button" onclick="alert('You have been invaded.')">exec java</button>
+                <button type="button" onclick="alert('You have been invaded by magikformula.')">exec java</button>
 
             </div>
         

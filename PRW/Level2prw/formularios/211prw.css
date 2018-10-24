@@ -1,5 +1,11 @@
 body{
     margin: 0;
+    margin: auto;
+
+    /*ATENÇÃO: Garantir um tamanho mínimo para o navegador auxilia na integridade
+    dos elementos flutuados, entre outras estilizações que possam ser impactadas*/
+    min-width: 747px;
+    max-width: 954px;
 }
 
 h1{
@@ -18,9 +24,11 @@ h1{
 /*Estilização dos FieldSets*/
 fieldset{
     text-transform: capitalize;
-    margin: 20px 3%;
+    margin: 20px;
     width: 40%;
     height: 350px;
+    border-bottom: 2px solid #808080;
+    box-shadow: 0 2px 0 0 rgba(80, 80, 80, 0.3);
 }
 
 fieldset.left{
@@ -34,12 +42,49 @@ fieldset.right{
 /*Para os botões não tomarem o espaço entre os "fieldsets" limpam-se ambos os lados:*/
 div.buttons{
     clear: both;
+    text-align: center; /*Botões são alinhados como texto!*/
+}
+
+button{
+    width: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
 }
 
 #upld{
     text-transform: uppercase;
 }
 
+.linha1{
+    text-align: center;
+    padding-top: 20px;
+}
+
+/*Declaração da label com parâmetro: for="aligna"*/
+label[for=aligna]{
+    /*Converte um elemento para que apresente ao mesmo tempo características
+    inline e de bloco. Obedece altura largura e margem, mas admite outros el.
+    ao seu lado*/
+    display: inline-block;
+
+    width: 30%;
+    text-align: right;
+}
+
+/*Ao invés de utilizar classes, utilizaremos os Seletores Complexos (especialmente
+os seletores de atributos para modificar o tamanho das caixas de input em questão)*/
+input[name="nomeusuario"], input[name="email"], input[name="phone"], input[name="birth"], input[name="login"], input[name="passwd"]{
+    width: 50%;
+    margin: 2px;
+}
+
+input, select, textarea{
+    font-weight: bold;
+}
+
+/*Formatação do <textarea>*/
 textarea{
     color: #808080;
+    resize: none; /*Alterações do parâmetro de redimensionamento da caixa de texto*/
 }
