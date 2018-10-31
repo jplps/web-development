@@ -144,6 +144,34 @@ CSS
 		Ex.: #1CA71A
 		
 		. RGBA - A = Opacidade entre 0 ~ 1.
-	Ex.: rgba(12,200,99,0.6); ou rgba(12,200,99,60%);
-	
-	
+		Ex.: rgba(12,200,99,0.6); ou rgba(12,200,99,60%);
+
+
+Aplicações para WEB
+
+		De acordo com o conteúdo do html e a estilização dada pelo css, quando
+	esses elementos não mudam o design é considerado estático, do contrário, é 
+	dinâmico. Os Protocolos de Comunicação, principalmente o http, são 
+	fundamentais para a existência de uma aplicação para web. Deveremos entender
+	o tipo de uso de cada usuário. podendo ser client-side ou server-side.
+
+			------------------
+			Cliente x Servidor
+			------------------
+
+		Interesses: python, pearl, javascript...
+
+		O Processo de interpretação de uma linguagem funciona linha por linha, em
+	conjunto com o processador, gerenciando os envíos enquanto for necessário.
+	Já no caso da Compilação, o programa atua lendo todas as linhas de código e
+	convertendo-as em binário executável (pronto para o processador executar).
+
+
+PHP - Pre-HyperlinkProcessor
+
+		Percussor Finlandês criou a linguagem para mediar os dados em páginas
+	da internet. O termo foi mudado após algum tempo, tendo como nome primário
+	Personal Home Page.
+		Quando todos essas ferramentas estão presentes (Pacotes Apache, MySql,
+	PhP), junto à Tecnologia computacional, forma-se um estação de
+	desenvolvimento (DevStation).
