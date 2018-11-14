@@ -7,7 +7,7 @@
         Endereço http://localhost/path/to/file.php para acessar a aplicação;
 
         Ex.: 2 - Script que mostra as principais informações sobre o interpretador
-        php instalado no servidor (função phpinfo();).
+        php instalado no servidor (função phpinfo(); , excs02 e 03).
 
     -->
     <head>

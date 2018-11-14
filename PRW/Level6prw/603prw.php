@@ -8,7 +8,7 @@
 
         Ex.: 3 - Página em php que utiliza constantes e variáveis de
         usuário, utilizando echo para escrever o valor dessas criações na
-        tela.
+        tela (excs04 e 05).
 
     -->
     <head>
