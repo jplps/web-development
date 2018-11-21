@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+}
+
+.body{
+    margin: auto;
+    max-width: 900px;
+    min-width: 700px;
+}
+
+h1{
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+form, table{
+    width: 80%;
+    margin: 20px auto;
+    text-transform: capitalize;
+}
+
+fieldset, h1{
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+}
+
+fieldset, h1, th{
+    background-color: #dfdfdf;
+}
+
+.coll{
+    float: left;
+    text-align: right;
+    width: 25%;
+}
+
+.colr{
+    float: left;
+    width: 55%;
+}
+
+.coll, .colr, .range{
+    margin: 5px;
+}
+
+.colr input{
+    width: 100%;
+}
+
+input[name=price], input[name=stock]{
+    width: 60%;
+}
+
+input[name=aqdate]{
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+button, #radio{
+    margin-left: 3%;
+}
+
+button{
+    text-transform: capitalize;
+    width: 180px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table{
+    border-spacing: 1px;
+}
+
+table, td, th{
+    border: 1px solid #000;
+}
+
+caption{
+    text-align: left;
+}
+
+td{
+    text-align: center;
+}
+
+.naming{
+    width: 20%;
+}
+
+.pricing{
+    width: 30%;
+}
