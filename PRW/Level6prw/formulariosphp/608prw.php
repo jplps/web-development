@@ -16,7 +16,7 @@
             h1{width: 60%; border-bottom: 2px solid #000; margin: auto; padding: 10px;
             text-transform: capitalize;}
             fieldset{width: 40%; margin: auto;}
-            
+            span{font-weight: bold; font-size: 150%;}
         </style>
     </head>
 
@@ -31,7 +31,7 @@
         <br/><br/>
 
         <fieldset>
-            <form id="firstForm" action="" method="get">
+            <form id="firstForm" action="608prw.php" method="get">
                 <label for="">Variable</label>
                 <input type="number" name="num1">
 
@@ -43,7 +43,7 @@
                 <br/>
 
                 <label for="">2st Constant</label>
-                <input type="number" name="num2">
+                <input type="number" name="num3">
             </form>
 
             <br/>
@@ -55,18 +55,20 @@
 
         <?php
             //Criando variavel $x com o primeiro valor do formulario:
-            $x = $_POST["num1"];
+            $X = $_GET["num1"];
             //Recebendo e guardando outros dois valores e colocando em constantes:
-            define("Y", $_POST["num2"]);
-            define("Z", $_POST["num3"]);
-            $xpression = (($x - 5) * Y) - Z;
+            define("Y", $_GET["num2"]);
+            define("Z", $_GET["num3"]);
+            $xpression = (($X - 5) * Y) - Z;
             echo "<p>
-                Variable \$x = $x <br>
+                Variable X = $X <br>
                 1st Constant Y = ", Y,"<br>
                 2nd Constant Z = ", Z,"<br><br>
                 
-                \$xpression = ((\$x - 5) * Y) - Z
-                <br><br>
+                <span>\$xpression = (( X - 5 ) * Y ) - Z</span>
+                
+                <br/><br/>
+                
                 \$xpression = $xpression
             
             </p>"
