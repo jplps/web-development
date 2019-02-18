@@ -25,7 +25,7 @@
         <h1>php form 3</h1>
 
         <br/><br/>
-
+        
         <fieldset>
             <?php
                 //Criando variavel $x com o primeiro valor do formulario:
