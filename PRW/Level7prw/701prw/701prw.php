@@ -27,7 +27,7 @@
             PHP, utilizando os "name"s para ordená-los, e guardando os dados
             fornecidos em cada input em seus respectivos endereços:
         -->
-        <h1>php form 2</h1>
+        <h1>php form 1</h1>
 
         <br/><br/>
 
