@@ -32,7 +32,7 @@
         <br/><br/>
 
         <fieldset>
-            <form id="firstForm" action="702prw.php" method="post">
+            <form id="firstForm" action="701bprw.php" method="post">
                 <label for="">Nota 1:</label>
                 <input type="number" name="num1" step="0.01"/>
 
