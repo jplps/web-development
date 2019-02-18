@@ -18,38 +18,41 @@
             text-transform: capitalize;}
             fieldset{width: 40%; margin: auto;}
             span{font-weight: bold; font-size: 150%;}
+            p{text-align: center; font-size: 150%;}
         </style>
     </head>
 
     <body>
-        <!--
-            O método corresponde ao vetor $_POST, já existente no
-            PHP, utilizando os "name"s para ordená-los, e guardando os dados
-            fornecidos em cada input em seus respectivos endereços:
-        -->
         <h1>php form 2</h1>
 
         <br/><br/>
 
         <fieldset>
-            <form id="firstForm" action="702prw.php" method="post">
-                <label for="">Nota 1:</label>
-                <input type="number" name="num1" step="0.01"/>
+            <?php
+                //Criando variavel $x com o primeiro valor do formulario:
+                $x = $_POST["num1"];
+                $y = $_POST["num2"];
+                $z = $_POST["num3"];
 
-                <br/>
+                //Cálculo da média:
+                $media = ($x + $y + $z) / 3;
 
-                <label for="">Nota 2:</label>
-                <input type="number" name="num2" step="0.01"/>
+                //Arredondamento com number_format():
+                $mediaRedonda = number_format($media, 2, ".", ",");
 
-                <br/>
+                //Imprimindo resultado na tela do navegador:
+                echo "<p>
+                    A média do aluno(a) é:
 
-                <label for="">Nota 3:</label>
-                <input type="number" name="num3" step="0.01"/>
-            </form>
+                    <br/>
 
-            <br/>
+                    (", $x," + ", $y," + ", $z,") / 3 =
 
-            <button type="submit" form="firstForm" value="submit">Submit</button>
+                    <br/>
+
+                    <span>", $mediaRedonda,"!</span>
+                </p>"
+            ?>
         </fieldset>
     </body>
 </html>
