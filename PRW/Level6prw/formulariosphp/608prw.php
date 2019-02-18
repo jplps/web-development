@@ -2,12 +2,9 @@
 <html lang="en">
     <!--
         Notas:
-
         Diretório geral em debian-based distros: /var/www/html;
         Endereço http://localhost/path/to/file.php para acessar a aplicação;
-
         Ex.: 6 - Formulários & PHP (excs10).
-
     -->
     <head>
         <meta charset="UTF-8">
@@ -18,11 +15,11 @@
             body{text-align: center;}
             h1{width: 60%; border-bottom: 2px solid #000; margin: auto; padding: 10px;
             text-transform: capitalize;}
-
-
+            fieldset{width: 40%; margin: auto;}
+            
         </style>
-        
     </head>
+
     <body>
         <!--
             O método corresponde aos vetores $_POST e $_GET, já existentes no
@@ -31,16 +28,38 @@
         -->
         <h1>php form</h1>
 
+        <br/><br/>
+
+        <fieldset>
+            <form id="firstForm" action="" method="get">
+                <label for="">Variable</label>
+                <input type="number" name="num1">
+
+                <br/>
+
+                <label for="">1st Constant</label>
+                <input type="number" name="num2">
+
+                <br/>
+
+                <label for="">2st Constant</label>
+                <input type="number" name="num2">
+            </form>
+
+            <br/>
+
+            <button type="submit" form="firstForm" value="submit">Submit</button>
+        </fieldset>
+
+        <br/>
+
         <?php
             //Criando variavel $x com o primeiro valor do formulario:
             $x = $_POST["num1"];
-
             //Recebendo e guardando outros dois valores e colocando em constantes:
             define("Y", $_POST["num2"]);
             define("Z", $_POST["num3"]);
-
             $xpression = (($x - 5) * Y) - Z;
-
             echo "<p>
                 Variable \$x = $x <br>
                 1st Constant Y = ", Y,"<br>
@@ -48,12 +67,9 @@
                 
                 \$xpression = ((\$x - 5) * Y) - Z
                 <br><br>
-
                 \$xpression = $xpression
             
             </p>"
-        
         ?>
-
     </body>
 </html>
