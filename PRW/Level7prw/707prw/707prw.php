@@ -4,13 +4,13 @@
         Notas:
         Diretório geral em debian-based distros: /var/www/html;
         Endereço http://localhost/path/to/file.php para acessar a aplicação;
-        Ex.: 6 - Formulários & PHP (excs16).
+        Ex.: 7 - Formulários & PHP (excs17).
     -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>PRW 706</title>
+        <title>PRW 707</title>
 
         <style>
             body{text-align: center;}
@@ -23,18 +23,19 @@
     </head>
 
     <body>
-        <h1>php form 6</h1>
+        <h1>php form 7</h1>
 
         <br/><br/>
 
-        <form id="form" action="706prw.php" method="get">
+        <form id="form" action="707prw.php" method="get">
             <fieldset>
-                <label for="">Dollars $</label>
-                <input type="number" name="dollars" min="0" step="0.01"/>
+                <label for="">Total Buy $</label>
+                <input type="number" name="buy" min="0" step="0.01"/>
 
+                <br/><br/>
 
-                <label for="">Tax $</label>
-                <input type="number" name="tax" min="0" step="0.01"/>
+                <label for="">Comission %</label>
+                <input type="number" name="com" min="0" step="0.01"/>
 
                 <br/><br/>
 
@@ -42,14 +43,14 @@
             </fieldset>
 
             <?php
-                    //Taxa de câmbio constante:
-                    define("tax", $_GET["tax"]);
-                    $tax = tax;
-
-                    $dollars = $_GET["dollars"];
+                    //Taxa de comissão:
+                    $com = $_GET["com"];
+                    
+                    //Total da compra:
+                    $buy = $_GET["buy"];
                     
                     //Cálculo da transformação:
-                    $final = $dollars * tax;
+                    $final = $buy * ($com/100);
 
                     //Arredondamento com number_format():
                     $finaled = number_format($final, 2);
@@ -58,11 +59,11 @@
                     echo "<p>
                             <br/>
 
-                            Tax: $tax
-                            
+                            Comission $com%
+
                             <br/>
 
-                            $$dollars dollars converted to R$$final reais.
+                            Total $$finaled
                     </p>";
                 ?>
         </form>
