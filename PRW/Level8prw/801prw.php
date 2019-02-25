@@ -47,13 +47,14 @@
         <fieldset>
             <legend>Arrays Interactions</legend>
 
+            <!-- Action = "/path/to/file" -->
             <form id="form" action="801prw.php" method="get">
                 <label for="">Select Student</label>
                 <select name="students">
                     <?php
                         //Laço de repetição "foreach($variable as $key => $value)":
-                        foreach ($students as $name => $grade) {
-                            echo "<option>$name</option>";
+                        foreach ($students as $student => $grade) {
+                            echo "<option>$student</option>";
                         }
                     ?>
                 </select>
@@ -61,7 +62,7 @@
                 <br/>
 
                 <label for="">Student's Name</label>
-                <input type="text" name="name"/>
+                <input type="text" name="student"/>
             </form>
         </fieldset>
 
@@ -73,7 +74,7 @@
 
                 <br/>
 
-                <input type="radio" name="operation" value="1"/>Student Grades<br/>
+                <input type="radio" name="operation" value="1"/>Student Grade<br/>
                 <input type="radio" name="operation" value="2"/>Students Decreased<br/>
                 <input type="radio" name="operation" value="3"/>Grades Growing<br/>
                 <input type="radio" name="operation" value="4"/>Check Existence<br/>
@@ -89,10 +90,42 @@
             <button type="submit" form="form" value="submit">Submit</button>
         </fieldset>
 
+        <!-- Script php para processamento de dados: -->
         <?php
             //Receber dados do formulário, processados somente após o "submit":
             if(isset($_POST["submit"])){ //Após submit setado como true (function "is set"), executar código;
-                $operation = $_POST["operation"];
+                $operation = $_POST["operation"]; //Atribuição do valor "value";
+
+                //Os valores recebidos pelo formulário em php são tratados inicialmente como string:
+                if ($operation == "1"){
+                    //Receber o nome do aluno selecionado no select:
+                    $student = $_POST["student"];
+
+                    $grade = $students[$student];
+                    
+                    echo "<p> $student grade is $grade.</p>";
+                }
+
+                //Ordenação de alunos inversamente (de Z para A):
+                else if ($operation == "2"){
+
+                }
+
+                else if ($operation == "3"){}
+
+                else if ($operation == "4"){}
+
+                else if ($operation == "5"){}
+
+                else if ($operation == "6"){}
+                
+                else if ($operation == "7"){}
+
+                else if ($operation == "8"){}
+
+                else if ($operation == "9"){}
+                
+                else {}
             }
         ?>
     </body>
