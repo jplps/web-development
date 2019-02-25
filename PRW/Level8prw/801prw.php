@@ -24,7 +24,8 @@
         <title>PRW 801</title>
 
         <style>
-            h1{width: 60%; border-bottom: 2px solid #000; margin: auto; padding: 10px;
+            body{color: #666;}
+            h1{width: 60%; border-bottom: 2px solid #666; margin: auto; padding: 10px;
             text-transform: capitalize; text-align: center;}
             fieldset{width: 55%; margin: 0 auto 40px;}
             span{font-weight: bold; font-size: 150%;}
@@ -90,7 +91,7 @@
 
         <?php
             //Receber dados do formulário, processados somente após o "submit":
-            if(isset($_POST["submit"])){ //Após submit setado como true, executar código;
+            if(isset($_POST["submit"])){ //Após submit setado como true (function "is set"), executar código;
                 $operation = $_POST["operation"];
             }
         ?>
