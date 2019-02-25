@@ -6,7 +6,7 @@
         "Rogério da Silva" => 4.2,
         "Jerusa Fontes" => 8.5,
         "Alícia Marques" => 9.0,
-        "Zenon Mendes" => 4.1
+        "Zenon Mendes" => 7.1
     ];
 ?>
 <!DOCTYPE html>
@@ -29,11 +29,11 @@
             text-transform: capitalize; text-align: center;}
             fieldset{width: 55%; margin: 0 auto 40px;}
             span{font-weight: bold; font-size: 150%;}
-            table{width: 50%; border: 1px solid #666; border-collapse: collapse;}
+            table{width: 50%; margin: auto; border: 1px solid #666; border-collapse: collapse;}
             caption{text-align: left; font-style: italic; margin-bottom: 5px;}
             th{background: #999;}
             td{padding-left: 10px;}
-            td.centralize{text-align: center;}
+            td.centralize, p{text-align: center;}
             td, th{border: 1px solid #b1b1b1;}
             button{display: block; margin-left: auto;}
         </style>
@@ -44,74 +44,117 @@
 
         <br/><br/>
 
-        <fieldset>
-            <legend>Arrays Interactions</legend>
+        <form id="form" action="801prw.php" method="post">
+            <fieldset>
+                <legend>Arrays Interactions</legend>
 
-            <!-- Action = "/path/to/file" -->
-            <form id="form" action="801prw.php" method="get">
-                <label for="">Select Student</label>
-                <select name="students">
-                    <?php
-                        //Laço de repetição "foreach($variable as $key => $value)":
-                        foreach ($students as $student => $grade) {
-                            echo "<option>$student</option>";
-                        }
-                    ?>
-                </select>
+                <!-- Action = "/path/to/file" -->
+
+                    <label for="">Select Student</label>
+                    <select name="StudentsArray">
+                        <?php
+                            //Laço de repetição "foreach($variable as $key => $value)":
+                            foreach ($students as $student => $grade) {
+                                echo "<option>$student</option>";
+                            }
+                        ?>
+                    </select>
+
+                    <br/>
+
+                    <label for="">Student's Name</label>
+                    <input type="text" name="StudentName"/>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Arrays Operations</legend>
+                    <label for="">Select Operation:</label>
+                    <input type="radio" name="operation" value="1"/>Selected Student Grade
+                    
+                    <br/><br/>
+
+                    <input type="radio" name="operation" value="2"/>Students Decreased<br/>
+                    <input type="radio" name="operation" value="3"/>Grades Growing<br/>
+                    <input type="radio" name="operation" value="4"/>Check Existence<br/>
+                    <input type="radio" name="operation" value="5"/>Show Average<br/>
+                    <input type="radio" name="operation" value="6"/>Above Average<br/>
+                    <input type="radio" name="operation" value="7"/>Lowest Grade<br/>
+                    <input type="radio" name="operation" value="8"/>Convert Array to String<br/>
+                    <input type="radio" name="operation" value="9"/>Generate Table<br/>
 
                 <br/>
 
-                <label for="">Student's Name</label>
-                <input type="text" name="student"/>
-            </form>
-        </fieldset>
-
-        <fieldset>
-            <legend>Arrays Operations</legend>
-
-            <form action="">
-                <label for="">Select Operation</label>
-
-                <br/>
-
-                <input type="radio" name="operation" value="1"/>Student Grade<br/>
-                <input type="radio" name="operation" value="2"/>Students Decreased<br/>
-                <input type="radio" name="operation" value="3"/>Grades Growing<br/>
-                <input type="radio" name="operation" value="4"/>Check Existence<br/>
-                <input type="radio" name="operation" value="5"/>Show Average<br/>
-                <input type="radio" name="operation" value="6"/>Above Average<br/>
-                <input type="radio" name="operation" value="7"/>Lowest Grade<br/>
-                <input type="radio" name="operation" value="8"/>Convert Array to String<br/>
-                <input type="radio" name="operation" value="9"/>Generate Table<br/>
-            </form>
-
-            <br/>
-
-            <button type="submit" form="form" value="submit">Submit</button>
-        </fieldset>
+                <button type="submit" form="form" name="send">Submit</button>
+            </fieldset>
+        </form>
 
         <!-- Script php para processamento de dados: -->
         <?php
             //Receber dados do formulário, processados somente após o "submit":
-            if(isset($_POST["submit"])){ //Após submit setado como true (function "is set"), executar código;
+            if(isset($_POST["send"])){ //Após submit setado como true (function "is set"), executar código;
                 $operation = $_POST["operation"]; //Atribuição do valor "value";
 
                 //Os valores recebidos pelo formulário em php são tratados inicialmente como string:
                 if ($operation == "1"){
                     //Receber o nome do aluno selecionado no select:
-                    $student = $_POST["student"];
+                    $student = $_POST["StudentsArray"];
 
                     $grade = $students[$student];
                     
-                    echo "<p> $student grade is $grade.</p>";
+                    echo "<p> ", $student," grade is $grade.</p>";
                 }
 
                 //Ordenação de alunos inversamente (de Z para A):
                 else if ($operation == "2"){
+                    //Utilização de ordenação krsort():
+                    krsort($students);
 
+                    //Mostrar os dados ordenados em table:
+                    echo "
+                    <table>
+                        <caption>Student Data Decreased - From Z to A</caption>
+
+                        <tr>
+                            <th>Student</th>
+                            <th>Grade</th>
+                        </tr>";
+
+                        foreach ($students as $student => $grade)
+                            echo "
+                            <tr>
+                                <td>$student</td>
+                                <td>$grade</td>
+                            </tr>
+                            ";
+
+                    echo "</table>";
                 }
 
-                else if ($operation == "3"){}
+                else if ($operation == "3"){
+                    //Utilização de ordenação krsort():
+                    asort($students);
+
+                    //Mostrar os dados ordenados em table:
+                    echo "
+                    <table>
+                        <caption>Student Grade Naturally Ordenated</caption>
+
+                        <tr>
+                            <th>Student</th>
+                            <th>Grade</th>
+                        </tr>";
+
+                        foreach ($students as $student => $grade)
+                            echo "
+                            <tr>
+                                <td>$student</td>
+                                <td>$grade</td>
+                            </tr>
+                            ";
+
+                    echo "</table>";
+                }
 
                 else if ($operation == "4"){}
 
@@ -128,5 +171,6 @@
                 else {}
             }
         ?>
+
     </body>
 </html>
