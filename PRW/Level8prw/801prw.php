@@ -189,7 +189,20 @@
                 }
 
                 else if ($operation == "6"){
-                    
+                    //Função de soma dos elementos de um array (array_sum) e de contagem de índice (count):
+                    $media = array_sum($students) / count($students);
+
+                    //Contar o número de alunos acima da média:
+                    $aux = 0;
+
+                    foreach ($students as $student => $grade)
+                        if($grade > $media)
+                            $aux++;
+
+                    //Impressão de resposta:
+                    echo "<p>
+                        $aux students are Above the Average.
+                    </p>";
                 }
                 
                 else if ($operation == "7"){}
