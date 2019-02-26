@@ -102,7 +102,7 @@
 
                     $grade = $students[$student];
                     
-                    echo "<p> ", $student," grade is $grade.</p>";
+                    echo "<p> ", $student," grade is $grade/10.0</p>";
                 }
 
                 //Ordenação de alunos inversamente (de Z para A):
@@ -156,7 +156,26 @@
                     echo "</table>";
                 }
 
-                else if ($operation == "4"){}
+                else if ($operation == "4"){
+                    //Receber o nome do aluno fornecido no input:
+                    $student = $_POST["StudentName"];
+                    
+                    //Usar função pronta "array search", retorna true/false:
+                    $exists = array_key_exists($student, $students);
+
+                    //Testes lógicos:
+                    if ($exists) {
+                        $grade = $students[$student];
+                        echo "<p>
+                            $student EXISTS, and the grade is $grade/10.0!!!
+                        </p>";
+                    }
+
+                    else
+                        echo "<p>
+                            $student DON'T EXIST!!!
+                        </p>";
+                }
 
                 else if ($operation == "5"){}
 
