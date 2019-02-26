@@ -54,9 +54,8 @@
                     <select name="StudentsArray">
                         <?php
                             //Laço de repetição "foreach($variable as $key => $value)":
-                            foreach ($students as $student => $grade) {
+                            foreach ($students as $student => $grade)
                                 echo "<option>$student</option>";
-                            }
                         ?>
                     </select>
 
@@ -81,7 +80,7 @@
                     <input type="radio" name="operation" value="6"/>Above Average<br/>
                     <input type="radio" name="operation" value="7"/>Lowest Grade<br/>
                     <input type="radio" name="operation" value="8"/>Convert Array to String<br/>
-                    <input type="radio" name="operation" value="9"/>Generate Table<br/>
+                    <input type="radio" name="operation" value="9"/>Generate Scoped Table<br/>
 
                 <br/>
 
@@ -160,10 +159,9 @@
                     //Receber o nome do aluno fornecido no input:
                     $student = $_POST["StudentName"];
                     
-                    //Usar função pronta ("in_array($value, $array)" - conforme valor), retorna true/false conforme índice:
+                    //Usar função pronta (exemplo: "in_array($value, $array)"):
                     $exists = array_key_exists($student, $students);
 
-                    //Testes lógicos:
                     if ($exists) {
                         $grade = $students[$student];
                         echo "<p>
@@ -192,14 +190,12 @@
                     //Função de soma dos elementos de um array (array_sum) e de contagem de índice (count):
                     $media = array_sum($students) / count($students);
 
-                    //Contar o número de alunos acima da média geral:
-                    $aux = 0;
+                    $aux = 0; //Contar o número de alunos acima da média geral;
 
                     foreach ($students as $student => $grade)
                         if($grade > $media)
                             $aux++;
 
-                    //Impressão de resposta:
                     echo "<p>
                         $aux students are Above the Average.
                     </p>";
@@ -209,19 +205,57 @@
                     //Retorno do menor valor do array max($array) ou min($array):
                     $lg = min($students);
 
-                    //Atribuindo valor ao índice:
-                    $student = array_search($lg, $students);
+                    $student = array_search($lg, $students); //Atribuindo valor ao índice;
 
                     echo "<p>
                         Lowest $lg/10.0 belongs to $student.
                     </p>";
                 }
 
-                else if ($operation == "8"){}
+                else if ($operation == "8"){
+                    //Função (implode) para converter array em string:
+                    $studentsString = implode(" - ", $students);
 
-                else if ($operation == "9"){}
+                    echo "<p>
+                        Success!
+
+                        <br/>
+
+                        \$students elements = $studentsString
+                    </p>";
+                }
+
+                else if ($operation == "9"){
+                    //Adicionar, manualmente, mais alguns dados no array:
+                    $students["João Lima"] = 9.9;
+                    $students["Wanussa Silva"] = 9.8;
+                    
+                    //Mostrar os dados ordenados em table:
+                    echo "<table>
+                        <caption>Students Added</caption>
+
+                        <tr>
+                            <th>Student</th>
+                            <th>Grade</th>
+                        </tr>";
+
+                        foreach ($students as $student => $grade)
+                            echo "
+                            <tr>
+                                <td>$student</td>
+                                <td>$grade</td>
+                            </tr>
+                            ";
+
+                    echo "</table>";
+                }
                 
-                else {}
+                else
+                    echo "<p>
+                        This is the \"no option\" warning!
+                        <br/>
+                        Choose one above, and click Submit again!
+                    </p>";
             }
         ?>
     </body>
