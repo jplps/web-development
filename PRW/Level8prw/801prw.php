@@ -192,7 +192,7 @@
                     //Função de soma dos elementos de um array (array_sum) e de contagem de índice (count):
                     $media = array_sum($students) / count($students);
 
-                    //Contar o número de alunos acima da média:
+                    //Contar o número de alunos acima da média geral:
                     $aux = 0;
 
                     foreach ($students as $student => $grade)
@@ -205,7 +205,17 @@
                     </p>";
                 }
                 
-                else if ($operation == "7"){}
+                else if ($operation == "7"){
+                    //Retorno do menor valor do array max($array) ou min($array):
+                    $lg = min($students);
+
+                    //Atribuindo valor ao índice:
+                    $student = array_search($lg, $students);
+
+                    echo "<p>
+                        Lowest $lg/10.0 belongs to $student.
+                    </p>";
+                }
 
                 else if ($operation == "8"){}
 
@@ -214,6 +224,5 @@
                 else {}
             }
         ?>
-
     </body>
 </html>
