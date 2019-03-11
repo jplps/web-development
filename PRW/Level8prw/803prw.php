@@ -86,11 +86,31 @@
                     $reg1 => $pc1,
                     $reg2 => $pc2,
                     $reg3 => $pc3
-                );
+                );    
 
                 echo "<pre>";
                 print_r($workers);
                 echo "</pre>";
+
+                $w = 0;
+
+                foreach ($workers as $reg => $pc) {
+                    if($pc < 998.00){
+                        echo "<p>
+                            $reg: $pc
+                        </p>";
+                    }
+                    else{
+                        $w++;
+                    }
+                        
+                }
+
+                if($w == 0){
+                    echo "<p>
+                        No one got payed lower than $998,00!!!
+                    </p>";
+                }
             }
         ?>
     </body>
