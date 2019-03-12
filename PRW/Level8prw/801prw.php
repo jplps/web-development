@@ -131,7 +131,7 @@
                 }
 
                 else if ($operation == "3"){
-                    //Utilização de ordenação krsort():
+                    //Utilização de ordenação arsort():
                     asort($students);
 
                     //Mostrar os dados ordenados em table:
