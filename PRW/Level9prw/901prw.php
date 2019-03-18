@@ -18,9 +18,9 @@
 			text-transform:capitalize; text-align:center; position:sticky; top:0;}
 			fieldset{margin-top:20px;}
 			button{display:block;margin:5px auto;}
-			input {margin:5px 0;}
+			input{margin:5px 0;}
 			.align{display:inline-block;text-align:right;width:50%;}
-
+			p{float:right;}
 		</style>
 	</head>
 
@@ -45,17 +45,30 @@
 		<?php
 			//Função para testar valor:
 			function valTest($x){
+				//Teste default do php para validação de inteiros:
 				$test = filter_var($x, FILTER_VALIDATE_INT);
 
-				return $test;
+				/**
+				 * Por ser uma linguagem fracamente tipada, o php pode resolver o inteiro 0 
+				 * como falso. Desta maneira (===) garantimos através de um teste lógico
+				 * que o valor estará correto.
+				 */
+				//Verificação de exatidão (boolean / boolean):
+				if($test === false || $x < 0)
+					return false;
+
+				else
+					return true;
 			}
 
 			if(isset($_POST["process"])){
 				//Receber valor do input:
 				$val = $_POST["value"];
 
+				//Chamar função:
 				$return = valTest($val);
 
+				//Testar resultado da função para o escopo da resposta:
 				if($return){
 					$squareroot = sqrt($val);
 
