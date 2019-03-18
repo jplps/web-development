@@ -80,14 +80,14 @@
 				<br/>
 			</fieldset>
 
-			<fieldset id="operations1">
-				<legend>Product Operations</legend>
-				<button type="submit" form="form" name="register">Register</button>
+			<fieldset id="operations1">				
+				<label for="">Code to Search</label>
+				<input type="text" name="searchcode" id="" />
 
 				<br/>
 				
-				<label for="">Code to Search</label>
-				<input type="text" name="searchcode" id="" />
+				<legend>Product Operations</legend>
+				<button type="submit" form="form" name="register">Register</button>
 			</fieldset>
 		</form>
 
