@@ -1,169 +1,191 @@
-<?php
-    //Criando matriz (tridimensional arrays) para armazenar dados:
-    $students["1010-x1"] = ["João de Ataíde", 7.5, 5.8];
-    $students["1010-x2"] = ["Joana de Almeida", 6, 5.5];
-    $students["1010-x3"] = ["Maria das Graças", 5, 9];
-    $students["1010-x4"] = ["Calorine Prado", 4.2, 7.7];
-
-    // //Referência:
-    // echo "<pre>";
-    // print_r($students);
-    // echo "</pre>";
-?>
 <!DOCTYPE html>
 <html lang="en">
-    <!--
-        Notas:
-        Diretório geral em debian-based distros: /var/www/html;
-        Endereço http://localhost/path/to/file.php para acessar a aplicação;
-        Ex.: 5 - Arrays & PHP
-    -->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--
+		Notas:
+		Diretório geral em debian-based distros: /var/www/html;
+		Endereço http://localhost/path/to/file.php para acessar a aplicação;
+		Ex.: 5 - Arrays & PHP
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>PRW 805</title>
+		<title>PRW 805</title>
 
-        <style>
-            body{width: 80%; color: #666; margin: auto;}
-            h1{border-bottom: 2px solid #666; margin: auto; padding: 10px;
-            text-transform: capitalize; text-align: center;}
-            fieldset{margin-top: 20px}
-        </style>
-    </head>
+		<style>
+			body{width: 80%; color: #666; margin: auto;}
+			h1{border-bottom: 2px solid #666; margin: auto; padding: 10px;
+			text-transform: capitalize; text-align: center;}
+			fieldset{margin: 20px auto;}
+			span{font-weight: bold; font-size: 150%;}
+			table{width: 50%; margin: auto; border: 1px solid #666; border-collapse: collapse;}
+			caption{text-align: left; font-style: italic; margin-bottom: 5px;}
+			th{background: #999;}
+			td{padding-left: 10px;}
+			td.centralize, p{text-align: center;}
+			td, th{border: 1px solid #b1b1b1;}
+			input, button {margin: 5px 0;}
+		</style>
+	</head>
 
-    <body>
-        <h1>php arrays 5</h1>
+	<body>
+		<h1>php arrays 5</h1>
 
-        <form id="form" action="" method="post">
-            <fieldset>
-                <legend>Data Process</legend>
+		<form id="form" action="" method="post">
+			<fieldset id="product1">
+				<legend>Product Registration 1</legend>
 
-                <label for="">Select Registration</label>
+				<label for="">Code:</label>
+				<input type="text" name="code1" autofocus>
+				<br/>
 
-                <select name="reg">
-                    <?php
-                        foreach ($students as $reg => $vetor) {
-                            echo "<option>$reg</option>";
-                        }
-                    ?>
-                </select>
-            </fieldset>
+				<label for="">In Stock:</label>
+				<input type="number" name="stock1" min="0">
+				<br/>
 
-            <fieldset>
-                <legend>Operations</legend>
-                <button type="submit" form="form" name="approvals">Approvals</button>
+				<label for="">Un Price:</label>
+				<input type="number" name="price1" min="0" step="0.01">
+				<br/>
+			</fieldset>
 
-                <button type="submit" form="form" name="rendiment">Rendiment</button>
+			<fieldset id="product2">
+				<legend>Product Registration 2</legend>
 
-                <button type="submit" form="form" name="distak">Distak</button>
-            </fieldset>
-        </form>
+				<label for="">Code:</label>
+				<input type="text" name="code2" autofocus>
+				<br/>
 
-        <?php
-            if(isset($_POST["rendiment"])){
-                //Recebe matrícula do select:
-                $reg = $_POST["reg"];
+				<label for="">In Stock:</label>
+				<input type="number" name="stock2" min="0">
+				<br/>
 
-                //Acesso a dados:
-                $name = $students[$reg][0];
-                $avtests = $students[$reg][1];
-                $avexs = $students[$reg][2];
+				<label for="">Un Price:</label>
+				<input type="number" name="price2" min="0" step="0.01">
+				<br/>
+			</fieldset>
 
-                $avfinal = ($avtests * 7 + $avexs * 3)/10;
+			<fieldset id="product3">
+				<legend>Product Registration 3</legend>
 
-                echo "<p>
-                    Selected Data:
-                    <br/><br/>
-                    Student: $name<br/>
-                    Registration: $reg<br/>
-                    Tests Average: $avtests<br/>
-                    Exercise Average: $avexs
-                    <br/><br/>
-                    Final Average: $avfinal
-                    <br/><br/>
-                ";
-            }
+				<label for="">Code:</label>
+				<input type="text" name="code3" autofocus>
+				<br/>
 
-            else if(isset($_POST["approvals"])){
-                //Auxilio para armazenamento de dados:
-                $auxArray = array();
+				<label for="">In Stock:</label>
+				<input type="number" name="stock3" min="0">
+				<br/>
 
-                foreach ($students as $reg => $interVector) {
-                    //Acessando dados do vetor interno de cada student:
-                    //Acesso a dados:
-                    $name = $students[$reg][0];
-                    $avtests = $students[$reg][1];
-                    $avexs = $students[$reg][2];
+				<label for="">Un Price:</label>
+				<input type="number" name="price3" min="0" step="0.01">
+				<br/>
+			</fieldset>
 
-                    $avfinal = ($avtests * 7 + $avexs * 3)/10;
+			<fieldset id="operations1">				
+				<label for="">Code to Search</label>
+				<input type="text" name="searchcode" id="" />
 
-                    if ($avfinal >= 6) {
-                        //Guardar no array auxiliar:
-                        $auxArray[$reg][0] = $name;
-                        $auxArray[$reg][1] = $avfinal;
-                    }
-                }
+				<br/>
+				
+				<legend>Product Operations</legend>
+				<button type="submit" form="form" name="register">Register</button>
+			</fieldset>
+		</form>
 
-                // //Referência:
-                // echo "<pre>";
-                // print_r($auxArray);
-                // echo "</pre>";
+		<?php
+			if(isset($_POST["register"])){
+				//Recebe dados e insere em matriz:
+				for ($i=1; $i <= 3; $i++) { 
+					//Concatenando nome da variável:
+					$cod = "code" . $i;
+					//Atribuindo de fato:
+					$cod = $_POST[$cod];
+					
+					$stock = "stock" . $i;
+					$stock = $_POST[$stock];
 
-                echo "
-                <br/>
-                <table>
-                    <tr>
-                        <th>Registration</th>
-                        <th>Name</th>
-                        <th>Final Av.</th>
-                    </tr>";
+					$price = "price" . $i;
+					$price = $_POST[$price];
 
-                    foreach ($auxArray as $reg => $internVector)
-                        echo "
-                        <tr>
-                            <td>$reg</td>
-                            <td>$internVector[0] </td>
-                            <td>$internVector[1] </td>";
-                        
-                        echo "</tr>";
-                echo "</table>";
-            }
+					//Guardando em matriz:
+					$products[$cod] = array($stock, $price);
+				}
 
-            else if(isset($_POST["distak"])){
-                //Aux para armazenar matrícula e desempenho:
-                $auxArray = [];
+				//Construir impressão:
+				echo "
+					<table>
+						<caption>Registered Products</caption>
 
-                foreach ($students as $reg => $internVector) {
-                    $avfinal = ($internVector[1] * 7 + $internVector[2] * 3)/10;
+						<tr>
+							<th>Code</th>
+							<th>Price</th>
+							<th>In Stock</th>
+						</tr>";
 
-                    //Guarda media final e matrícula no vetor auxiliar:
-                    $auxArray[$reg] = $avfinal;
-                }
+				foreach ($products as $cod => $v) {
+					echo "
+						<tr>
+							<td>$cod</td>
+							<td>$v[1]</td>
+							<td>$v[0]</td>
+						</tr>
+					";
+				}
 
-                // //Referência:
-                // echo "<pre>";
-                // print_r($auxArray);
-                // echo "</pre>";
+				echo "</table>";
 
-                //Função max() para percorrer vetor e checar maior elemento:
-                $highest = max($auxArray);
 
-                //Recuperar a matrícula no vetor auxiliar:
-                $regdistak = array_search($highest, $auxArray);
+				//O Mestre do Estoque:
+				$stockmaster = 0;
 
-                //Recuperando nome através da matricula:
-                $namedistak = $students[$regdistak][0];
+				foreach ($products as $cod => $v) {
+					if($v[0] >= $stockmaster){
+						$codmaster = $cod;
+						$pricemaster = $v[1];
+						$stockmaster = $v[0];
+					}
+				}
 
-                echo "<p>
-                    Distak Data:
-                    <br/><br/>
-                    Student: $namedistak<br/>
-                    Registration: $regdistak
-                    <br/><br/>
-                    Final Average: $highest
-                </p>";
-            }
-        ?>
-    </body>
+				//Construir impressão:
+				echo "<p>
+					Stock Master Data: <br/><br/>
+					Code: $codmaster <br/>
+					Price: $pricemaster <br/>
+					In Stock: $stockmaster <br/>
+				</p>";
+
+
+				//Faturamento:
+				$sum = 0;
+
+				foreach ($products as $cod => $v) {
+					$sum = $sum + $v[0] * $v[1];
+				}
+
+				$sumed = number_format($sum, 2, ".", ",");
+
+				echo "<p>
+					Total Income from Stock is: $sumed
+				</p>";
+
+
+				//
+				$searchcode = $_POST["searchcode"];
+
+				if(array_key_exists($searchcode, $products)){
+					echo "<p>
+						Inquire: <br/><br/>
+
+						Search Code: $searchcode <br/>
+						In Stock: ", $products[$searchcode][0],"<br/>
+						Price: ", $products[$searchcode][1],"
+					</p>";
+				}
+
+				else
+					echo "<p>
+						The inputed code doesn't exist!!!
+					</p>";
+			}
+		?>
+	</body>
 </html>
