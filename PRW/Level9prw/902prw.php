@@ -47,7 +47,15 @@
 
 		<?php
 			if(isset($_POST["send"])){
+        $val0 = $_POST["first"];
+        $val1 = $_POST["second"];
 
+        //Invocação de funções externas:
+        $sum = $summing($val0, $val1);
+
+        $cub = $cubbing($sum);
+
+        $showThem($val0, $val1, $cub);
       }
 		?>
 	</body>

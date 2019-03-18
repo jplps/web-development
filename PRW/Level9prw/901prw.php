@@ -52,6 +52,8 @@
 				 * Por ser uma linguagem fracamente tipada, o php pode resolver o inteiro 0 
 				 * como falso. Desta maneira (===) garantimos através de um teste lógico
 				 * que o valor estará correto.
+				 * A validação é extremamente importante pois somente a declaração das tags
+				 * não garante a idoneidade dos dados.
 				 */
 				//Verificação de exatidão (boolean / boolean):
 				if($test === false || $x < 0)
