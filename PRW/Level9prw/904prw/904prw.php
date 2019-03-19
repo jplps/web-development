@@ -71,7 +71,7 @@
 			include_once "904prw.inc.php";
 
 			if(isset($_POST["send"])){
-				//Validação de input (sem select selectado):
+				//Validação de input (garante select selectado):
 				if(isset($_POST["uc"])){
 				$uc = $_POST["uc"];
 
