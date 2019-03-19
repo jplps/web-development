@@ -1,3 +1,12 @@
+<?php
+  $ucs = [
+    "PObjetos" => 4,
+    "PWeb" => 8,
+    "Design" => 8,
+    "Projetos" => 2,
+    "BDados" => 4
+  ];
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<!--
@@ -26,7 +35,7 @@
 			fieldset{margin-top:20px;}
 			button{display:block;margin:5px auto;}
 			input{margin:5px 0;}
-			.align{display:inline-block;text-align:right;width:50%;}
+			.align{display:inline-block;width:50%;}
 			p{float:right;}
 		</style>
 	</head>
@@ -36,30 +45,43 @@
 
 		<form id="form" action="" method="post">
 			<fieldset>
-				<legend>Month Trick</legend>
+				<legend>Consult Trick</legend>
 
-				<label class="align">Select Something</label>
-				<select name="month" id="">
-          <?php
-            foreach ($months as $month => $days) {
-              echo "<option>$month</option>";
-            }
-          ?>
-        </select>
+				<label class="align">Select UC</label>
+
+				<br/>
+				
+				<?php
+					foreach ($ucs as $uc => $num_classes) {
+						echo "<input type=\"radio\" name=\"uc\" value=\"$uc\" >
+							$uc
+						</input> <br/>";
+					}
+				?>
 			</fieldset>
 
 			<fieldset>
 				<legend>Operations</legend>
 
-				<button type="submit" form="form" name="send">Send What</button>
+				<button type="submit" form="form" name="send">Show Classes</button>
 			</fieldset>
 		</form>
 
 		<?php
-
+			include_once "904prw.inc.php";
 
 			if(isset($_POST["send"])){
+				//Validação de input (sem select selectado):
+				if(isset($_POST["uc"])){
+				$uc = $_POST["uc"];
 
+				showClasses($ucs, $uc);
+				}
+
+				else
+					echo "<p>
+						Select something and press it again!
+					</p>";
       }
 		?>
 	</body>
