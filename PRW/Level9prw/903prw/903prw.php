@@ -1,10 +1,26 @@
+<?php
+  $months = [
+    "Janeiro" => 31,
+    "Fevereiro" => 28,
+    "Março" => 31,
+    "Abril" => 30,
+    "Maio" => 31,
+    "Junho" => 30,
+    "Julho" => 31,
+    "Agosto" => 31,
+    "Setembro" => 30,
+    "Outubro" => 31,
+    "Novembro" => 30,
+    "Dezembro" => 31
+  ];
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<!--
 		Notas:
 		Diretório geral em debian-based distros: /var/www/html;
 		Endereço http://localhost/path/to/file.php para acessar a aplicação;
-		Ex.: 2 - Function & Include
+		Ex.: 3 - Function & Include
 
 		Existem dois tipos de utilização de bibliotecas externas, contendo as funções
 		desejadas:
@@ -17,7 +33,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>PRW 902</title>
+		<title>PRW 903</title>
 
 		<style>
 			body{width:66.6%; color:#666; margin: auto;}
@@ -32,40 +48,34 @@
 	</head>
 
 	<body>
-		<h1>php function & include 2</h1>
+		<h1>php function & include 3</h1>
 
 		<form id="form" action="" method="post">
 			<fieldset>
-				<legend>Numeric Process</legend>
+				<legend>Month Trick</legend>
 
-				<label class="align">First Integer:</label>
-				<input type="number" name="first" id="" />
-
-        <label class="align">Second Integer:</label>
-				<input type="number" name="second" id="" />
+				<label class="align">Select Month</label>
+				<select name="month" id="">
+          <?php
+            foreach ($months as $month => $days) {
+              echo "<option>$month</option>";
+            }
+          ?>
+        </select>
 			</fieldset>
 
 			<fieldset>
 				<legend>Operations</legend>
 
-				<button type="submit" form="form" name="send">Send Your Data</button>
+				<button type="submit" form="form" name="send">Send Data</button>
 			</fieldset>
 		</form>
 
 		<?php
-			//Incluir biblioteca de funções:
-			require_once "902prw.inc.php";
-		
 			if(isset($_POST["send"])){
-        $val0 = $_POST["first"];
-        $val1 = $_POST["second"];
+        $month = $_POST["month"];
 
-        //Invocação de funções externas:
-        $sum = summing($val0, $val1);
-
-        $cub = cubbing($sum);
-
-        showThem($val0, $val1, $sum, $cub);
+        
       }
 		?>
 	</body>
