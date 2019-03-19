@@ -1,26 +1,10 @@
-<?php
-  $months = [
-    "Janeiro" => 31,
-    "Fevereiro" => 28,
-    "Março" => 31,
-    "Abril" => 30,
-    "Maio" => 31,
-    "Junho" => 30,
-    "Julho" => 31,
-    "Agosto" => 31,
-    "Setembro" => 30,
-    "Outubro" => 31,
-    "Novembro" => 30,
-    "Dezembro" => 31
-  ];
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<!--
 		Notas:
 		Diretório geral em debian-based distros: /var/www/html;
 		Endereço http://localhost/path/to/file.php para acessar a aplicação;
-		Ex.: 3 - Function & Include
+		Ex.: 4 - Function & Include
 
 		Existem dois tipos de utilização de bibliotecas externas, contendo as funções
 		desejadas:
@@ -33,7 +17,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>PRW 903</title>
+		<title>PRW 904</title>
 
 		<style>
 			body{width:66.6%; color:#666; margin: auto;}
@@ -48,13 +32,13 @@
 	</head>
 
 	<body>
-		<h1>php function & include 3</h1>
+		<h1>php function & include 4</h1>
 
 		<form id="form" action="" method="post">
 			<fieldset>
 				<legend>Month Trick</legend>
 
-				<label class="align">Select Month</label>
+				<label class="align">Select Something</label>
 				<select name="month" id="">
           <?php
             foreach ($months as $month => $days) {
@@ -67,17 +51,15 @@
 			<fieldset>
 				<legend>Operations</legend>
 
-				<button type="submit" form="form" name="send">Send Data</button>
+				<button type="submit" form="form" name="send">Send What</button>
 			</fieldset>
 		</form>
 
 		<?php
-      require_once "903prw.inc.php";
+
 
 			if(isset($_POST["send"])){
-        $month = $_POST["month"];
 
-        searchDayz($months, $month);
       }
 		?>
 	</body>
