@@ -12,13 +12,13 @@
   }
 
   //Função show:
-  function showThem($x, $y, $z){
+  function showThem($x, $y, $sum, $cub){
     echo "<p>
       Results: <br/>
       Integer 0: $x <br/>
       Integer 1: $y <br/>
       Sum: $sum <br/>
-      Cube: $cub <br/>
-    </p>"
+      Cube: $cub
+    </p>";
   }
 ?>

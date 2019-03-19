@@ -5,6 +5,13 @@
 		Diretório geral em debian-based distros: /var/www/html;
 		Endereço http://localhost/path/to/file.php para acessar a aplicação;
 		Ex.: 2 - Function & Include
+
+		Existem dois tipos de utilização de bibliotecas externas, contendo as funções
+		desejadas:
+
+		include/					require/
+		include_once			require_once
+
 	-->
 	<head>
 		<meta charset="UTF-8">
@@ -46,16 +53,19 @@
 		</form>
 
 		<?php
+			//Incluir biblioteca de funções:
+			include "902prw.inc.php";
+		
 			if(isset($_POST["send"])){
         $val0 = $_POST["first"];
         $val1 = $_POST["second"];
 
         //Invocação de funções externas:
-        $sum = $summing($val0, $val1);
+        $sum = summing($val0, $val1);
 
-        $cub = $cubbing($sum);
+        $cub = cubbing($sum);
 
-        $showThem($val0, $val1, $cub);
+        showThem($val0, $val1, $sum, $cub);
       }
 		?>
 	</body>
