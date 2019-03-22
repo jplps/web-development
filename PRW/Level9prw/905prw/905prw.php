@@ -39,7 +39,7 @@
 
 		<form id="form" action="" method="post">
 			<fieldset>
-				<legend>IMC</legend>
+				<legend>BMI</legend>
 
 				<label class="align">Input Weight (Kg):</label>
 				<input type="number" name="weight" id="" />
