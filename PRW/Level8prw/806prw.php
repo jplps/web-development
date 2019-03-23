@@ -72,12 +72,12 @@
         $operation = $_POST["operation"]; //Atribuição do valor "value";
 
         if ($operation == "1")
-          foreach ($accounts as $account => $clients) {
+          foreach ($accounts as $account => $clients)
             if ($cc == $account)
               $accounts[$account][1] -= $val;
 
         else if ($operation == "2")
-          foreach ($accounts as $account => $clients) {
+          foreach ($accounts as $account => $clients)
             if ($cc == $account)
               $accounts[$account][1] += $val;
 
@@ -85,7 +85,7 @@
           echo "<p>
             Select outcome or income PLEASE.
           </p>";
-      }
+
     ?> 
   </body>
 </html>
