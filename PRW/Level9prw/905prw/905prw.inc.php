@@ -1,7 +1,7 @@
 <?php
   //Cálculo de IMC
   function calculateIMC($h, $w){
-    $imc = ($w / pow(2, $h));
+    $imc = $w / pow(2, $h);
     return $imc;
   }
 

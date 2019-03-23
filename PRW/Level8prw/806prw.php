@@ -59,45 +59,33 @@
       <fieldset>
         <legend>Operations</legend>
         
-        <button type="submit" form="form" name="exe">Execute</button>
+        <button type="submit" form="form" name="send">Execute</button>
       </fieldset>
     </form>
 
     <?php
-      if(isset($_POST["exe"])){
+      if(isset($_POST["send"])){
         //Recebe matrícula do select:
         $cc = $_POST["account"];
         $val = $_POST["value"];
 
         $operation = $_POST["operation"]; //Atribuição do valor "value";
 
-        if ($operation == "1"){
+        if ($operation == "1")
           foreach ($accounts as $account => $clients) {
             if ($cc == $account)
               $accounts[$account][1] -= $val;
-        }
 
-        else if ($operation == "2"){
+        else if ($operation == "2")
           foreach ($accounts as $account => $clients) {
             if ($cc == $account)
               $accounts[$account][1] += $val;
-        }
 
         else
           echo "<p>
             Select outcome or income PLEASE.
           </p>";
-
-
-
-        //Acesso a dados:
-        $name = $students[$reg][0];
-        $avtests = $students[$reg][1];
-        $avexs = $students[$reg][2];
-
-        $avfinal = ($avtests * 7 + $avexs * 3)/10;
-
-        }
+      }
     ?> 
   </body>
 </html>
