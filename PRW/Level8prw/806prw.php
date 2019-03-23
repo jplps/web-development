@@ -7,7 +7,7 @@
 
   // //Referência:
   // echo "<pre>";
-  // print_r($students);
+  // print_r($accounts);
   // echo "</pre>";
 ?>
 <!DOCTYPE html>
@@ -29,14 +29,19 @@
 			h1{border-bottom:2px solid #666; margin:auto; padding:10px;
 			text-transform:capitalize; text-align:center; position:sticky; top:0;}
 			fieldset{margin-top:20px;}
-			button{display:block;margin:5px auto;}
 			input{margin:5px;}
 			p{float:right;}
+      table{margin: auto; border: 1px solid #666; border-collapse: collapse;}
+      caption{text-align: left; font-style: italic; margin-bottom: 5px;}
+      th{background: #999;}
+      td{padding-left: 10px;}
+      td.centralize, p{text-align: center;}
+      td, th{min-width:70px;border: 1px solid #b1b1b1;}
     </style>
   </head>
 
   <body>
-    <h1>php arrays 4</h1>
+    <h1>php arrays 6</h1>
 
     <form id="form" action="" method="post">
       <fieldset>
@@ -57,7 +62,13 @@
       </fieldset>
 
       <fieldset>
-        <legend>Operations</legend>
+        <legend>Options</legend>
+
+        <select name="option" id="">
+          <option value="0">Update</option>
+          <option value="1">Higher</option>
+          <option value="2">See Added</option>
+        </select>
         
         <button type="submit" form="form" name="send">Execute</button>
       </fieldset>
@@ -65,27 +76,74 @@
 
     <?php
       if(isset($_POST["send"])){
-        //Recebe matrícula do select:
-        $cc = $_POST["account"];
-        $val = $_POST["value"];
+        $opt = $_POST["option"];
 
-        $operation = $_POST["operation"]; //Atribuição do valor "value";
+        if($opt == "0"){
+          if(isset($_POST["operation"])){
+            $ccn = $_POST["account"];
+            $valn = $_POST["value"];
+            $opr = $_POST["operation"];
 
-        if ($operation == "1")
-          foreach ($accounts as $account => $clients)
-            if ($cc == $account)
-              $accounts[$account][1] -= $val;
+            foreach($accounts as $cc => $specs)
+              if($cc == $ccn)
+                if($opr == "0")
+                  $specs[1] -= $valn;
+                else
+                  $specs[1] += $valn;
+          }
 
-        else if ($operation == "2")
-          foreach ($accounts as $account => $clients)
-            if ($cc == $account)
-              $accounts[$account][1] += $val;
+          else
+            echo "<p>
+              Choose Outcome or Income please...
+            </p>";
+        }
 
-        else
+        if($opt == "1"){
+          $highername = "";
+          $higherpay = 0;
+  
+          foreach ($accounts as $cpf => $specs){
+            if ($higherpay == 0){
+              $higherpay = $specs[1];
+              $highername = $specs[0];
+            }
+
+            else if ($specs[1] > $higherpay){
+              $higherpay = $specs[1];
+              $highername = $specs[0];
+            }
+          }
+
           echo "<p>
-            Select outcome or income PLEASE.
+            The higher pay is $higherpay by $highername.
           </p>";
+        }
 
+        else if($opt == "2"){
+          $accounts["1010-x5"] = ["Arthur de Castro", 200];
+          $accounts["1010-x6"] = ["Anselmo de  Andrade", 15840];
+
+          //Mostrar os dados ordenados em table:
+          echo "<table>
+            <caption>All</caption>
+
+            <tr>
+              <th>CC</th>
+              <th>NAME</th>
+              <th>AVAIBLE</th>
+            </tr>";
+
+          foreach ($accounts as $cc => $specs){
+            echo "<tr>
+              <td>$cc</td>
+              <td>",$specs[0],"</td>
+              <td>",$specs[1],"</td>
+            </tr>";
+          }
+
+          echo "</table>";
+        }
+      }
     ?> 
   </body>
 </html>
