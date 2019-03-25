@@ -12,8 +12,10 @@
     }
 
     function classify(){
-      if($this->class <= 3)
-        echo "Baixa Duração";
+      if($this->class < 2)
+        echo "Curta Duração";
+      else if($this->class <= 3)
+        echo "Media Duração";
       else
         echo "Longa Duração";
     }
