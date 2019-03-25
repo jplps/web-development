@@ -86,10 +86,31 @@
 
             foreach($accounts as $cc => $specs)
               if($cc == $ccn)
-                if($opr == "0")
+                if($opr == 0){
                   $specs[1] -= $valn;
+                }
                 else
                   $specs[1] += $valn;
+
+          //Mostrar os dados ordenados em table:
+          echo "<table>
+          <caption>All</caption>
+
+          <tr>
+            <th>CC</th>
+            <th>NAME</th>
+            <th>AVAIBLE</th>
+          </tr>";
+
+        foreach ($accounts as $cc => $specs){
+          echo "<tr>
+            <td>$cc</td>
+            <td>",$specs[0],"</td>
+            <td>",$specs[1],"</td>
+          </tr>";
+        }
+
+        echo "</table>";
           }
 
           else
