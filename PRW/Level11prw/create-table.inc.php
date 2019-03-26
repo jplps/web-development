@@ -7,5 +7,6 @@
     grade2 DECIMAL(3,1)
   )";
 
+  //Consulta para garantir aviso de erro caso ocorra::
   $result = $connection->query($sql) || exit($connection->error);
 ?>
