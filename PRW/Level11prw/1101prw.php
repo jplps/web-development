@@ -17,44 +17,58 @@
 			h1{border-bottom:2px solid #666; margin:auto; padding:10px;
 			text-transform:capitalize; text-align:center; position:sticky; top:0;}
 			fieldset{margin-top:20px;}
-			input{margin:5px;}
-			p{float:right;}
-      table{margin: auto; border: 1px solid #666; border-collapse: collapse;}
-      caption{text-align: left; font-style: italic; margin-bottom: 5px;}
-      th{background: #999;}
-      td{padding-left: 10px;}
-      td.centralize, p{text-align: center;}
-      td, th{min-width:70px;border: 1px solid #b1b1b1;}
+			.align {display:inline-block; width:100px;}
+			input{margin:5px;width:150px;}
+			select{float:right;}
+      table{margin:auto; border:1px solid #666; border-collapse:collapse;}
+      caption{text-align:left; font-style:italic; margin-bottom:5px;}
+      th{background:#999;}
+      td{padding-left:10px;}
+      td.centralize, p{text-align:center;}
+      td, th{min-width:70px;border:1px solid #b1b1b1;}
 		</style>
 	</head>
 
 	<body>
-		<h1>php + sql</h1>
+		<h1>php + sql 1</h1>
 
 		<form name="form" action="" method="post">
 			<fieldset>
-				<label class="align">Student</label>
+				<label class="align">Registry</label>
 				<input type="varchar" />
 				<br/>
 
-				<label class="align">Registry</label>
+				<label class="align">UC</label>
 				<input type="number" />
 				<br/>
 
 				<?php
-					for ($i=0; $i < 3; $i++) { 
+					for ($i=1; $i < 3; $i++) { 
 						echo "
 							<label class='align'>Grade $i</label>
-							<input type='number' name='g$i'/>
+							<input type='number' name='g$i' step='0.01'/>
 							<br/>
 						";
 					}
 				?>
+
+				<select name="operation" id="">
+					<option value="0">Registry</option>
+					<option value="1">Average</option>
+					<option value="2">Best(s)</option>
+				</select>
 		</form>
 
     <?php
-      //Inclusão da classe:
-      require_once "1101prw.inc.php";
+      //Inclusões:
+			require "con-data.inc.php";
+			require "connect.inc.php";
+			require "create-db.inc.php";
+			require "select-db.inc.php";
+			require "define-charset.inc.php";
+			require "create-table.inc.php";
+
+			require "disconnect.inc.php";
     ?>
 	</body>
 </html>
