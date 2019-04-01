@@ -7,15 +7,20 @@
 		var $g0;
 		var $g1;
 		
-		//Método para receber os dados do formulário:
-		function registerData($connection)
-		{
+		/**
+     * ***REGISTRO (objeto)
+     * 
+     * Recebe a conexão e assegura a correta atribuição dos valores ao objeto.
+     */
+		function registerData($connection){
       /*
         ***RISCO DE ATAQUE***
 
+        - SQL INJECTION
+
         Cuidado com os métodos de recebimento de dados para serem enviados
         ao MySQL. Pode haver risco de injeção de SQL. Para isso, usamos funções
-        do PHP que impedem este tipo de ataque:
+        do PHP que impedem este tipo de ataque (trim with escape_string).
       */
 			$reg = trim($connection->escape_string($_POST["reg"]));
 			$uc = trim($connection->escape_string($_POST["uc"]));
@@ -29,7 +34,11 @@
 			$this->g1 = $g1;
     }
 
-    //Função para inserção de dados na tabela:
+    /**
+     * ***INSERIR (tabela)
+     * 
+     * Recebe a conexão e a tabela, e executa a Inserção de dados.
+     */
     function insert($connection, $table){
       $sql = "INSERT $table VALUES (
         '$this->reg',
@@ -43,7 +52,11 @@
       echo "<p>Success.</p>";
     }
 
-    //Cálculo de média:
+    /**
+     * ***MÉDIA DAS NOTAS
+     * 
+     * Cálculo da média de notas, e geração de visualização.
+     */
     function average($connection, $table){
       //Criando consulta com aplicação matemática, com alias para nomear campo:
       $sql = "SELECT registry, (grade1 + grade2)/2 AS average FROM $table ";
@@ -64,6 +77,11 @@
           /*
             ***RISCO DE ATAQUE***
             
+            - CROSS-SITE SCRIPTING
+
+            Com a criação de variáveis anterior á sua apresentação, todas as nossas
+            variáveis de última instância podem estar contaminadas com scripts mal
+            intencionados. 
           */
           $r = $line[0];
           $a = $line[1];
