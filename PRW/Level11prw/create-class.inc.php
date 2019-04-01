@@ -1,27 +1,29 @@
 <?php
-  //Criar classe referente às operações:
-	class Student
-	{
+  //Criar classe aluno referente às operações:
+	class Student {
 		var $reg;
 		var $uc;
 		var $g0;
 		var $g1;
-		
+  
+    
 		/**
      * ***REGISTRO (objeto)
      * 
      * Recebe a conexão e assegura a correta atribuição dos valores ao objeto.
      */
 		function registerData($connection){
-      /*
-        ***RISCO DE ATAQUE***
-
-        - SQL INJECTION
-
-        Cuidado com os métodos de recebimento de dados para serem enviados
-        ao MySQL. Pode haver risco de injeção de SQL. Para isso, usamos funções
-        do PHP que impedem este tipo de ataque (trim with escape_string).
-      */
+      /**
+       * ***RISCO DE ATAQUE***
+       * 
+       * - SQL INJECTION 
+       * 
+       * Cuidado com os métodos de recebimento de dados para serem enviados
+       * ao MySQL. Pode haver risco de injeção de código SQL.
+       * 
+       * Para isso, usamos funções do PHP que impedem este tipo de ataque (trim
+       * with escape_string).
+       */
 			$reg = trim($connection->escape_string($_POST["reg"]));
 			$uc = trim($connection->escape_string($_POST["uc"]));
 			$g0 = trim($connection->escape_string($_POST["g0"]));
@@ -33,6 +35,7 @@
 			$this->g0 = $g0;
 			$this->g1 = $g1;
     }
+
 
     /**
      * ***INSERIR (tabela)
@@ -51,6 +54,7 @@
       $result = $connection->query($sql) || exit($connection->error);
       echo "<p>Success.</p>";
     }
+
 
     /**
      * ***MÉDIA DAS NOTAS
@@ -74,17 +78,21 @@
         </tr>";
         //Utilização do while para lidar com resultado:
         while ($line = $result->fetch_array()) {  //Retorna false quando objeto não for atribuido;
-          /*
-            ***RISCO DE ATAQUE***
-            
-            - CROSS-SITE SCRIPTING
-
-            Com a criação de variáveis anterior á sua apresentação, todas as nossas
-            variáveis de última instância podem estar contaminadas com scripts mal
-            intencionados. 
-          */
-          $r = $line[0];
-          $a = $line[1];
+          /**
+           * ***RISCO DE ATAQUE***
+           * 
+           * - CROSS-SITE SCRIPTING (XSS)
+           * 
+           * Com a criação de variáveis anterior á sua apresentação, todas as nossas
+           * variáveis de última instância podem estar contaminadas com scripts mal
+           * intencionados.
+           * 
+           * Para isso, usamos funções do PHP que impedem este tipo de ataque, com
+           * o objetivo de sanitizar os valores (htmlentities($value, encoding,
+           * charset)).
+           */
+          $r = htmlentities($line[0], ENT_QUOTES, "UTF-8");
+          $a = htmlentities($line[1], ENT_QUOTES, "UTF-8");
 
           echo "<tr>
             <td>$r</td>
@@ -92,6 +100,16 @@
           </tr>";
         }
       echo "</table>";
+    }
+
+
+    /**
+     * ***ACIMA DA MÉDIA
+     * 
+     * Cálculo de quantos alunos estão com nota média acima de 6:
+     */
+    function aboveAv($connection, $table){
+      $sql = "";
     }
   }
 ?>

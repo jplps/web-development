@@ -19,7 +19,7 @@
 			fieldset{margin-top:20px;}
 			.align {display:inline-block; width:100px;}
 			input{margin:5px;width:150px;}
-			select{margin-top:10px;}
+			button, select{margin-top:10px;}
       table{margin:auto; border:1px solid #666; border-collapse:collapse;}
       caption{text-align:left; font-style:italic; margin-bottom:5px;}
       th{background:#999;}
@@ -96,6 +96,15 @@
 				else if($op == "1"){
 					//Chama o método que retorna a média:
 					$student0->average($connection, $table);
+				}
+
+				//Melhores Alunos:
+				else if($op == "2"){
+					$howmany = $students->aboveAv($connection, $table);
+
+					echo "<p>
+						There are $howmany students Above the Average.
+					</p>";
 				}
 			}
     ?>
