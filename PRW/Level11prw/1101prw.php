@@ -35,17 +35,17 @@
 		<form name="form" action="" method="post">
 			<fieldset>
 				<label class="align">Registry</label>
-				<input type="varchar" />
+				<input type="varchar" name="reg" />
 				<br/>
 
 				<label class="align">UC</label>
-				<input type="number" />
+				<input type="number" name="uc" />
 				<br/>
 
 				<?php
-					for ($i=1; $i < 3; $i++) { 
+					for ($i=0; $i < 2; $i++) { 
 						echo "
-							<label class='align'>Grade $i</label>
+							<label class='align'>Grade ",$i+1,"</label>
 							<input type='number' name='g$i' step='0.01'/>
 							<br/>
 						";
@@ -68,7 +68,23 @@
 			require "define-charset.inc.php";
 			require "create-table.inc.php";
 
+			require "create-class.inc.php";
+
 			require "disconnect.inc.php";
+
+			//Criando um objeto:
+			$student0 = new Student();
+
+			if(isset($_POST["send"])){
+				//Receber operação:
+				$op = $_POST["operation"];
+
+				//Cadastro:
+				if($op == "1"){
+					//Chama o método para registrar dados:
+					$student0->registerData($connection);
+				}
+			}
     ?>
 	</body>
 </html>
