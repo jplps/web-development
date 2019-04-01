@@ -19,7 +19,7 @@
 			fieldset{margin-top:20px;}
 			.align {display:inline-block; width:100px;}
 			input{margin:5px;width:150px;}
-			select{float:right;}
+			select{margin-top:10px;}
       table{margin:auto; border:1px solid #666; border-collapse:collapse;}
       caption{text-align:left; font-style:italic; margin-bottom:5px;}
       th{background:#999;}
@@ -39,7 +39,7 @@
 				<br/>
 
 				<label class="align">UC</label>
-				<input type="number" name="uc" />
+				<input type="varchar" name="uc" />
 				<br/>
 
 				<?php
@@ -57,6 +57,10 @@
 					<option value="1">Average</option>
 					<option value="2">Best(s)</option>
 				</select>
+
+				<br/>
+
+				<button type="send">Send Your DaTA</button>
 		</form>
 
     <?php
@@ -80,9 +84,18 @@
 				$op = $_POST["operation"];
 
 				//Cadastro:
-				if($op == "1"){
+				if($op == "0"){
 					//Chama o método para registrar dados:
 					$student0->registerData($connection);
+
+					//Insere os dados na tabela:
+					$student0->insert($connection, $table);
+				}
+
+				//Média:
+				else if($op == "1"){
+					//Chama o método que retorna a média:
+					$student0->average($connection, $table);
 				}
 			}
     ?>
