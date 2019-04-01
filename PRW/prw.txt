@@ -173,5 +173,5 @@ PHP - Pre-HyperlinkProcessor
 	da internet. O termo foi mudado após algum tempo, tendo como nome primário
 	Personal Home Page.
 		Quando todos essas ferramentas estão presentes (Pacotes Apache, MySql,
-	PhP), junto à Tecnologia computacional, forma-se um estação de
+	PhP), junto à Tecnologia computacional, forma-se uma estação de
 	desenvolvimento (DevStation).
