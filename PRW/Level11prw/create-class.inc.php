@@ -109,7 +109,8 @@
      * Cálculo de quantos alunos estão com nota média acima de 6:
      */
     function aboveAv($connection, $table){
-      $sql = "";
+      //COUNT: SQL argumento para contagem (* - entram na contagem células null):
+      $sql = "SELECT COUNT(*) FROM $table WHERE (grade1 + grade2)/2 >= 6";  //Filtro de registro WHERE <teste lógico>;
     }
   }
 ?>
