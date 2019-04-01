@@ -16,7 +16,7 @@
       /**
        * ***RISCO DE ATAQUE***
        * 
-       * - SQL INJECTION 
+       * SEC0 - SQL INJECTION 
        * 
        * Cuidado com os métodos de recebimento de dados para serem enviados
        * ao MySQL. Pode haver risco de injeção de código SQL.
@@ -81,7 +81,7 @@
           /**
            * ***RISCO DE ATAQUE***
            * 
-           * - CROSS-SITE SCRIPTING (XSS)
+           * SEC1 - CROSS-SITE SCRIPTING (XSS)
            * 
            * Com a criação de variáveis anterior á sua apresentação, todas as nossas
            * variáveis de última instância podem estar contaminadas com scripts mal
@@ -111,6 +111,13 @@
     function aboveAv($connection, $table){
       //COUNT: SQL argumento para contagem (* - entram na contagem células null):
       $sql = "SELECT COUNT(*) FROM $table WHERE (grade1 + grade2)/2 >= 6";  //Filtro de registro WHERE <teste lógico>;
+      $result = $connection->query($sql) || exit ($connection->error);
+
+      //***SEC1
+      $line = $result->fetch_array();
+      $quantity = htmlentities($line[0], ENT_QUOTES, "UTF-8");
+
+      return $quantity;
     }
   }
 ?>

@@ -77,7 +77,7 @@
 			require "disconnect.inc.php";
 
 			//Criando um objeto:
-			$student0 = new Student();
+			$student = new Student();
 
 			if(isset($_POST["send"])){
 				//Receber operação:
@@ -86,24 +86,24 @@
 				//Cadastro:
 				if($op == "0"){
 					//Chama o método para registrar dados:
-					$student0->registerData($connection);
+					$student->registerData($connection);
 
 					//Insere os dados na tabela:
-					$student0->insert($connection, $table);
+					$student->insert($connection, $table);
 				}
 
 				//Média:
 				else if($op == "1"){
 					//Chama o método que retorna a média:
-					$student0->average($connection, $table);
+					$student->average($connection, $table);
 				}
 
 				//Melhores Alunos:
 				else if($op == "2"){
-					$howmany = $students->aboveAv($connection, $table);
+					$quantity = $student->aboveAv($connection, $table);
 
 					echo "<p>
-						There are $howmany students Above the Average.
+						There are $quantity students Above the Average.
 					</p>";
 				}
 			}
