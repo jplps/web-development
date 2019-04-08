@@ -86,9 +86,13 @@
 			$prj = new Project();
 
 			if(isset($_POST["registry"])){
-				$prj->fetchData($connection);
-				$prj->registerData($connection, $table);
+				$prj->fetch($connection);
+				$prj->register($connection, $table);
 				echo "<p>Success.</p>";
+			}
+
+			if(isset($_POST["other"])){
+				$prj->list($connection, $table);
 			}
 
 			require "disconnect.inc.php";

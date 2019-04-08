@@ -7,7 +7,7 @@
     var theme;
     var methods;
 
-    function fetchData($connection){
+    function fetch($connection){
       $title = trim($connection->escape_string($_POST["title"]));
       $coop = trim($connection->escape_string($_POST["coop"]));
       $coor = trim($connection->escape_string($_POST["coor"]));
@@ -17,7 +17,8 @@
       $aux0 = implode("-", $_POST["methods"]);  //transform array to string
       $aux1 = trim($connection->escape_string($aux0); //clean up with trim
       $methods = explode("-", $aux1); //transform back to array
-			
+      
+      //object constructor
 			$this->title = $title;
 			$this->coop = $coop;
 			$this->coor = $coor;
@@ -26,7 +27,7 @@
       $this->methods = $methods;
     }
 
-    function registerData($connection, $table){
+    function register($connection, $table){
       //convert array to json
       $this->methods = json_encode($this->methods);
       //in order with table fields!
@@ -34,13 +35,18 @@
         null,
         '$this->title',
         $this->coop,
-        $this->coor,
-        '$this->datestamp'
+        '$this->coor',
+        '$this->datestamp',
         '$this->theme',
         $this->methods
       )";
       $result = $connection->query($sql) || exit($connection->error);
       echo "<p>Success.</p>";
+    }
+
+    function list($connection, $table){
+      $sql = "SELECT * FROM $table";
+      $result = $connection->query($sql) || exit($connection->error);
     }
   }
 ?>
