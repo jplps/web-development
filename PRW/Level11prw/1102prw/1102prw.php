@@ -4,7 +4,7 @@
 		Notas:
 		Diretório geral em debian-based distros: /var/www/html;
 		Endereço http://localhost/path/to/file.php para acessar a aplicação;
-		Ex.: 1 - POO + SQL
+		Ex.: 2 - POO + SQL
 	-->
 	<head>
 		<meta charset="UTF-8">
@@ -15,10 +15,10 @@
 		<style>
 			body{width:66.6%; color:#666; margin: auto;}
 			h1{border-bottom:2px solid #666; margin:auto; padding:10px;
-			text-transform:capitalize; text-align:center; position:sticky; top:0;}
-			fieldset{margin-top:20px;}
-			.align {display:inline-block; width:100px;}
-			input{margin:5px;width:150px;}
+			text-transform:uppercase; text-align:center; position:sticky; top:0;}
+			fieldset{margin-top:20px; text-transform:capitalize;}
+			.align {display:inline-block; width:200px; margin:5px;}
+			input{max-width:120px;}
 			button, select{margin-top:10px;}
       table{margin:auto; border:1px solid #666; border-collapse:collapse;}
       caption{text-align:left; font-style:italic; margin-bottom:5px;}
@@ -30,19 +30,19 @@
 	</head>
 
 	<body>
-		<h1>php + sql 2</h1>
+		<h1>project system</h1>
 
 		<form name="form" action="" method="post">
 			<fieldset>
-				<legend>Project Control System</legend>
+				<legend>Control System</legend>
 
 
 				<label class="align">title</label>
 				<input type="varchar" name="title" />
 				<br/>
 
-				<label class="align">number of students</label>
-				<input type="number" name="students_num" min="1" max="4" />
+				<label class="align">number of cooperations</label>
+				<input type="number" name="coop" min="1" max="4" />
 				<br/>
 
 				<label class="align">date</label>
@@ -56,16 +56,18 @@
 				</select>
 				<br/>
 
-				<label for="">cooriented</label>
-				<input type="radio" name="coop" value="0" id="" />
+				<label class="align">cooriented</label>
 				<br/>
-				<input type="radio" name="coop" value="1" id="" />
+				<input type="radio" name="coor" value="0" id="" />yes
+				<br/>
+				<input type="radio" name="coor" value="1" id="" />no
 				<br/>
 
-				<label for="">method</label>
+				<label class="align">method</label>
 				<br/>
-				<input type="checkbox" name="method" value="plan" id="" />action plan
-				<input type="checkbox" name="method" value="research" id="" />field research
+
+				<input type="checkbox" name="methods[]" value="plan" id="" />action plan<br/>
+				<input type="checkbox" name="methods[]" value="research" id="" />field research<br/>
 
 
 				<button type="submit" name="registry">register</button>
@@ -82,29 +84,9 @@
 
 			require "create-class.inc.php";
 
+			
+
 			require "disconnect.inc.php";
-
-			$student = new Student();
-
-			if(isset($_POST["send"])){
-				$op = $_POST["operation"];
-				if($op == "0"){
-					$student->registerData($connection);
-					$student->insert($connection, $table);
-				}
-
-				//Média:
-				else if($op == "1"){
-					$student->average($connection, $table);
-				}
-
-				else if($op == "2"){
-					$quantity = $student->aboveAv($connection, $table);
-					echo "<p>
-						There are $quantity students Above the Average.
-					</p>";
-				}
-			}
     ?>
 	</body>
 </html>

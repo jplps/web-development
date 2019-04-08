@@ -74,8 +74,6 @@
 
 			require "create-class.inc.php";
 
-			require "disconnect.inc.php";
-
 			//Criando um objeto:
 			$student = new Student();
 
@@ -106,6 +104,8 @@
 						There are $quantity students Above the Average.
 					</p>";
 				}
+
+				require "disconnect.inc.php";
 			}
     ?>
 	</body>
