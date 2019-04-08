@@ -7,12 +7,15 @@
     var theme;
     var methods;
 
-    function getData($connection){
+    function fetchData($connection){
       $title = trim($connection->escape_string($_POST["title"]));
       $coop = trim($connection->escape_string($_POST["coop"]));
       $datestamp = trim($connection->escape_string($_POST["datestamp"]));
       $theme = trim($connection->escape_string($_POST["theme"]));
-      $methods = trim($connection->escape_string($_POST["methods"]));
+      //methods is an array: implode and explode process (SEC03)
+      $aux0 = implode("-", $_POST["methods"]);  //transform array to string
+      $aux1 = trim($connection->escape_string($aux0); //clean up with trim
+      $methods = explode("-", $aux1); //transform back to array
 			
 			$this->title = $title;
 			$this->coop = $coop;
@@ -22,12 +25,16 @@
       $this->methods = $methods;
     }
 
-    function insert($connection, $table){
+    function registerData($connection, $table){
+      //in order with fields!!!!!!!
       $sql = "INSERT $table VALUES (
-        '$this->reg',
-        '$this->uc',
-        '$this->g0',
-        '$this->g1'
+      null,
+			'$this->title = $title',
+			'$this->coop = $coop',
+      '$this->coor = $coor',
+      '$this->datestamp = $datestamp'
+      '$this->theme = $theme',
+      '$this->methods = $methods'
       )";
 
       $result = $connection->query($sql) || exit($connection->error);

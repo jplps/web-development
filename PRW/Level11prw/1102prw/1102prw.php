@@ -83,7 +83,11 @@
 			require "create-table.inc.php";
 			require "create-class.inc.php";
 
+			$prj = new Project();
 
+			if(isset($_POST["registry"])){
+				$prj->fetchData();
+			}
 
 			require "disconnect.inc.php";
     ?>
