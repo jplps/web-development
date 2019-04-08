@@ -66,8 +66,8 @@
 				<label class="align">method</label>
 				<br/>
 
-				<input type="checkbox" name="methods[]" value="plan" id="" />action plan<br/>
-				<input type="checkbox" name="methods[]" value="research" id="" />field research<br/>
+				<input type="checkbox" name="methods[]" value="actionplan" id="" />action plan<br/>
+				<input type="checkbox" name="methods[]" value="fieldresearch" id="" />field research<br/>
 
 
 				<button type="submit" name="registry">register</button>

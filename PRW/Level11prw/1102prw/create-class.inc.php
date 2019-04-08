@@ -10,6 +10,7 @@
     function fetchData($connection){
       $title = trim($connection->escape_string($_POST["title"]));
       $coop = trim($connection->escape_string($_POST["coop"]));
+      $coor = trim($connection->escape_string($_POST["coor"]));
       $datestamp = trim($connection->escape_string($_POST["datestamp"]));
       $theme = trim($connection->escape_string($_POST["theme"]));
       //methods is an array: implode and explode process (SEC03)
@@ -27,9 +28,8 @@
 
     function registerData($connection, $table){
       //convert array to json
-      $methods = json_encode($methods);
-      
-      //in order with table fields!!!!!!!
+      $this->methods = json_encode($this->methods);
+      //in order with table fields!
       $sql = "INSERT $table VALUES (
         null,
         '$this->title',
