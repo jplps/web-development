@@ -45,7 +45,9 @@
     }
 
     function list($connection, $table){
-      $sql = "SELECT * FROM $table";
+      //complex query
+      $sql = "SELECT title, coop WHERE datestamp < '2015-05-01', coor == '1' FROM $table";
+
       $result = $connection->query($sql) || exit($connection->error);
     }
   }

@@ -58,9 +58,9 @@
 
 				<label class="align">cooriented</label>
 				<br/>
-				<input type="radio" name="coor" value="0" id="" />yes
+				<input type="radio" name="coor" value="1" id="" />yes
 				<br/>
-				<input type="radio" name="coor" value="1" id="" />no
+				<input type="radio" name="coor" value="0" id="" />no
 				<br/>
 
 				<label class="align">method</label>
