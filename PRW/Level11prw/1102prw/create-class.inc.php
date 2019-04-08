@@ -46,8 +46,29 @@
 
     function list($connection, $table){
       //complex query
-      $sql = "SELECT title, coop WHERE datestamp < '2015-05-01', coor == '1' FROM $table";
+      $sql = "SELECT title, coop FROM $table WHERE datestamp < '2015-05-01' AND coor == 'true'";
+      if($connection->affected_rows() > 0){ //true if rows were affected on table
+        echo "<table>
+          <capiton>Complex DB Query</capiton>
 
+          <tr>
+            <th>Title</th>
+            <th>Coop</th>
+          </tr>";
+          while ($register <= $res->fetch_array()) {
+            $title = htmlentities($register[0], ENT_QUOTES, "UTF-8");
+            $coop = htmlentities($register[1], ENT_QUOTES, "UTF-8");
+
+            echo "<tr>
+              <td>$title</td>
+              <td>$coop</td>
+            </tr>";
+          }
+          echo "</table>";
+      }
+      else {
+        echo "List is unavaible.";
+      }
       $result = $connection->query($sql) || exit($connection->error);
     }
   }
