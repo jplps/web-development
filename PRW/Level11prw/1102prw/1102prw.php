@@ -41,7 +41,7 @@
 				<input type="varchar" name="title" />
 				<br/>
 
-				<label class="align">number of cooperations</label>
+				<label class="align">cooperations</label>
 				<input type="number" name="coop" min="1" max="4" />
 				<br/>
 
@@ -50,7 +50,7 @@
 				<br/>
 
 				<label class="align">select one</label>
-				<select name="select" id="">
+				<select name="theme" id="">
 					<option value="0">web app</option>
 					<option value="1">theoretic research</option>
 				</select>
@@ -81,10 +81,9 @@
 			require "select-db.inc.php";
 			require "define-charset.inc.php";
 			require "create-table.inc.php";
-
 			require "create-class.inc.php";
 
-			
+
 
 			require "disconnect.inc.php";
     ?>
