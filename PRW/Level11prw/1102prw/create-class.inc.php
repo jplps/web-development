@@ -26,48 +26,21 @@
     }
 
     function registerData($connection, $table){
-      //in order with fields!!!!!!!
+      //convert array to json
+      $methods = json_encode($methods);
+      
+      //in order with table fields!!!!!!!
       $sql = "INSERT $table VALUES (
-      null,
-			'$this->title = $title',
-			'$this->coop = $coop',
-      '$this->coor = $coor',
-      '$this->datestamp = $datestamp'
-      '$this->theme = $theme',
-      '$this->methods = $methods'
+        null,
+        '$this->title',
+        $this->coop,
+        $this->coor,
+        '$this->datestamp'
+        '$this->theme',
+        $this->methods
       )";
-
       $result = $connection->query($sql) || exit($connection->error);
       echo "<p>Success.</p>";
-    }
-
-    function average($connection, $table){
-      $sql = "SELECT registry, (grade1 + grade2)/2 AS average FROM $table ";
-      $result = $connection->query($sql) || exit($connection->error);
-      echo "<table>
-        <caption>Average Generated</caption>
-        <tr>
-          <th>Registry</th>
-          <th>Average</th>
-        </tr>";
-        while ($line = $result->fetch_array()) {  //Retorna false quando objeto não for atribuido;
-          $r = htmlentities($line[0], ENT_QUOTES, "UTF-8");
-          $a = htmlentities($line[1], ENT_QUOTES, "UTF-8");
-
-          echo "<tr>
-            <td>$r</td>
-            <td>$a</td>
-          </tr>";
-        }
-      echo "</table>";
-    }
-
-    function aboveAv($connection, $table){
-      $sql = "SELECT COUNT(*) FROM $table WHERE (grade1 + grade2)/2 >= 6";  //Filtro de registro WHERE <teste lógico>;
-      $result = $connection->query($sql) || exit ($connection->error);
-      $line = $result->fetch_array();
-      $quantity = htmlentities($line[0], ENT_QUOTES, "UTF-8");
-      return $quantity;
     }
   }
 ?>
