@@ -42,7 +42,7 @@
         '$this->theme',
         '$this->methods'
       )";
-      $result = $connection->query($sql) || exit($connection->error);
+      $result = $connection->query($sql) || die($connection->error);
       echo "<p>Success.</p>";
     }
 
@@ -71,11 +71,13 @@
       else {
         echo "List is unavaible.";
       }
-      $result = $connection->query($sql) || exit($connection->error);
+      $result = $connection->query($sql) || die($connection->error);
     }
 
     function exclude($connection, $table){
-      $sql = "";
+      $sql = "DELETE FROM $table WHERE coop > 2";
+      $result = $connection->query($sql) || die($connection->error);
+      echo "Success.";
     }
   }
 ?>
