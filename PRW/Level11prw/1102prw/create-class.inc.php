@@ -87,5 +87,14 @@
       $result = $connection->query($sql) || die($connection->error);
       echo "Success.";
     }
+
+    function count($connection, $table){
+      $sql = "SELECT COUNT(*) FROM $table WHERE theme='fieldresearch'";
+      $result = $connection->query($sql) || die($connection->error);
+      $registry = $result->fetch_array();
+      $quantity = $registry[0];
+      echo "Success. Count: ";
+      return $quantity;
+    }
   }
 ?>
