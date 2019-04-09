@@ -29,9 +29,9 @@
     }
 
     function register($connection, $table){
-      //convert php array to json
-      $this->methods = json_encode($this->methods);
-      
+      //encode php array to json on UTF-8
+      $this->methods = json_encode($this->methods, JSON_UNESCAPED_UNICODE);
+
       //in order with table fields!
       $sql = "INSERT $table VALUES (
         null,
@@ -72,6 +72,10 @@
         echo "List is unavaible.";
       }
       $result = $connection->query($sql) || exit($connection->error);
+    }
+
+    function exclude($connection, $table){
+      $sql = "";
     }
   }
 ?>

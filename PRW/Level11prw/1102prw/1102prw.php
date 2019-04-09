@@ -93,6 +93,7 @@
 
 			if(isset($_POST["other"])){
 				$prj->list($connection, $table);
+				$prj->exclude($connection, $table);
 			}
 
 			require "disconnect.inc.php";
