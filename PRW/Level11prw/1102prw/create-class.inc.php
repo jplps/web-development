@@ -75,7 +75,15 @@
     }
 
     function exclude($connection, $table){
+      //looking for under 3 cooperations projects
       $sql = "DELETE FROM $table WHERE coop > 2";
+      $result = $connection->query($sql) || die($connection->error);
+      echo "Success.";
+    }
+
+    function alter($connection, $table){
+      //look for string inside a field to change other fields
+      $sql = "UPDATE $table WHERE title LIKE '%web%' SET datestamp = '2018-10-10";
       $result = $connection->query($sql) || die($connection->error);
       echo "Success.";
     }
