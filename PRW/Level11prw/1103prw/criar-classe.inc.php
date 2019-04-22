@@ -191,7 +191,6 @@
 				//podemos usar o próprio nome da coluna como índice
 				echo "<tr>
 					<td class=\"centra\"> $matricula </td>
-					
 					<td class=\"centra\"> $media </td>
 					</tr>";
 			}
