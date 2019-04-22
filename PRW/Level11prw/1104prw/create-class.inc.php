@@ -77,15 +77,26 @@
 			$sql = "DELETE FROM $table WHERE exechours < 100 AND preview < 1000";
 			$result = $conn->query($sql) or die($conn->error);
 			echo "<p>
-				Success.
+			Success.
 			</p>";
 		}
-
+		
 		//-----------------------------------------------------------
-
+		
 		function averageCalc($conn, $table){
-			$sql = "SELECT * FROM $table WHERE ";
+			//First query: calc average with AVG(tablefield)
+			$sql = "SELECT AVG(exechours) FROM $table";
 			$result = $conn->query($sql) or die($conn->error);
+			$registry = $result->fetch_array();
+			$average = htmlentities($registry[0], ENT_QUOTES, "UTF-8");
+			//Got average, second query now: count using average
+			$sql0 = "SELECT COUNT(*) FROM $table WHERE exechours < $average";
+			$result0 = $conn->query($sql0) || exit ($conn->error);
+			$registry0 = $result0->fetch_array();
+			$quantity = htmlentities($registry0[0], ENT_QUOTES, "UTF-8");
+			echo "<p>
+				There are $quantity projects with hours below average $average.
+			</p>";
 		}
 	}
 ?>
