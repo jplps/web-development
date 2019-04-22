@@ -154,7 +154,7 @@
 			$sql = "SELECT SUM(diarias * valor) FROM $nomeDaTabela WHERE origem = 'Brasil'";
 			$resultado = $conexao->query($sql) or die($conexao->error);
 			//testando se a consulta retornou algum registro
-			if($resultado->affected_rows > 0){
+			if($conexao->affected_rows > 0){
 				//a matriz resultado contém apenas uma linha
 				$registro = $resultado->fetch_array();
 				$total = $registro[0];
@@ -184,13 +184,10 @@
 												<th> Matrícula </th>
 												<th> Média </th>
 											</tr>";
-											
 			while($registro = $resultado->fetch_array())
 			{
 				//devemos sanitizar as variáveis, antes de enviarmos ao navegador. Assim, evitamos um tipo de ataque conhecido como XSS (cross-site scripting)
-				
 				$matricula = htmlentities($registro[0], ENT_QUOTES, "UTF-8");
-				
 				$media     = htmlentities($registro["media"], ENT_QUOTES, "UTF-8");
 				//podemos usar o próprio nome da coluna como índice
 				echo "<tr>
