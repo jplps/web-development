@@ -9,6 +9,5 @@
 		valor DECIMAL(6,2) UNSIGNED,
 		aviao VARCHAR(30),
 		data DATETIME)";
-																
 	$resultado = $conexao->query($sql) or exit($conexao->error);
 ?>

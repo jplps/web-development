@@ -73,29 +73,25 @@
 			require "selecionar-banco.inc.php";
 			require "definir-charset.inc.php";
 			require "criar-tabela.inc.php";
-			
 			require "criar-classe.inc.php";
 			
 			//criar um objeto HOSPEDE
 			$hospede = new Hospede();
 			
 			//testando o cadastro
-			if(isset($_POST["cadastrar"]))	
-				{
+			if(isset($_POST["cadastrar"])) {
 				$hospede -> receberDados($conexao);
 				$hospede->cadastrar($conexao, $nomeDaTabela);	
 				echo "<p> Hóspede cadastrado com sucesso. </p>";
-				}
+			}
 				
 			//efetuando a operação de alteração do número de diárias
-			if(isset($_POST["alterar"]))
-				{
+			if(isset($_POST["alterar"])) {
 				$hospede->alterar($conexao, $nomeDaTabela);	
-				}
-				
+			}
+			
 			//testar se o usuário acionou o último submit
-			if(isset($_POST["enviar"]))
-				{
+			if(isset($_POST["enviar"])){
 				//receber a operação escolhida pelo usuário no select
 				$operacao = $_POST["operacao"];
 				if($operacao == "1") //excluir
@@ -109,7 +105,7 @@
 					
 				if($operacao == "4") //totalizar faturamento com todos os hóspedes
 					$hospede->totalizar($conexao, $nomeDaTabela);
-				}
+			}
 			
 			require "desconectar.inc.php";
 		?>

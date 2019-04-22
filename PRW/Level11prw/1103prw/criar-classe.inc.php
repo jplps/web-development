@@ -10,18 +10,12 @@
 		
 		function receberDados($conexao) {
 			$cpf = trim($conexao->escape_string($_POST["cpf"]));
-			
 			$nome = trim($conexao->escape_string($_POST["nome"]));
-			
 			$cartao = trim($conexao->escape_string($_POST["cartao"]));
-			
 			//criptogranfando, via PHP, o número do cartão de crédito
 			$cartao = hash("sha512", $cartao);
-			
 			$diarias = trim($conexao->escape_string($_POST["diarias"]));
-			
 			$valor = trim($conexao->escape_string($_POST["valor"]));
-			
 			//testar se o usuário escolheu algum botão de rádio
 			if(isset($_POST["procedencia"]))
 				$origem = trim($conexao->escape_string($_POST["procedencia"]));
@@ -36,7 +30,6 @@
 			}
 			else
 				$aviao = "Nenhuma";			
-			
 			$this->cpf       = $cpf;
 			$this->nome      = $nome;
 			$this->cartao    = $cartao;
@@ -50,16 +43,15 @@
 		
 		function cadastrar($conexao, $nomeDaTabela)	{
 			$sql = "INSERT $nomeDaTabela VALUES(
-														'$this->cpf',	
-														'$this->nome',
-														'$this->cartao',
-														'$this->origem',
-														$this->diarias,
-														$this->valor,
-														'$this->aviao',
-														NOW()
-														)"; //a função NOW() é aplicada somente a campos de data e faz o MySQL inserir, automaticamente, a cada registro cadastrado, o dia, mês, ano, hora, minuto e segundo em que o cadastro foi efetuado
-														
+				'$this->cpf',	
+				'$this->nome',
+				'$this->cartao',
+				'$this->origem',
+				$this->diarias,
+				$this->valor,
+				'$this->aviao',
+				NOW()
+				)"; //a função NOW() é aplicada somente a campos de data e faz o MySQL inserir, automaticamente, a cada registro cadastrado, o dia, mês, ano, hora, minuto e segundo em que o cadastro foi efetuado
 			$resultado = $conexao->query($sql) or die($conexao->error);
 		}
 		
@@ -73,7 +65,6 @@
 			//consulta de alteração
 			$sql = "UPDATE $nomeDaTabela SET diarias=$alteraDiarias WHERE cpf='$cpf'";
 			$resultado = $conexao->query($sql) or die($conexao->error);
-			
 			//testando se o CPF pesquisado foi encontrado na tabela
 			if($conexao->affected_rows > 0)
 				echo "<p> A alteração do número de diárias para o hóspede de cpf igual a $cpf foi efetuada com sucesso. </p>";
@@ -86,9 +77,7 @@
 		function excluir($conexao, $nomeDaTabela) {
 			//consulta da exclusão
 			$sql = "DELETE FROM $nomeDaTabela WHERE origem='Argentina' AND data < '2018-06-01 00:00:00'";
-			
 			$resultado = $conexao->query($sql) or exit($conexao->error);
-			
 			if($conexao->affected_rows > 0)
 				echo "<p> Foram excluídos $conexao->affected_rows hóspedes argentinos com data de registro anterior a 01/06/2018. </p>";
 			else
@@ -100,9 +89,7 @@
 		function listar1($conexao, $nomeDaTabela)	{
 			//listar, numa tabela, o nome, o cpf e a data de entrada do todos os hóspedes que NÃO utilizaram nenhuma companhia aérea
 			$sql = "SELECT cpf, nome, DATE_FORMAT(data, '%d/%m/%Y - %H:%i:%s') FROM $nomeDaTabela WHERE aviao = 'Nenhuma'";
-			
 			$resultado = $conexao->query($sql) or die($conexao->error);
-			
 			if($conexao->affected_rows == 0)
 				echo "<p> Todos os hóspedes cadastrados utilizaram avião em sua viagem. Impossível listar os dados solicitados. </p>";
 			else {
@@ -118,7 +105,6 @@
 					$cpf  = htmlentities($registro[0], ENT_QUOTES, "UTF-8");
 					$nome = htmlentities($registro[1], ENT_QUOTES, "UTF-8");
 					$data = htmlentities($registro[2], ENT_QUOTES, "UTF-8");
-					
 					echo "<tr>
 									<td> $cpf </td>
 									<td> $nome </td>
@@ -132,9 +118,7 @@
 		function listar2($conexao, $nomeDaTabela){
 			//listar nome e o valor pago pela estadia de cada hóspede
 			$sql = "SELECT nome, diarias * valor FROM $nomeDaTabela";
-
 			$resultado = $conexao->query($sql) or die($conexao->error);
-
 			//testando se houve retorno de algum registro (a tabela pode
 			//estar vazia)
 			if($conexao->affected_rows > 0){
@@ -163,9 +147,7 @@
 		function calcularMedia($conexao, $nomeDaTabela) {
 			//método que calcula a média de notas de cada aluno
 			$sql = "SELECT matricula, (nota1 + nota2)/2 AS media FROM $nomeDaTabela";
-			
 			$resultado = $conexao->query($sql) or die($conexao->error);
-			
 			echo "<table>
 											<caption> Média e matrícula, por aluno </caption>
 											<tr>
@@ -195,13 +177,9 @@
 		function contarAcima6($conexao, $nomeDaTabela) {
 			//consulta para contar, no banco de dados, quantos alunos têm média acima de 6,0
 			$sql = "SELECT COUNT(*) FROM $nomeDaTabela WHERE (nota1 + nota2)/2 > 6";
-			
 			$resultado = $conexao->query($sql) or die($conexao->error);
-			
 			$registro = $resultado->fetch_array();
-			
 			$quantos = htmlentities($registro[0], ENT_QUOTES, "UTF-8");
-			
 			return $quantos;
 		}
 	}
