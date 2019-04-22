@@ -94,22 +94,21 @@
 				echo "<p> Todos os hóspedes cadastrados utilizaram avião em sua viagem. Impossível listar os dados solicitados. </p>";
 			else {
 				echo "<table>
-								<caption> Relação de hóspedes que não utilizaram avião em sua viagem </cpation>
-								<tr>
-									<th> CPF </th>
-									<th> Nome </th>
-									<th> Check-in </th>
-								</tr>";
-								
+					<caption> Relação de hóspedes que não utilizaram avião em sua viagem </cpation>
+					<tr>
+						<th> CPF </th>
+						<th> Nome </th>
+						<th> Check-in </th>
+					</tr>";
 				while($registro = $resultado->fetch_array()) {
 					$cpf  = htmlentities($registro[0], ENT_QUOTES, "UTF-8");
 					$nome = htmlentities($registro[1], ENT_QUOTES, "UTF-8");
 					$data = htmlentities($registro[2], ENT_QUOTES, "UTF-8");
 					echo "<tr>
-									<td> $cpf </td>
-									<td> $nome </td>
-									<td> $data </td>
-								</tr>";					
+						<td> $cpf </td>
+						<td> $nome </td>
+						<td> $data </td>
+					</tr>";					
 				} //fim do enquanto
 				echo "</table>";				
 			}
@@ -179,11 +178,11 @@
 			$sql = "SELECT matricula, (nota1 + nota2)/2 AS media FROM $nomeDaTabela";
 			$resultado = $conexao->query($sql) or die($conexao->error);
 			echo "<table>
-											<caption> Média e matrícula, por aluno </caption>
-											<tr>
-												<th> Matrícula </th>
-												<th> Média </th>
-											</tr>";
+				<caption> Média e matrícula, por aluno </caption>
+				<tr>
+					<th> Matrícula </th>
+					<th> Média </th>
+				</tr>";
 			while($registro = $resultado->fetch_array())
 			{
 				//devemos sanitizar as variáveis, antes de enviarmos ao navegador. Assim, evitamos um tipo de ataque conhecido como XSS (cross-site scripting)
@@ -191,10 +190,10 @@
 				$media     = htmlentities($registro["media"], ENT_QUOTES, "UTF-8");
 				//podemos usar o próprio nome da coluna como índice
 				echo "<tr>
-											<td class=\"centra\"> $matricula </td>
-											
-											<td class=\"centra\"> $media </td>
-											</tr>";
+					<td class=\"centra\"> $matricula </td>
+					
+					<td class=\"centra\"> $media </td>
+					</tr>";
 			}
 			echo "</table>";
 		}
