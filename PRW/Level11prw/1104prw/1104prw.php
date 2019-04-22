@@ -55,7 +55,7 @@
 				<label class="align">select op.</label>
 				<select name="operation" id="">
 					<option value="0">registry</option>
-					<option value="1">code and value</option>
+					<option value="1">codes and values</option>
 					<option value="2">project number</option>
 					<option value="3">exclude project</option>
 					<option value="4">hour av. and project number</option>
@@ -78,28 +78,21 @@
 			$project = new Project();
 
 			if(isset($_POST["send"])){
-				//Receber operação:
 				$op = $_POST["operation"];
 
-				//Cadastro:
 				if($op == "0"){
-					//Chama o método para registrar dados:
-					$project->registerData($conn);
-
+					//Chama o método para pegar dados do formulário:
+					$project->getFormData($conn);
 					//Insere os dados na tabela:
-					$project->insert($conn, $table);
+					$project->registerInDB($conn, $table);
 				}
 
-				//Média:
-				else if($op == "1"){
-					//Chama o método que retorna a média:
-					$project->average($conn, $table);
-				}
+				else if($op == "1")
+					//Chama o método que retorna a listagem:
+					$project->listProjects($conn, $table);
 
-				//Melhores Alunos:
 				else if($op == "2"){
 					$quantity = $project->aboveAv($conn, $table);
-
 					echo "<p>
 						There are $quantity projects Above the Average.
 					</p>";
