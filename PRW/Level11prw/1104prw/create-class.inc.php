@@ -64,7 +64,15 @@
 		function countProjects($conn, $table){
 			$sql = "SELECT COUNT(*) FROM $table WHERE YEAR(datestamp) < '2015'";
 			$result = $conn->query($sql) or die($conn->error);
-			
+			$registry = $result->fetch_array();
+			$quantity = htmlentities($registry[0], ENT_QUOTES, "UTF-8");
+			echo "<p>
+				We have $quantity project(s) in our database, previous to 2015.
+			</p>";
 		}
+
+		//-----------------------------------------------------------
+
+		
 	}
 ?>
