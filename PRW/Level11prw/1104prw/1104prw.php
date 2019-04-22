@@ -104,6 +104,7 @@
 						There are $quantity projects Above the Average.
 					</p>";
 				}
+			}
 
 			require "disconnect.inc.php";
     ?>
