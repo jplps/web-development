@@ -91,12 +91,9 @@
 					//Chama o método que retorna a listagem:
 					$project->listProjects($conn, $table);
 
-				else if($op == "2"){
-					$quantity = $project->aboveAv($conn, $table);
-					echo "<p>
-						There are $quantity projects Above the Average.
-					</p>";
-				}
+				else if($op == "2")
+					$project->countProjects($conn, $table);
+				
 			}
 
 			require "disconnect.inc.php";

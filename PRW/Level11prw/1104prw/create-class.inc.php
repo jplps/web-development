@@ -5,6 +5,8 @@
 		var $date;
 		var $exechours;
 
+		//-----------------------------------------------------------
+
 		function getFormData($conn){
 			$projectid = trim($conn->escape_string($_POST["projectid"]));
 			$this->projectid = $projectid;
@@ -55,6 +57,14 @@
 				echo "<p>
 					Table may be empty.
 				</p>";
+		}
+
+		//-----------------------------------------------------------
+
+		function countProjects($conn, $table){
+			$sql = "SELECT COUNT(*) FROM $table WHERE YEAR(datestamp) < '2015'";
+			$result = $conn->query($sql) or die($conn->error);
+			
 		}
 	}
 ?>

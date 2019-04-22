@@ -10,7 +10,7 @@
 		/**
      * ***REGISTRO (objeto)
      * 
-     * Recebe a conexão e assegura a correta atribuição dos valores ao objeto.
+     * Recebe a conexão e assegura a correta atribuição dos valores as variaveis..
      */
 		function registerData($connection){
       /**
