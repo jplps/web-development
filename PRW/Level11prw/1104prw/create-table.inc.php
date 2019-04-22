@@ -1,13 +1,9 @@
 <?php
   $sql = "CREATE TABLE IF NOT EXISTS $table (
-    id INT PRIMARYKEY AUTO_INCREMENT,
-    title VARCHAR(200) NOT NULL,
-    coop TINYINT UNSIGNED,
-    coor BOOLEAN,
+    projectid VARCHAR PRIMARYKEY,
+    preview DECIMAL(9, 2) UNSIGNED,
     datestamp DATE,
-    theme VARCHAR(50),
-    methods JSON
+    exechours MEDIUMINT UNSIGNED
   )";
-
-  $result = $connection->query($sql) || exit($connection->error);
+  $result = $conn->query($sql) || exit($connection->error);
 ?>

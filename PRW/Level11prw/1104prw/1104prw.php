@@ -40,8 +40,8 @@
 				<input type="varchar" name="projectid" autofocus />
 				<br/>
 
-				<label class="align">value prev.</label>
-				<input type="number" name="value" min="0" step="0.01" />
+				<label class="align">value</label>
+				<input type="number" name="preview" min="0" step="0.01" />
 				<br/>
 
 				<label class="align">date</label>
@@ -49,11 +49,11 @@
 				<br/>
 
 				<label class="align">exec. hours</label>
-				<input type="number" name="hours" min="0" />
+				<input type="number" name="exechours" min="0" />
 				<br/>
 
 				<label class="align">select op.</label>
-				<select name="theme" id="">
+				<select name="operation" id="">
 					<option value="0">registry</option>
 					<option value="1">code and value</option>
 					<option value="2">project number</option>
@@ -75,7 +75,35 @@
 			require "create-table.inc.php";
 			require "create-class.inc.php";
 
-			//Do me
+			$project = new Project();
+
+			if(isset($_POST["send"])){
+				//Receber operação:
+				$op = $_POST["operation"];
+
+				//Cadastro:
+				if($op == "0"){
+					//Chama o método para registrar dados:
+					$project->registerData($conn);
+
+					//Insere os dados na tabela:
+					$project->insert($conn, $table);
+				}
+
+				//Média:
+				else if($op == "1"){
+					//Chama o método que retorna a média:
+					$project->average($conn, $table);
+				}
+
+				//Melhores Alunos:
+				else if($op == "2"){
+					$quantity = $project->aboveAv($conn, $table);
+
+					echo "<p>
+						There are $quantity projects Above the Average.
+					</p>";
+				}
 
 			require "disconnect.inc.php";
     ?>

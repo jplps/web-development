@@ -1,4 +1,4 @@
 <?php
   //Definindo colação:
-  $connection->set_charset("utf8");
+  $conn->set_charset("utf8");
 ?>
