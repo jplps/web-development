@@ -79,21 +79,18 @@
 
 			if(isset($_POST["send"])){
 				$op = $_POST["operation"];
-
 				if($op == "0"){
-					//Chama o método para pegar dados do formulário:
 					$project->getFormData($conn);
-					//Insere os dados na tabela:
 					$project->registerInDB($conn, $table);
 				}
-
 				else if($op == "1")
-					//Chama o método que retorna a listagem:
 					$project->listProjects($conn, $table);
-
 				else if($op == "2")
 					$project->countProjects($conn, $table);
-				
+				else if($op == "3")
+					$project->excludeProjects($conn, $table);
+				else if($op == "4")
+					$project->averageCalc($conn, $table);
 			}
 
 			require "disconnect.inc.php";

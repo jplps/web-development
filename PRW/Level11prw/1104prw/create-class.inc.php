@@ -73,6 +73,19 @@
 
 		//-----------------------------------------------------------
 
-		
+		function excludeProjects($conn, $table){
+			$sql = "DELETE FROM $table WHERE exechours < 100 AND preview < 1000";
+			$result = $conn->query($sql) or die($conn->error);
+			echo "<p>
+				Success.
+			</p>";
+		}
+
+		//-----------------------------------------------------------
+
+		function averageCalc($conn, $table){
+			$sql = "SELECT * FROM $table WHERE ";
+			$result = $conn->query($sql) or die($conn->error);
+		}
 	}
 ?>
