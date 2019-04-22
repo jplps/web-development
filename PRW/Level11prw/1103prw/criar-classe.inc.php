@@ -140,8 +140,38 @@
 					} //fim do laço
 				echo "</table>";
 			}
+			else
+				echo "<p>
+					Impossível listar despesa por hóspede. A tabela no banco de
+					dados está vazia.
+				</p>";
 		}
 		
+		//-------------------------------------------------
+
+		function totalizar($conexao, $nomeDaTabela){
+			//somar o gasto individual de cada hóspede BRASILEIRO na tabela
+			$sql = "SELECT SUM(diarias * valor) FROM $nomeDaTabela WHERE origem = 'Brasil'";
+			$resultado = $conexao->query($sql) or die($conexao->error);
+			//testando se a consulta retornou algum registro
+			if($resultado->affected_rows > 0){
+				//a matriz resultado contém apenas uma linha
+				$registro = $resultado->fetch_array();
+				$total = $registro[0];
+				$total = htmlentities($total, ENT_QUOTES, "UTF-8");
+				$totalFormatado = number_format($total, 2, ",", ".");
+				echo "<p>
+					O faturamento total de nosso hotel com hóspedes brasileiros
+					é igual a R$$totalFormatado.
+				</p>";
+			}
+			else
+				echo "<p>
+					A tabela está vazia ou há apenas hóspedes não-brasileiros
+					no cadastro.
+				</p>";
+		}
+
 		//-------------------------------------------------
 
 		function calcularMedia($conexao, $nomeDaTabela) {
