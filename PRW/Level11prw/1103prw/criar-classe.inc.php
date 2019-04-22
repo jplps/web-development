@@ -153,10 +153,13 @@
 							<td>$nome</td>
 							<td>$despesaFormatada</td>
 						</tr>";
-					}
+					} //fim do laço
+				echo "</table>";
 			}
 		}
 		
+		//-------------------------------------------------
+
 		function calcularMedia($conexao, $nomeDaTabela) {
 			//método que calcula a média de notas de cada aluno
 			$sql = "SELECT matricula, (nota1 + nota2)/2 AS media FROM $nomeDaTabela";
