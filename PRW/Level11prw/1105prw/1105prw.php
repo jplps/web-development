@@ -3,7 +3,6 @@
 	session_start();
 	//Inicializando variavel de sessão como false (desconectado)
 	$_SESSION["signed"] = false;
-	
 ?>
 <!DOCTYPE html>
 <html lang="en">
