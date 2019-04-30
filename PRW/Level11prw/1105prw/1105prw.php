@@ -69,6 +69,7 @@
 			if(isset($_POST["submit"])){
 				$user = new User();
 				getFormData($conn);
+				//SignIn rotina:
 				/**
 				 * Criar consulta select no db para equipara-los às variáveis
 				 * setadas (checar affected rows method):
@@ -76,7 +77,6 @@
 				 * $sql = "SELECT mail, pass, FROM $table WHERE mail='$mail'
 				 * AND pass='$pass'";
 				*/
-
 				//Alterar a sessão
 				$_SESSION["signed"] = true;
 				//Armazenar a senha e o login criptografados em variáveis de sessão
@@ -84,6 +84,20 @@
 				$_SESSION["pass"] = $pass;
 				//Redirecionar para página restrita
 				header("location: protectedpage.php");
+
+				/** 
+				 * Chamar include para bloquear acesso, antes do doctype na
+				 * página progetida):
+				 * <?php
+				 * 	require "validate.inc.php";
+				 * ?>
+				 * 
+				 * validate.inc.php:
+				 * //Checar existência ou invalidez de variável
+				 * if(!isset($_SESSION["signed"]) || $_SESSION["signed"] == false){
+				 * 	signOut();
+				 * }
+				*/
 
 				//Sign out rotina:
 				// $_SESSION = array();
