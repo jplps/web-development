@@ -1,34 +1,33 @@
 /*Ao menos um parágrafo de texto justificado;*/
-p{
-    text-align: justify;
+p {
+  text-align: justify;
 }
 
 /*Uma lista não ordenada de dois ou mais níveis com marcador square;*/
-ul{
-    list-style-type: square;
+ul {
+  list-style-type: square;
 }
 
-img{
-    height: 120px;
-    padding: 10px;
+img {
+  height: 120px;
+  padding: 10px;
 }
 
 /*Duas imagens locais, uma à esquerda e outra à direita com texto justificado entre ambas;*/
-#img1{
-    float: left;
+#img1 {
+  float: left;
 }
 
-#img2{
-    float: right;
+#img2 {
+  float: right;
 }
 
-a{
-    display: block;
-    text-align: center;
+a {
+  display: block;
+  text-align: center;
 }
 
-#imglink{
-    width: 90px;
-    height: auto;
+#imglink {
+  width: 90px;
+  height: auto;
 }
-

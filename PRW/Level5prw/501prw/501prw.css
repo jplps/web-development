@@ -1,81 +1,83 @@
 /*Global*/
-body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0;
-    text-transform: capitalize;
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  text-transform: capitalize;
 }
 
-h2{
-    text-align: center;
-    border-bottom: 1px solid #b2b2b2;
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 10px;
+h2 {
+  text-align: center;
+  border-bottom: 1px solid #b2b2b2;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 /*Especificos*/
-table{
-    border-spacing: 0;
+table {
+  border-spacing: 0;
 }
 
-.borderedl{
-    border-right: 1px solid #000;
+.borderedl {
+  border-right: 1px solid #000;
 }
 
-.borderedr, .borderedl{
-    border-bottom: 1px solid #000;
+.borderedr,
+.borderedl {
+  border-bottom: 1px solid #000;
 }
 
-.external{
-    margin: 0;
-    border: 1px solid #000;
-    border-spacing: 0;
-    width: 90%;
-    margin: auto;
+.external {
+  margin: 0;
+  border: 1px solid #000;
+  border-spacing: 0;
+  width: 90%;
+  margin: auto;
 }
 
-caption{
-    text-align: right;
-    margin-top: 20px;
-    margin-bottom: 10px;
+caption {
+  text-align: right;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.black{
-    color: #fff;
-    background-color: #000;
+.black {
+  color: #fff;
+  background-color: #000;
 }
 
-.orange{
-    background-color: #ffb833;
-    border-spacing: 0;
+.orange {
+  background-color: #ffb833;
+  border-spacing: 0;
 }
 
-.blue{
-    background-color: #5151ff;
+.blue {
+  background-color: #5151ff;
 }
 
-.country{
-    border: 1px solid #000;
-    background-color: #b2b2b2;
+.country {
+  border: 1px solid #000;
+  background-color: #b2b2b2;
 }
 
-.country td{
-    border: 1px solid #000;
+.country td {
+  border: 1px solid #000;
 }
 
-.country td{
-    padding: 10px;
+.country td {
+  padding: 10px;
 }
 
-.lastborder{
-    border-right: 1px solid #000;
+.lastborder {
+  border-right: 1px solid #000;
 }
 
-.incepted{
-    border-left: 1px solid #b2b2b2;
-    padding: 10px;
+.incepted {
+  border-left: 1px solid #b2b2b2;
+  padding: 10px;
 }
 
-.idented{
-    padding: 10px;
+.idented {
+  padding: 10px;
 }

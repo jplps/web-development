@@ -1,55 +1,55 @@
 /*Apenas o primeiro link com fundo modificado em estado hover;*/
-.link1:hover{
-    background-color: #000;
-    color: #fff;
+.link1:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 /*Apenas um dos links sem sublinhado;*/
-.link2{
-    text-decoration: none;
+.link2 {
+  text-decoration: none;
 }
 
 /*Imagem de fundo para um parágrafo;*/
-.p1{
-    background-image: url("./img/wave1.jpg");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: auto 100%;
+.p1 {
+  background-image: url('./img/wave1.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: auto 100%;
 }
 
 /*Imagem diferente para outro parágrafo (utilizando ID);*/
-#p2{
-    background-image: url("./img/wave2.jpg");
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: auto 100%;
+#p2 {
+  background-image: url('./img/wave2.jpg');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: auto 100%;
 }
 
-p{
-    color: #888;
+p {
+  color: #888;
 }
 
 /*Listas sem marcadores;*/
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
 
 /*Primeira lista transformada usando numerador I;*/
-#nivel1{
-    list-style-type: upper-roman;
+#nivel1 {
+  list-style-type: upper-roman;
 }
 
 /*Fonte padrão da segunda lista importada do Google fonts, de cor alterada;*/
 @import url('https://fonts.googleapis.com/css?family=Notable');
 
-.nivel2{
-    color: #888;
-    font-family: 'Notable', sans-serif;
+.nivel2 {
+  color: #888;
+  font-family: 'Notable', sans-serif;
 }
 
 /*Cor da letra do segundo link alterada em estado focus;*/
-.link2:focus{
-    color: #888;
+.link2:focus {
+  color: #888;
 }
 
 /*Imagem de fundo na página simulando:
@@ -58,11 +58,10 @@ ul{
     . Imagem posiciona-se no centro da página;
     . Imagem se distancia da esquerda em 300px;
     . Imagem se distancia do topo em 150px;*/
-body{
-    background-image: url("./img/jam.png");
-    background-size: 50%;
-    background-repeat: repeat-x;
-    background-repeat: repeat-y;
-    background-position: 300px 150px;
-    
+body {
+  background-image: url('./img/jam.png');
+  background-size: 50%;
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-position: 300px 150px;
 }

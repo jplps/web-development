@@ -1,38 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee');
 @import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
 
-body{
-    margin: 0;
-    font-family: 'Allerta Stencil', sans-serif;
-    text-align: justify;
-    height: 780px;
-    border: 5px solid #000;
-    /*configurações de fundo:*/
-    background-image: url("./foto1.jpeg"); /*definição do caminho da imagem*/
-    background-repeat: repeat-x; /*por default, uma imagem se repete nos eixos x e y*/
-    background-position: 50% 100%; /*posicionamento de objeto de referência - center(50%) bottom(95%)*/
-    background-color: #aaa;
+body {
+  margin: 0;
+  font-family: 'Allerta Stencil', sans-serif;
+  text-align: justify;
+  height: 780px;
+  border: 5px solid #000;
+  /*configurações de fundo:*/
+  background-image: url('./foto1.jpeg'); /*definição do caminho da imagem*/
+  background-repeat: repeat-x; /*por default, uma imagem se repete nos eixos x e y*/
+  background-position: 50% 100%; /*posicionamento de objeto de referência - center(50%) bottom(95%)*/
+  background-color: #aaa;
 }
 
-h1{
-    font-family: 'Bungee', cursive;
-    margin: 0;
-    border-bottom: 5px solid #000;
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
-    color: #000;
-    background-color: #4c6349;
-    text-shadow: 1px 1px 1px #aaa;
-    text-align: center;
+h1 {
+  font-family: 'Bungee', cursive;
+  margin: 0;
+  border-bottom: 5px solid #000;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+  color: #000;
+  background-color: #4c6349;
+  text-shadow: 1px 1px 1px #aaa;
+  text-align: center;
 }
 
-p{
-    width: 80%;
-    margin: 30px auto;
-    border: 1px solid #000;
-    padding: 30px;
-    /*condensamento com mais de uma imagem de fundo:*/
-    background: url("./foto3.jpeg") no-repeat right bottom, 
-    url("./foto2.png") no-repeat left bottom;
-    background-size: auto 100%; /*comprimento e altura*/
-    opacity: 0.8; /*a transparência das imagens de fundo esmaece o texto também*/
+p {
+  width: 80%;
+  margin: 30px auto;
+  border: 1px solid #000;
+  padding: 30px;
+  /*condensamento com mais de uma imagem de fundo:*/
+  background: url('./foto3.jpeg') no-repeat right bottom,
+    url('./foto2.png') no-repeat left bottom;
+  background-size: auto 100%; /*comprimento e altura*/
+  opacity: 0.8; /*a transparência das imagens de fundo esmaece o texto também*/
 }

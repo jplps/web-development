@@ -4,78 +4,78 @@
   Começamos com o mais externo, body, e listaremos
   itens conforme sua aparição ou conexão (parentesco).
 */
-body{
-    margin: 0;
-    line-height: 25px;
+body {
+  margin: 0;
+  line-height: 25px;
 }
 
-h1{
-    line-height: 150%;
-    text-transform: uppercase;
-    text-align: center;
-    width: 90%;
-    margin: 20px auto;
-    border-bottom: 2px solid #808080;
-    box-shadow: 0 2px 0 0 rgba(80, 80, 80, 0.3);
+h1 {
+  line-height: 150%;
+  text-transform: uppercase;
+  text-align: center;
+  width: 90%;
+  margin: 20px auto;
+  border-bottom: 2px solid #808080;
+  box-shadow: 0 2px 0 0 rgba(80, 80, 80, 0.3);
 }
 
-form{
-    width: 80%;
-    margin: auto;
-    text-transform: capitalize;
+form {
+  width: 80%;
+  margin: auto;
+  text-transform: capitalize;
 }
 
-fieldset{
-    width: 40%;
-    margin: 0 auto;
-    border: 2px solid #808080;
-    box-shadow: 3px 3px 3px rgba(80, 80, 80, 0.3);
+fieldset {
+  width: 40%;
+  margin: 0 auto;
+  border: 2px solid #808080;
+  box-shadow: 3px 3px 3px rgba(80, 80, 80, 0.3);
 }
 
-fieldset.left{
-    float: left;
+fieldset.left {
+  float: left;
 }
 
-fieldset.right{
-    float: right;
+fieldset.right {
+  float: right;
 }
 
-div.heightdef{
-    height: 175px;
+div.heightdef {
+  height: 175px;
 }
 
-.row{
-    width: 90%;
-    margin: auto;
+.row {
+  width: 90%;
+  margin: auto;
 }
 
-input.righted{
-    width: 90px;
-    margin-left: 10px;
+input.righted {
+  width: 90px;
+  margin-left: 10px;
 }
 
-row.label{
-    width: 50%;
-    text-align: right;
+row.label {
+  width: 50%;
+  text-align: right;
 }
 
-.coll{
-    float: left;
-    width: 50%;
-    text-align: right;
+.coll {
+  float: left;
+  width: 50%;
+  text-align: right;
 }
 
-.colr{
-    float: left;
-    width: 50%;
+.colr {
+  float: left;
+  width: 50%;
 }
 
-.clearer{
-    clear: both;
+.clearer {
+  clear: both;
 }
 
-button{
-    margin: 10px 10px;
-    padding: 10px;
-    width: 175px;
+button {
+  margin: 10px 10px;
+  padding: 10px;
+  width: 175px;
 }

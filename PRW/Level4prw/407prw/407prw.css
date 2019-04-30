@@ -1,55 +1,54 @@
 /*Um parágrafo com fonte Arial Narrow em negrito, cor verde e tamanho 16;*/
-.changed{
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
-    color: #004900;
+.changed {
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  color: #004900;
 }
 
 /*Primeira lista com cor de fundo;*/
-#list1{
-    background-color: blue;
-    color: #fff;
+#list1 {
+  background-color: blue;
+  color: #fff;
 }
 
 /*Segunda lista de cor diferente da anterior;*/
-#list2{
-    background-color: #ad0000;
-    color: #fff;
+#list2 {
+  background-color: #ad0000;
+  color: #fff;
 }
 
 /*Cor de fundo da página em azul claro;
   Imagem de fundo fixa;*/
-body{
-    background-color: #add8e6;
-    background-image: url("./img/jam.jpg");
-    background-size: 50%;
-    background-position: center;
-    background-attachment: fixed;
+body {
+  background-color: #add8e6;
+  background-image: url('./img/jam.jpg');
+  background-size: 50%;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /*Cor de fundo do parágrafo em verde claro;
   Identação do parágrafo em 10%;*/
-p{
-    background-color: #90ee90;
-    display: inline;
+p {
+  background-color: #90ee90;
+  display: inline;
 }
 
 /*Cor de fundo de um cabeçalho nível 4 como transparente;*/
-h4{
-    background-color: transparent;
-    color: #fff;
+h4 {
+  background-color: transparent;
+  color: #fff;
 }
 
 /*Duas <div>s dividindo o documento em duas colunas uma contendo o parágrafo, outra, as listas;*/
-.left{
-    float: left;
-    background-color: #60ca65;
-    width: 50%;
-
+.left {
+  float: left;
+  background-color: #60ca65;
+  width: 50%;
 }
 
-.right{
-    float: right;
-    background-color: #60caa7;
-    width: 50%;
+.right {
+  float: right;
+  background-color: #60caa7;
+  width: 50%;
 }

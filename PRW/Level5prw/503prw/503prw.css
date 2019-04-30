@@ -1,55 +1,58 @@
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
-h1{
-    text-align: center;
-    padding: 20px;
-    text-transform: uppercase;
+h1 {
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
 }
 
-form{
-    width: 80%;
-    margin: auto;
-    text-transform: capitalize;
+form {
+  width: 80%;
+  margin: auto;
+  text-transform: capitalize;
 }
 
-span{
-    text-transform: none;
+span {
+  text-transform: none;
 }
 
-.coll{
-    float: left;
-    text-align: right;
-    width: 25%;
+.coll {
+  float: left;
+  text-align: right;
+  width: 25%;
 }
 
-.colr{
-    float: left;
-    width: 55%;
+.colr {
+  float: left;
+  width: 55%;
 }
 
-.coll, .colr, .range{
-    margin: 5px;
+.coll,
+.colr,
+.range {
+  margin: 5px;
 }
 
-.colr input{
-    width: 100%;
+.colr input {
+  width: 100%;
 }
 
-input[name=passwd], input[name=login]{
-    width: 50%;
+input[name='passwd'],
+input[name='login'] {
+  width: 50%;
 }
 
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: '';
+  display: table;
+  clear: both;
 }
 
-button{
-    width: 40%;
-    float: left;
-    height: 40px;
-    margin: 5%;
+button {
+  width: 40%;
+  float: left;
+  height: 40px;
+  margin: 5%;
 }

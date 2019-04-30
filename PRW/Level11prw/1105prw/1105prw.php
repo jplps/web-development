@@ -85,6 +85,9 @@
 				//Armazenar a senha e o login criptografados em variáveis de sessão
 				$_SESSION["mail"] = $mail;
 				$_SESSION["pass"] = $pass;
+
+				//Redirecionar para página restrita
+				header("location: protectedpage.php");
 			}
 
 			require "disconnect.inc.php";
