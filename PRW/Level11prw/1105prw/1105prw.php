@@ -24,7 +24,7 @@
 			h1{border-bottom:2px solid #666; margin:auto; padding:10px;
 			text-transform:uppercase; text-align:center; position:sticky; top:0;}
 			fieldset{margin-top:20px; text-transform:capitalize;}
-			.align {display:inline-block; width:200px; margin:5px;}
+			.align {display:inline-block; width:200px; margin:5px; text-align:right;}
 			input{max-width:120px;}
 			button, select{margin-top:10px;}
       table{margin:auto; border:1px solid #666; border-collapse:collapse;}
@@ -44,7 +44,7 @@
 				<legend>project control</legend>
 
 				<label class="align">@</label>
-				<input type="text" name="user" autofocus />
+				<input type="text" name="mail" autofocus />
 				<br/>
 
 				<label class="align">*</label>
@@ -56,6 +56,7 @@
 		</form>
 
     <?php
+			//Implementar backend
 			require "conn-data.inc.php";
 			require "connect.inc.php";
 			require "create-db.inc.php";
@@ -64,14 +65,20 @@
 			require "create-table.inc.php";
 			require "create-class.inc.php";
 
-			$project = new Project();
+			$user = new User();
 
 			if(isset($_POST["submit"])){
-				$op = $_POST["operation"];
-				if($op == "0"){
-					$project->getFormData($conn);
-					$project->registerInDB($conn, $table);
-				}
+				//Desinfectar login e senha e criptografa-las
+				$mail = $_POST["mail"];
+				$pass = $_POST["pass"];
+
+				/**
+				 * Criar consulta select no db para equipara-los às variáveis
+				 * setadas (checar affected rows method):
+				 * 
+				 * $sql = "SELECT mail, pass, FROM table WHERE mail='$mail'
+				 * AND pass='$pass'";
+			  */
 			}
 
 			require "disconnect.inc.php";
