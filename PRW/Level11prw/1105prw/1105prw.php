@@ -64,30 +64,31 @@
 			require "create-table.inc.php";
 			require "create-class.inc.php";
 
-			$user = new User();
+			
 
 			if(isset($_POST["submit"])){
-				//Desinfectar login e senha e criptografa-las
-				$mail = $_POST["mail"];
-				$pass = $_POST["pass"];
-
+				$user = new User();
+				getFormData($conn);
 				/**
 				 * Criar consulta select no db para equipara-los às variáveis
 				 * setadas (checar affected rows method):
 				 * 
-				 * $sql = "SELECT mail, pass, FROM table WHERE mail='$mail'
+				 * $sql = "SELECT mail, pass, FROM $table WHERE mail='$mail'
 				 * AND pass='$pass'";
 				*/
-			
+				
 				//Alterar a sessão
 				$_SESSION["signed"] = true;
-
 				//Armazenar a senha e o login criptografados em variáveis de sessão
 				$_SESSION["mail"] = $mail;
 				$_SESSION["pass"] = $pass;
-
 				//Redirecionar para página restrita
 				header("location: protectedpage.php");
+
+				//Sign out rotina:
+				// $_SESSION = array();
+				// session_destroy();
+				// header("location: login.php");
 			}
 
 			require "disconnect.inc.php";

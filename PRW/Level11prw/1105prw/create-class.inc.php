@@ -1,21 +1,16 @@
 <?php
-	class Project {
-		var $projectid;
-		var $preview;
-		var $date;
-		var $exechours;
+	class User {
+		var $id;
+		var $mail;
+		var $pass;
 
 		//-----------------------------------------------------------
 
 		function getFormData($conn){
-			$projectid = trim($conn->escape_string($_POST["projectid"]));
-			$this->projectid = $projectid;
-			$preview = trim($conn->escape_string($_POST["pre$preview"]));
-			$this->preview = $preview;
-			$datestamp = trim($conn->escape_string($_POST["datestamp"]));
-			$this->datestamp = $datestamp;
-			$exechours = trim($conn->escape_string($_POST["exechours"]));
-			$this->exechours = $exechours;
+			$mail = trim($conn->escape_string($_POST["mail"]));
+			$this->mail = $mail;
+			$pass = trim($conn->escape_string($_POST["pass"]));
+			$this->pass = $pass;
 		}
 
 		//-----------------------------------------------------------

@@ -3,5 +3,5 @@
   $user = "root"; //Usuário do db (padrão);
   $pass = "aluno";
   $db = "CTI_PRW"; //Nome do DB;
-  $table = "project"; //Nome da Tabela;
+  $table = "users"; //Nome da Tabela;
 ?>
