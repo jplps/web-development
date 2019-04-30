@@ -78,7 +78,14 @@
 				 * 
 				 * $sql = "SELECT mail, pass, FROM table WHERE mail='$mail'
 				 * AND pass='$pass'";
-			  */
+				*/
+			
+				//Alterar a sessão
+				$_SESSION["signed"] = true;
+
+				//Armazenar a senha e o login criptografados em variáveis de sessão
+				$_SESSION["mail"] = $mail;
+				$_SESSION["pass"] = $pass;
 			}
 
 			require "disconnect.inc.php";
