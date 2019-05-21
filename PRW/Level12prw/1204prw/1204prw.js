@@ -2,5 +2,5 @@
 var name = prompt('Name:', 'John Doe')
 
 //Mudando dinamicamente o conteúdo da página conforme teste lógico:
-if(name)
+if(name && name != '')
   document.getElementById('paragraph').innerHTML = 'Hi there ' + name + '!'
