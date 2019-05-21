@@ -18,7 +18,7 @@ function sum(){
    * Obs.: NaN = Not a Number
    */
   num_1 = parseInt(num_1)
-  num_2 = parseInt(num_2)
+  num_2 = parseFloat(num_2)
   
   var sum = num_1 + num_2
   alert("the sum is " + sum + "!")
