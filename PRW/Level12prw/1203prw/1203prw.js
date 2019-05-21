@@ -17,11 +17,16 @@ function sum(){
    * 
    * Obs.: NaN = Not a Number
    */
-  num_1 = parseInt(num_1)
-  num_2 = parseFloat(num_2)
-  
-  var sum = num_1 + num_2
-  alert("the sum is " + sum + "!")
+  num_1_conv = parseInt(num_1)
+  num_2_conv = parseFloat(num_2)
+
+  //Testando o sucesso da conversão (js compara os caracteres):
+  if(num_1 == num_1_conv && num_2 == num_2_conv){
+    var sum = num_1_conv + num_2_conv
+    alert("the sum is " + sum + "!")
+  }
+  else
+    alert("the sum failed.")
 
   //Todos os outros sinais são tratados normalmente!
   var sub = num_1 - num_2
