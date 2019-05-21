@@ -18,16 +18,26 @@
   </head>
 
   <body>
-    <h1>js innerhtml</h1>
+    <h1>js numeric convertions</h1>
 
-    <p id="first">1st: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cum praesentium reprehenderit explicabo omnis cumque distinctio autem debitis vero quia. Aliquam facilis hic deserunt numquam aperiam temporibus, velit cum nam!</p>
-    <p id="second">2nd: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aut magni odit illo facilis iusto neque error consectetur esse, repudiandae, molestiae dicta ipsum ex iste rem eos, omnis nulla autem!</p>
-    <p id="third"></p>
+    <p>
+      Carefull with numeric fields treatments in forms. When 
+      JavaScripting, the result can be very different than we
+      expect.
+    </p>
 
     <form>
       <fieldset>
         <legend>js testing</legend>
-        
+
+        <label for="">age</label>
+        <input type="number" id="age" min="0" autofocus>
+        <br><br>
+
+        <label for="">balance</label>
+        <input type="number" id="balance" min="0" step="0.01">
+        <br><br>
+
         <button 
           id="btn" 
           type="button"
@@ -37,6 +47,6 @@
       </fieldset>
     </form>
 
-    <script src="1202prw.js"></script>
+    <script src="1203prw.js"></script>
   </body>
 </html>
