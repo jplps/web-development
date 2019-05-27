@@ -5,4 +5,4 @@ function sumMe(n1, n2) {
 }
 
 //Invocar função
-sumMe(10, 20)
+sumMe(1987, 32)
