@@ -7,7 +7,11 @@ var paragraph = document.getElementById("container")
 var extract = () => {
   //Acessando o valor numérico
   var num = input.value
-  var square_root = Math.sqrt(num) //Extração da raíz com a lib Math
+  //Extração da raíz com a lib Math
+  var square_root = Math.sqrt(num)
+  // square_root = square_root.toLocaleString('pt-br') //Formatação local
+  //Alterando conteúdo do container
+  paragraph.innerText = square_root
 }
 
 //Associar cada evento ao seu objeto com literais
