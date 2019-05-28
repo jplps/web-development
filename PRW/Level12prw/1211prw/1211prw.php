@@ -33,10 +33,28 @@
         <label class="align">grade 2</label>
         <input type="number" name="g2" min="0" max="10" step="any">
         
-        <button type="submit" id="btn">average</button>
+        <button type="submit" name="send">average</button>
       </fieldset>
     </form>
 
+    <?php
+      if(isset($_POST["send"])){
+        //Pegando valores do formulário
+        $student = $_POST["student"];
+        $g1 = $_POST["g1"];
+        $g2 = $_POST["g2"];
+
+        //Calcular média
+        $average = ($g1 + $g2) / 2;
+      }
+    ?>
+
+    <!-- Execução no servidor -->
+    <script>
+      
+    </script>
+
+    <!-- Execução no cliente -->
     <script src="1211prw.js"></script>
   </body>
 </html>
