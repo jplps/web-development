@@ -1,9 +1,10 @@
 //Criação objetos para manipulações
 var button = document.getElementById('btn')
+var showButton = document.getElementById('btns')
 var input = document.getElementById('num')
 var paragraph = document.getElementById('container')
 
-//Declaração de literal
+//Declaração de literais
 var extract = () => {
   //Acesso ao valor numérico
   var num = input.value
@@ -17,5 +18,14 @@ var extract = () => {
   paragraph.setAttribute('class', 'show')
 }
 
-//Associação de cada evento ao seu objeto com literais
+var showMe = () => {
+  //Teste lógico para definir a classe do paragrafo
+  if(paragraph.className)
+    paragraph.setAttribute('class', '')
+  else
+    paragraph.setAttribute('class', 'show')
+}
+
+//Associação de cada evento ao seu objeto com literais definidos
 button.addEventListener('click', extract)
+showButton.addEventListener('click', showMe)
