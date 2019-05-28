@@ -51,7 +51,9 @@
 
     <!-- Execução no servidor -->
     <script>
-      
+      //Transferência de variável PHP / JS
+      var student = '<?php echo $student; ?>'
+      var average = '<?php echo $average; ?>'
     </script>
 
     <!-- Execução no cliente -->
