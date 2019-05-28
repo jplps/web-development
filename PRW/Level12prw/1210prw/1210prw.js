@@ -16,6 +16,7 @@ var extract = () => {
   paragraph.innerText = square_root
   //Ativação da classe do container (sem influenciar diretamente o css com paragraph.style.display)
   paragraph.setAttribute('class', 'show')
+  showButton.setAttribute('class', 'show')
 }
 
 var showMe = () => {
