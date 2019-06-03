@@ -13,13 +13,14 @@ const validateForm = e => {
 
   //Cancelar evento padrão (navegador não dispara o evento e)
   e.preventDefault()
-  
+
   //Criação de objetos para mostrar erros
   var mailerror = document.getElementById('mailerror')
   var passerror = document.getElementById('passerror')
   var passconfirmerror = document.getElementById('passconfirmerror')
   var registryerror = document.getElementById('registryerror')
   var justificationerror = document.getElementById('justificationerror')
+  
   //Acessar valores inputados pelo usuário
   var email = document.getElementById('email').value
   var pass = document.getElementById('pass').value
@@ -29,6 +30,7 @@ const validateForm = e => {
   var radio1 = document.getElementById('radio1')
   var radio2 = document.getElementById('radio2')
 
+  //Validação de email
   //Usando expressão regular para testar email (regex)
   var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   //Testando email conforme expressão (método test retorna boolean)
@@ -40,6 +42,30 @@ const validateForm = e => {
   }
   else mailerror.setAttribute('class', '')
 
+  //Validação de senha e confirmação de senha
+  /**
+   * Testando a senha, o método trim elimina espaços vazíos (em 
+   * branco) antes e depois dos caracteres (permite espaços no meio 
+   * da senha!)
+   */
+  pass = pass.trim()
+  //Testando quantidade de caracteres
+  if(pass.length < 6){
+    passerror.innerText = 'Pass cannot contain less than 6 characters.'
+    passerror.setAttribute('class', 'showme')
+    errors = true
+  }
+  else passerror.setAttribute('class', '')
+  //Testando confirmação de senha
+  passconfirm = passconfirm.trim()
+  if(!(passconfirm === pass)){
+    passconfirmerror.innerText = 'Passes do not match.'
+    passconfirmerror.setAttribute('class', 'showme')
+    errors = true
+  }
+  else passconfirmerror.setAttribute('class', '')
+
+  
 }
 
 //Associar evento submit ao formulário
