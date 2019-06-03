@@ -11,6 +11,9 @@ const validateForm = e => {
   //Cancelar evento padrão (navegador não dispara o evento e)
   e.preventDefault()
 
+  //Controle de erros
+  var errors = false
+
   //Criação de objetos para mostrar erros
   var mailerror = document.getElementById('mailerror')
   var passerror = document.getElementById('passerror')
@@ -28,8 +31,14 @@ const validateForm = e => {
 
   //Usando expressão regular para testar email (regex)
   var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  //Testando email conforme expressão (regex)
+  //Testando email conforme expressão (retorna boolean)
   var result = filter.test(email)
+  if(!result){
+    mailerror.innerText = 'Invalid e-Mail.'
+    mailerror.setAttribute('class', 'showme')
+    errors = true
+  }
+  else mailerror.setAttribute('class', '')
 
 }
 
