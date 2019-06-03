@@ -20,6 +20,10 @@ const validateForm = e => {
   var email = document.getElementById('email').value
   var pass = document.getElementById('pass').value
   var passconfirm = document.getElementById('passconfirm').value
+  var justification = document.getElementById('justification').value
+  //Acessar valores em inputs do tipo radio (sem atributo value)
+  var radio1 = document.getElementById('radio1')
+  var radio2 = document.getElementById('radio2')
   
 }
 
