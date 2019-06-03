@@ -16,7 +16,10 @@ const validateForm = e => {
   var passconfirmerror = document.getElementById('passconfirmerror')
   var registryerror = document.getElementById('registryerror')
   var justificationerror = document.getElementById('justificationerror')
-
+  //Acessar valores inputados pelo usuário
+  var email = document.getElementById('email').value
+  var pass = document.getElementById('pass').value
+  var passconfirm = document.getElementById('passconfirm').value
   
 }
 
