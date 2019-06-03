@@ -61,9 +61,9 @@
         <label class="align">registry type *</label>
         <br />
         <label id="registryerror"></label>
-        <input type="radio" name="course" id="1" value="tutor" />
+        <input type="radio" name="course" id="radio1" value="tutor" />
         <br />
-        <input type="radio" name="course" id="2" value="student" />
+        <input type="radio" name="course" id="radio2" value="student" />
         <br />
         <br />
         
