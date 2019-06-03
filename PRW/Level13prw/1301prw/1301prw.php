@@ -38,28 +38,33 @@
     <h1>js form validation</h1>
     
     <!-- Atributo novalidate cancela a ação padrão de validação do navegador -->
-    <form action="1301prw.php" method="post" id="form" novalidate>
+    <form method="post" id="form" novalidate>
       <fieldset>
         <legend>course registry</legend>
         
         <label class="align">email *</label>
         <input type="email" name="email" id="email" autofocus />
-        <label id="mailerror"></label><br />
+        <label id="mailerror"></label>
+        <br />
 
         <label class="align">pass (min. 6 chars)</label>
         <input type="password" name="pass" id="pass" />
-        <label id="passerror"></label><br />
+        <label id="passerror"></label>
+        <br />
 
         <label class="align">confirm pass</label>
         <input type="password" name="passconfirm" id="passconfirm" />
-        <label id="passconfirmerror"></label><br />
+        <label id="passconfirmerror"></label>
+        <br />
         <br />
 
         <label class="align">registry type *</label>
         <br />
         <label id="registryerror"></label>
-        <input type="radio" name="tutor" id="1" />tutor<br />
-        <input type="radio" name="student" id="2" />student<br />
+        <input type="radio" name="course" id="1" />tutor
+        <br />
+        <input type="radio" name="course" id="2" />student
+        <br />
         <br />
         
         <label class="align top">justification *</label>
