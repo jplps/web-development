@@ -65,7 +65,6 @@ const validateForm = e => {
   }
   else passconfirmerror.setAttribute('class', '')
 
-  
 }
 
 //Associar evento submit ao formulário
