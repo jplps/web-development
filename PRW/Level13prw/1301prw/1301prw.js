@@ -58,13 +58,22 @@ const validateForm = e => {
   else passerror.setAttribute('class', '')
   //Testando confirmação de senha
   passconfirm = passconfirm.trim()
-  if(!(passconfirm === pass)){
+  if(passconfirm != pass){
     passconfirmerror.innerText = 'Passes do not match.'
     passconfirmerror.setAttribute('class', 'showme')
     errors = true
   }
   else passconfirmerror.setAttribute('class', '')
 
+  //Validação dos botões de radio
+  if (!radio1.checked && !radio2){
+    registryerror.innerText = 'Select an option.'
+    registryerror.setAttribute('class', 'showme')
+    errors = true
+  }
+  else registryerror.setAttribute('class', '')
+
+  
 }
 
 //Associar evento submit ao formulário
