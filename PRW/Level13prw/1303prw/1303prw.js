@@ -1,51 +1,24 @@
-//Acesso ao formulário, atribuição de objeto
-var form = document.getElementById('form')
-/**
- * Literal de função para validar formulário, recebendo evento e 
- * 
- * Este evento é um objeto oferecido pelo js sempre que criarmos 
- * uma função que trata de um evento. Pode receber qualquer nome
- * para referência dentro do escopo.
-*/
-const validateChecks = e => {
-  //Criando objetos
-  var checkjava = document.getElementById('java')
-  var checkjavascript = document.getElementById('javascript')
-  var checkphp = document.getElementById('php')
-  var checkpython = document.getElementById('python')
-  var checkcpp = document.getElementById('cpp')
+//Acesso ao botão por meio de objeto btn
+var btn = document.getElementById('btn')
 
-  //Guardar quantidade marcada
-  var qtmarked = 0
+//Definição de literal de função
+const createVector = () => {
+  //Duas maneiras distintas de criar vetores manualmente
+  var vector1 = ['sunday', 'monday', 'tuesday']
+  var vector2 = new Array('sunday', 'monday', 'tuesday')
 
-  //Contando conforme marcação
-  if (checkjava.checked) {
-    qtmarked++
+  //Acessando células do vetor com for
+  var days = 'Vector 1: '
+  for (let i = 0; i < vector1.length; i++) {
+    days = days + '\n' + vector1[i]
   }
-  if (checkjavascript.checked) {
-    qtmarked++
-  }
-  if (checkphp.checked) {
-    qtmarked++
-  }
-  if (checkpython.checked) {
-    qtmarked++
-  }
-  if (checkcpp.checked) {
-    qtmarked++
-  }
-
-  //Utilizando contador
-  if (qtmarked == 0) {
-    alert('You must choose at least one language.')
-  }
-  if (qtmarked > 2) {
-    alert('You must choose two languages maximum.')
-  }
-
-  alert('You selected ' + qtmarked + ' languages.')
+  //Acessando células do vetor com foreach
+  days += '\n' + 'Vector 2:'
+  vector2.forEach(day => {
+    days += "\n" + day
+  })
+  alert(days)
 }
 
-//Associar evento submit ao formulário
-form.addEventListener('submit', validateChecks)
-
+//Associar evento click ao botão
+btn.addEventListener('click', createVector)
