@@ -49,14 +49,14 @@ const validateForm = e => {
    * da senha!)
    */
   pass = pass.trim()
-  //Testando quantidade de caracteres
+  //Testando quantidade de caracteres (método length)
   if(pass.length < 6){
     passerror.innerText = 'Pass cannot contain less than 6 characters.'
     passerror.setAttribute('class', 'showme')
     errors = true
   }
   else passerror.setAttribute('class', '')
-  //Testando confirmação de senha
+  //Testando confirmação de senha (sem espaços ao redor)
   passconfirm = passconfirm.trim()
   if(passconfirm != pass){
     passconfirmerror.innerText = 'Passes do not match.'
@@ -65,7 +65,7 @@ const validateForm = e => {
   }
   else passconfirmerror.setAttribute('class', '')
 
-  //Validação dos botões de radio
+  //Validação dos botões de radio (ao menos um botão de radio deve ser selecionado)
   if (!radio1.checked && !radio2){
     registryerror.innerText = 'Select an option.'
     registryerror.setAttribute('class', 'showme')
@@ -73,7 +73,17 @@ const validateForm = e => {
   }
   else registryerror.setAttribute('class', '')
 
-  
+  //Validação do textarea (sem espaços ao redor e não pode ser vazía)
+  justification = justification.trim()
+  if (justification.length == 0) {
+    justificationerror.innerText = 'Justification is mandatory.'
+    justificationerror.setAttribute('class', 'showme')
+    errors = true
+  }
+  else justificationerror.setAttribute('class', '')
+
+  //Lidando com os erros (se existir algum, não executar ação padrão)
+  if (errors) e.preventDefault()
 }
 
 //Associar evento submit ao formulário
