@@ -55,7 +55,8 @@
         <label class="align">confirm pass</label>
         <input type="password" name="passconfirm" id="passconfirm" />
         <label id="passconfirmerror"></label>
-        <br /><br />
+        <br />
+        <br />
 
         <label class="align">registry type *</label>
         <br />
@@ -63,7 +64,8 @@
         <input type="radio" name="course" id="radio1" value="tutor" />
         <br />
         <input type="radio" name="course" id="radio2" value="student" />
-        <br /><br />
+        <br />
+        <br />
         
         <label class="align top">justification *</label>
         <textarea type="text" name="justification" id="justification"></textarea>
