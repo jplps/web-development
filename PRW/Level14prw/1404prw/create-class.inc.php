@@ -12,7 +12,7 @@
      * 
      * Recebe a conexão e assegura a correta atribuição dos valores as variaveis..
      */
-		function registerData($connection){
+		function registerData($conn){
       /**
        * ***RISCO DE ATAQUE***
        * 
@@ -24,10 +24,10 @@
        * Para isso, usamos funções do PHP que impedem este tipo de ataque (trim
        * with escape_string).
        */
-			$reg = trim($connection->escape_string($_POST["reg"]));
-			$uc = trim($connection->escape_string($_POST["uc"]));
-			$g0 = trim($connection->escape_string($_POST["g0"]));
-			$g1 = trim($connection->escape_string($_POST["g1"]));
+			$reg = trim($conn->escape_string($_POST["reg"]));
+			$uc = trim($conn->escape_string($_POST["uc"]));
+			$g0 = trim($conn->escape_string($_POST["g0"]));
+			$g1 = trim($conn->escape_string($_POST["g1"]));
 			
 			//Atribuição cada variável aos campos da classe:
 			$this->reg = $reg;
@@ -42,7 +42,7 @@
      * 
      * Recebe a conexão e a tabela, e executa a Inserção de dados.
      */
-    function insert($connection, $table){
+    function insert($conn, $table){
       $sql = "INSERT $table VALUES (
         '$this->reg',
         '$this->uc',
@@ -51,7 +51,7 @@
       )";
 
       //Envia inserção ou garante aviso de erro:
-      $result = $connection->query($sql) || exit($connection->error);
+      $result = $conn->query($sql) || exit($conn->error);
       echo "<p>Success.</p>";
     }
 
@@ -61,12 +61,12 @@
      * 
      * Cálculo da média de notas, e geração de visualização.
      */
-    function average($connection, $table){
+    function average($conn, $table){
       //Criando consulta com aplicação matemática, com alias para nomear campo:
       $sql = "SELECT registry, (grade1 + grade2)/2 AS average FROM $table ";
 
       //Envia inserção ou garante aviso de erro:
-      $result = $connection->query($sql) || exit($connection->error);
+      $result = $conn->query($sql) || exit($conn->error);
 
       //Visualização:
       echo "<table>
@@ -108,10 +108,10 @@
      * 
      * Cálculo de quantos alunos estão com nota média acima de 6:
      */
-    function aboveAv($connection, $table){
+    function aboveAv($conn, $table){
       //COUNT: SQL argumento para contagem (* - entram na contagem células null):
       $sql = "SELECT COUNT(*) FROM $table WHERE (grade1 + grade2)/2 >= 6";  //Filtro de registro WHERE <teste lógico>;
-      $result = $connection->query($sql) || exit ($connection->error);
+      $result = $conn->query($sql) || exit ($conn->error);
 
       //***SEC1
       $line = $result->fetch_array();

@@ -1,4 +1,4 @@
 <?php
   //Selecionar db:
-  $connection->select_db($db);
+  $conn->select_db($db);
 ?>

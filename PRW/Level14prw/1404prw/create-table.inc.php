@@ -8,5 +8,5 @@
   )";
 
   //Evia consulta ou garante aviso de erro caso ocorra:
-  $result = $connection->query($sql) || exit($connection->error);
+  $result = $conn->query($sql) || exit($conn->error);
 ?>
