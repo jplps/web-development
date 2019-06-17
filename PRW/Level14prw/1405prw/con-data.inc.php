@@ -3,5 +3,5 @@
   $user = "root"; //Usuário do db (padrão);
   $pass = "aluno";  //Senha de instalação padrão IFSC-Linux;
   $db = "PRW"; //Nome do DB;
-  $table = "employees"; //Nome da Tabela;
+  $table = "funcionarios"; //Nome da Tabela;
 ?>
