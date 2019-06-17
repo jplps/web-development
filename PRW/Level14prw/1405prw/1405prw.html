@@ -17,7 +17,7 @@
 			h1{border-bottom:2px solid #666; margin:auto; padding:10px;
 			text-transform:capitalize; text-align:center; position:sticky; top:0;}
 			fieldset{margin-top:20px;}
-			.align {display:inline-block; width:100px;}
+			.align {display:inline-block; width:150px;}
 			input{margin:5px;width:150px;}
 			button, select{margin-top:10px;}
 			div#DivReturn{display:none;}
@@ -29,8 +29,9 @@
 		<h1>php + sql form fields</h1>
 
 		<form name="myform" action="#" method="post">
-			<legend>paycheck data</legend>
 			<fieldset>
+				<legend>paycheck data</legend>
+
 				<label class='align'>select employee</label>
 				<select name="operation" id="">
 					<option value="0">Registry</option>
@@ -39,11 +40,13 @@
 				</select>
 				<br/>
 
-				<button type="submit" name="submit">Send Your DaTA</button>
+				<button type="button" name="fulfill">fulfill select</button>
+				<button type="submit" name="submit">show paycheck</button>
 		</form>
 
 		<div id="DivReturn"></div>
 
-		<script src="1405prw.js"></script>
+		<script src="get-employees.js"></script>
+		<script src="show-paycheck.js"></script>
 	</body>
 </html>
