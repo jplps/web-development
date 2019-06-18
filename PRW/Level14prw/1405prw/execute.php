@@ -20,7 +20,5 @@
     echo "<option>$employee</option>"; 
   }
 
-  require "show-paycheck.php";
-  
   require "disconnect.inc.php";
 ?>
