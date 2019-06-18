@@ -1,5 +1,5 @@
 <?php
-  $sql = "INSERT  employees VALUE 
+  $sql = "INSERT  funcionarios VALUE 
     (DEFAULT, 'Carlos Almeida', 5700),
     (DEFAULT, 'Pedro Cavalcanti', 12700),
     (DEFAULT, 'Luiz Aguiar', 8200),
