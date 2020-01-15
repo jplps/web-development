@@ -135,9 +135,9 @@ Repo: http://hdam.pro.br/
 	Com relação ao atributo ID, só é possível existir um único elemento
 	atribuído à especificação (identidade única).
 	
-	.html													.css
+	.html									.css
 	<p class="centraliza">...			p.centraliza{...}
-	<p id="id001">...							#id001 {...}
+	<p id="id001">...				#id001 {...}
 	
 	- CORES:	
 		- RGB - Red Green Blue - (0 ~ 255, 0 ~ 255, 0 ~ 255). Isso leva à:
