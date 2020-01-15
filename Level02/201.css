@@ -1,14 +1,16 @@
 /* Inserindo fontes remotas: google fonts; O navegador busca na url definida */
 @import url('https://fonts.googleapis.com/css?family=Butcherman');
 
+/* Aplicação de estilos para todas as tags <h1> no documento. */
 h1 {
   /* Na aplicação de uma mesma fonte já definida em CSS interno (no .html),
   o navegador renderizará de acordo com a aparição dos códigos de cima para 
-  baixo (em ordem sequencial) */
+  baixo (em ordem sequencial). */
   font-family: 'Butcherman', cursive; 
 }
 
-/* Utilizando as Classes no modelo específico:
+/* Utilizando as Classes no modelo específico (note a substituição do estilo
+de uma tag <h1> já definida acima):
 atributo.classe{
   /* Exmeplo de efeito em cascata: propriedade que propaga-se para todos 
   filhos do elemento:
@@ -24,4 +26,9 @@ Utilizando as Classes no modelo geral: */
 #fontchanged {
   font-size: 19px;
   font-style: italic;
+}
+
+p {
+  /* Definindo margem automática centralizando conteúdo. */
+  margin: auto;
 }
