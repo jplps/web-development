@@ -1,9 +1,8 @@
 body {
   margin: 0;
   margin: auto;
-
-  /*ATENÇÃO: Garantir um tamanho mínimo para o navegador auxilia na integridade
-    dos elementos flutuados, entre outras estilizações que possam ser impactadas*/
+  /* ATENÇÃO: Garantir um tamanho mínimo para o navegador auxilia na integridade
+  dos elementos flutuados, entre outras estilizações que possam ser impactadas */
   min-width: 747px;
   max-width: 954px;
 }
@@ -15,13 +14,12 @@ h1 {
   margin: 20px auto;
   border-bottom: 1px solid #808080;
   box-shadow: 0 2px 0 0 rgba(80, 80, 80, 0.3);
-
-  /*Fixação de Elemento - lembrar de definir a localização (top, left, right, bottom)*/
+  /* Fixação de Elemento - lembrar de definir a localização (top, left, right, bottom) */
   position: sticky;
   top: 0;
 }
 
-/*Estilização dos FieldSets*/
+/* Estilização dos FieldSets */
 fieldset {
   text-transform: capitalize;
   margin: 20px;
@@ -39,10 +37,11 @@ fieldset.right {
   float: right;
 }
 
-/*Para os botões não tomarem o espaço entre os "fieldsets" limpam-se ambos os lados:*/
+/* Para os botões não tomarem o espaço entre os "fieldsets" limpam-se ambos os lados: */
 div.buttons {
   clear: both;
-  text-align: center; /*Botões são alinhados como texto!*/
+	/* Botões são alinhados como texto! */
+	text-align: center; 
 }
 
 button {
@@ -61,19 +60,19 @@ button {
   padding-top: 20px;
 }
 
-/*Declaração da label com parâmetro: for="aligna"*/
+/* Declaração da label com parâmetro: for="aligna" */
 label[for='aligna'] {
-  /*Converte um elemento para que apresente ao mesmo tempo características
+  /* Converte um elemento para que apresente ao mesmo tempo características
     inline e de bloco. Obedece altura largura e margem, mas admite outros el.
-    ao seu lado*/
+    ao seu lado */
   display: inline-block;
 
   width: 30%;
   text-align: right;
 }
 
-/*Ao invés de utilizar classes, utilizaremos os Seletores Complexos (especialmente
-os seletores de atributos para modificar o tamanho das caixas de input em questão)*/
+/* Ao invés de utilizar classes, utilizaremos os Seletores Complexos (especialmente
+os seletores de atributos para modificar o tamanho das caixas de input em questão) */
 input[name='nomeusuario'],
 input[name='email'],
 input[name='phone'],
@@ -90,8 +89,9 @@ textarea {
   font-weight: bold;
 }
 
-/*Formatação do <textarea>*/
+/* Formatação do <textarea> */
 textarea {
   color: #808080;
-  resize: none; /*Alterações do parâmetro de redimensionamento da caixa de texto*/
+	/* Alterações do parâmetro de redimensionamento da caixa de texto */
+	resize: none; 
 }
