@@ -2,13 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Butcherman');
 
 h1 {
-  font-family: 'Butcherman', cursive; /* Na aplicação de uma mesma fonte já definida em CSS interno (no .html),
-o navegador renderizará de acordo com a aparição dos códigos de cima para baixo (em ordem sequencial) */
+  /* Na aplicação de uma mesma fonte já definida em CSS interno (no .html),
+  o navegador renderizará de acordo com a aparição dos códigos de cima para 
+  baixo (em ordem sequencial) */
+  font-family: 'Butcherman', cursive; 
 }
 
 /* Utilizando as Classes no modelo específico:
 atributo.classe{
-    font-family: 'Butcherman', cursive; /* Exmeplo de efeito em cascata: propriedade que propaga-se para todos filhos do elemento
+  /* Exmeplo de efeito em cascata: propriedade que propaga-se para todos 
+  filhos do elemento:
+  font-family: 'Butcherman', cursive; 
 } 
 
 Utilizando as Classes no modelo geral: */
