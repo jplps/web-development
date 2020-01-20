@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>Basic CSS</title>
+
+	<!-- Primeiro tipo de CSS: Icorporated (logo antes de fechar </head>,
+	definido pela tag <style>). Menos vantajoso, pois aumenta muito o código. -->
+	<style>
+		body {
+			/* Cor com transparência */
+			background-color: rgba(12, 200, 99, 60%);
+			/* Fonte (.ttf .otf entre outras) de tudo que estiver escrito em <body> */
+			font-family: Calibri;
+		}
+
+		h2 {
+			/* Alinhamento de texto */
+			text-align: right;
+			/* Cor em hexadecimal (lembrando que quando há conflito de regras - 
+			valores diferentes - o atributo mais próximo da tag tem prioridade. 
+			No caso abaixo, o css inline é obedecido no primeiro h2) */
+			color: #d7da4c;
+		}
+
+		p,
+		body {
+			/* Argumento border se suas características básicas: style, color e width
+			border-style: groove;
+			border-color: #3a596e;
+			border-width: 18px;
+
+			Modo compacto de declaração: */
+			border: 20px groove #3a596e;
+			/* O argumento border não é um elemento que sofre o efeito cascata: o 
+			efeito não se aplica para todos os elementos filhos */
+			border-top-color: aquamarine;
+			/* Configuração dos lados individualmente */
+			border-left-style: dashed;
+			border-right-width: 7px;
+			/* Largura padrão é sempre 100% do elemento pai, nesse caso o elemento 
+			body e simultaneamente parágrafos "p" */
+			width: 80%;
+			/*height: 30px; /* Sempre unidade absoluta: cm, mm, px. Altura é sempre 
+			um potencial problema de conflito, o navegador vazará os elementos que 
+			não couberem na altura definida */
+		}
+	</style>
+
+	<!-- CSS externo só pode ser chamado na seção da tag <head> do documento:
+	rel - relative, relacionado a (conteúdo);
+	href - referência, caminho do link; -->
+	<link rel="stylesheet" href="100.css">
+</head>
+
+<body>
+	<!-- Tag <br>: quebra de linha -->
+	<h1>Introduction to:<br>CSS</h1>
+
+	<!-- Segundo tipo de CSS: Inline -->
+	<h2 style="color:red; text-align:center;">Fundamentals</h2>
+
+	<!-- Atributo Class: referencia o parágrafo através de um identificador 
+	na tag de abertura e utilizado no arquivo .css -->
+	<h2 class="butcherman">Advantages</h2>
+
+	<p>
+		CSS is the English abbreviation for the term Cascading Style Sheet, or in Portuguese, "folhas de estilo em cascata".
+		"Leaf Cascading style is a simple mechanism for adding styles (fonts, colors, spacing, etc ...) to a
+		HTML document." Stylization! Formatting ranges from font colors and fonts to font definitions.
+		opacities, transparencies, even the most complex part of the layout of elements (mates,
+		content - x, y, z ... axes) on the same page.
+	</p>
+
+	<p class="butcherman">
+		CSS is not a programming language, there are disagreements about language aspects by
+		different authors, but there is a set of rules and syntax to make sense of the written data. Thus,
+		can also be considered a markup language. Separating style and semantic meaning, CSS helps in
+		size and complexity of an html file.
+	</p>
+
+	<!-- Atributo Id: deve ser único, não se repetirá -->
+	<p id="fontchanged">
+		It is the basic unit of a style sheet. Basic unit means the smallest portion of code
+		able to style a particular HTML element. See below for the main components of a CSS rule. O
+		Grouping of various CSS rules make up what we call a style sheet.
+	</p>
+</body>
+
+</html>
