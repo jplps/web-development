@@ -1,14 +1,15 @@
-/*caixa de conteúdo total*/
+body {
+  margin: 0;
+}
+
+/* Caixa de conteúdo total */
 .content {
   max-width: 80%; /*largura 80% da tela*/
   margin: auto; /*margem externa distribuida*/
   padding-top: 90px;
 }
 
-body {
-  margin: 0;
-}
-/*cabeçalho colorido*/
+/* Cabeçalho */
 header {
   text-align: center;
   width: 100%;
@@ -16,41 +17,18 @@ header {
   top: 0;
   left: 0;
 }
-/*caixa do texto "surfe" em verde*/
+
 .head {
   color: #37ff25;
   margin-block-end: 0;
   margin-block-start: 0;
-  background-color: #ff00bf; /*fundo em cor pink*/
+  /* Fundo em cor pink */
+  background-color: #ff00bf; 
   padding: 20px;
   font-size: 30px;
 }
 
-/*rodapé colorido azul e amarelo*/
-footer {
-  text-align: right; /**/
-  color: #0077ff; /**/
-  background-color: #eeff00; /**/
-  margin: 0;
-}
-
-/**/
-p.foot {
-  margin: 0;
-  padding: 20px;
-}
-.peix {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-/**/
-.main {
-  padding: 85px 10px;
-}
-
+/* Menu */
 .menu {
   width: 20%;
   background-color: #ff0000;
@@ -59,27 +37,46 @@ p.foot {
   float: left;
 }
 
+/* Sessão */
 .section {
   width: 80%;
   float: right;
   background-color: #0077ff;
 }
-
 .section p {
   margin: 0;
   padding: 20px;
 }
-
 .section h2 {
   margin: 0;
   padding: 20px;
 }
 
-/**/
+/* Unordered List */
 ul {
   text-align: left;
   list-style-type: none;
   padding: 10px;
   margin-block-start: 0%;
   margin-block-end: 0%;
+}
+
+/* Rodapé */
+footer {
+  text-align: right; /**/
+  color: #0077ff; /**/
+  background-color: #eeff00; /**/
+  margin: 0;
+}
+
+.rodape {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+p.foot {
+  margin: 0;
+  padding: 20px;
 }
