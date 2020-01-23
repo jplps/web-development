@@ -5,8 +5,10 @@
 	<meta charset="utf-8">
 	<title>Basic CSS</title>
 
-	<!-- Primeiro tipo de CSS: Icorporated (logo antes de fechar </head>,
-	definido pela tag <style>). Menos vantajoso, pois aumenta muito o código. -->
+	<!-- 
+		Primeiro tipo de CSS: Icorporated (logo antes de fechar </head>,
+		definido pela tag <style>). Menos vantajoso, pois aumenta muito o código. 
+	-->
 	<style>
 		body {
 			/* Cor com transparência */
@@ -18,9 +20,11 @@
 		h2 {
 			/* Alinhamento de texto */
 			text-align: right;
-			/* Cor em hexadecimal (lembrando que quando há conflito de regras - 
-			valores diferentes - o atributo mais próximo da tag tem prioridade. 
-			No caso abaixo, o css inline é obedecido no primeiro h2) */
+			/* 
+				Cor em hexadecimal (lembrando que quando há conflito de regras - 
+				valores diferentes - o atributo mais próximo da tag tem prioridade. 
+				No caso abaixo, o css inline é obedecido no primeiro h2) 
+			*/
 			color: #d7da4c;
 		}
 
@@ -33,25 +37,35 @@
 
 			Modo compacto de declaração: */
 			border: 20px groove #3a596e;
-			/* O argumento border não é um elemento que sofre o efeito cascata: o 
-			efeito não se aplica para todos os elementos filhos */
+			/* 
+				O argumento border não é um elemento que sofre o efeito cascata: o 
+				efeito não se aplica para todos os elementos filhos 
+			*/
 			border-top-color: aquamarine;
 			/* Configuração dos lados individualmente */
 			border-left-style: dashed;
 			border-right-width: 7px;
-			/* Largura padrão é sempre 100% do elemento pai, nesse caso o elemento 
-			body e simultaneamente parágrafos "p" */
+			/* 
+				Largura padrão é sempre 100% do elemento pai, nesse caso o elemento 
+				body e simultaneamente parágrafos "p" 
+			*/
 			width: 80%;
-			/*height: 30px; /* Sempre unidade absoluta: cm, mm, px. Altura é sempre 
-			um potencial problema de conflito, o navegador vazará os elementos que 
-			não couberem na altura definida */
+			/*
+				Sempre unidade absoluta: cm, mm, px. Altura é sempre 
+				um potencial problema de conflito, o navegador vazará os elementos que 
+				não couberem na altura definida 
+
+				height: 30px;
+			*/
 		}
 	</style>
 
-	<!-- CSS externo só pode ser chamado na seção da tag <head> do documento:
-	rel - relative, relacionado a (conteúdo);
-	href - referência, caminho do link; -->
-	<link rel="stylesheet" href="100.css">
+	<!-- 
+		CSS externo só pode ser chamado na seção da tag <head> do documento:
+		rel - relative, relacionado a (conteúdo);
+		href - referência, caminho do link; 
+	-->
+	<link rel="stylesheet" href="./00.css">
 </head>
 
 <body>
@@ -61,8 +75,10 @@
 	<!-- Segundo tipo de CSS: Inline -->
 	<h2 style="color:red; text-align:center;">Fundamentals</h2>
 
-	<!-- Atributo Class: referencia o parágrafo através de um identificador 
-	na tag de abertura e utilizado no arquivo .css -->
+	<!-- 
+		Atributo Class: referencia o parágrafo através de um identificador 
+		na tag de abertura e utilizado no arquivo .css 
+	-->
 	<h2 class="butcherman">Advantages</h2>
 
 	<p>

@@ -1,12 +1,12 @@
+/* Atributos Gerais */
 @import url('https://fonts.googleapis.com/css?family=Codystar');
 
-/*Atributos Gerais*/
 body {
   font-size: 120%;
   margin: 0;
 }
 
-/*Título e Descrição (head da página)*/
+/* Título e Descrição (head da página) */
 header {
   background-color: #c7c7c7;
 }
@@ -30,7 +30,7 @@ p {
   border-bottom: 1px dashed #636363;
 }
 
-/*Atributos Específicos*/
+/* Atributos Específicos */
 table {
   font-family: 'Codystar', cursive;
   font-weight: bold;
@@ -39,7 +39,7 @@ table {
   margin: auto;
   height: 450px;
   box-shadow: 0 5px 3px rgba(99, 99, 99, 0.5);
-  /*Zerar espaço entre as bordas internas*/
+  /* Zerar espaço entre as bordas internas */
   border-spacing: 0;
 }
 
@@ -51,7 +51,7 @@ caption {
 
 td,
 th {
-  /*Bordas das Células*/
+  /* Bordas das Células */
   border: 1px solid #636363;
 }
 

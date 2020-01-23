@@ -3,17 +3,22 @@
 
 /* Aplicação de estilos para todas as tags <h1> no documento. */
 h1 {
-  /* Na aplicação de uma mesma fonte já definida em CSS interno (no .html),
-  o navegador renderizará de acordo com a aparição dos códigos de cima para 
-  baixo (em ordem sequencial). */
+  /* 
+    Na aplicação de uma mesma fonte já definida em CSS interno (no .html),
+    o navegador renderizará de acordo com a aparição dos códigos de cima para 
+    baixo (em ordem sequencial). 
+  */
   font-family: 'Butcherman', cursive; 
 }
 
-/* Utilizando as Classes no modelo específico (note a substituição do estilo
-de uma tag <h1> já definida acima):
+/* 
+  Utilizando as Classes no modelo específico (note a substituição do estilo
+  de uma tag <h1> já definida acima):
 atributo.classe{
-  /* Exmeplo de efeito em cascata: propriedade que propaga-se para todos 
-  filhos do elemento:
+  /* 
+    Exmeplo de efeito em cascata: propriedade que propaga-se para todos 
+    filhos do elemento:
+  
   font-family: 'Butcherman', cursive; 
 } 
 

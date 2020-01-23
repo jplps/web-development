@@ -1,8 +1,10 @@
 body {
   margin: 0;
   margin: auto;
-  /* ATENÇÃO: Garantir um tamanho mínimo para o navegador auxilia na integridade
-  dos elementos flutuados, entre outras estilizações que possam ser impactadas */
+  /* 
+    ATENÇÃO: Garantir um tamanho mínimo para o navegador auxilia na integridade
+    dos elementos flutuados, entre outras estilizações que possam ser impactadas 
+  */
   min-width: 747px;
   max-width: 954px;
 }
@@ -62,17 +64,21 @@ button {
 
 /* Declaração da label com parâmetro: for="aligna" */
 label[for='aligna'] {
-  /* Converte um elemento para que apresente ao mesmo tempo características
+  /* 
+    Converte um elemento para que apresente ao mesmo tempo características
     inline e de bloco. Obedece altura largura e margem, mas admite outros el.
-    ao seu lado */
+    ao seu lado 
+  */
   display: inline-block;
 
   width: 30%;
   text-align: right;
 }
 
-/* Ao invés de utilizar classes, utilizaremos os Seletores Complexos (especialmente
-os seletores de atributos para modificar o tamanho das caixas de input em questão) */
+/* 
+  Ao invés de utilizar classes, utilizaremos os Seletores Complexos (especialmente
+  os seletores de atributos para modificar o tamanho das caixas de input em questão) 
+*/
 input[name='nomeusuario'],
 input[name='email'],
 input[name='phone'],
