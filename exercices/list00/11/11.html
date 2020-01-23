@@ -1,0 +1,65 @@
+<!--
+  Ex.12 - Documento web, utilizando padrões HTML5 contendo:
+		- Parágrafos, Cabeçalhos, Links e Listas;
+		- Arquivo principal para estilização dos principais elementos;
+		- Comentário no arquivo de estilo;
+		- Parágrafo com tamanho de fonte 120% e cor azul;
+		- Parágrafo diferente com fonte vermelha (utilizando ID);
+		- Link estilizado (estilo de fonte oblíqua);
+		- Borda marrom ao redor de todos os cabeçalhos (espessura de 5px - utilizando CLASSE);
+		- Borda marrom em um segundo cabeçalho (espessura de 10px - utilizando ID);
+		- Uma das listas deverá ser centralizada na página;
+		- Um cabeçalho deverá apresentar texto marcado com linha na horizontal;
+		- Mude o tipo de fonte de todo o documento para Calibri tamanho 2em;
+		- Borda ao redor da última lista do documento;
+		- 5% de margem inferior para todos os objetos;
+		- Defina margem superior de um dos links em 80px (utilizando CLASSE);
+		- Define margem esquerda de um segundo link em 3em (utilizando CLASSE);
+
+	Obs.: Uso de CSS externo.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title> Ex.: 12 </title>
+	<link rel="stylesheet" href="./11.css">
+</head>
+
+<body>
+	<!--Parágrafos, Cabeçalhos, Links e Listas;-->
+	<header>Header</header>
+
+	<p>
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam officia beatae nihil, facere dignissimos cumque
+		perspiciatis, odit nam commodi eius hic libero consequuntur facilis atque minus aliquam, nisi numquam deserunt.
+	</p>
+
+	<a class="link1" href="default.asp" target="_blank">This is a link.</a>
+
+	<header id="master">Header 2</header>
+
+	<p id="par2">
+		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, quod? Obcaecati, dolorum? Eaque consequuntur cum
+		qui sequi explicabo in nisi illo vitae quo natus enim maiores deserunt temporibus, quidem minus!
+	</p>
+
+	<p>Unordered list:</p>
+	<ul class="a">
+		<li>First</li>
+		<li>Second</li>
+		<li>Third</li>
+	</ul>
+
+	<p>Ordered list:</p>
+	<ol class="b">
+		<li>First</li>
+		<li>Second</li>
+		<li>Third</li>
+	</ol>
+
+	<a class="link2" href="default.asp" target="_blank">Aaaaand this is another link</a>
+</body>
+
+</html>
