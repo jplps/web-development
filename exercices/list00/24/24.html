@@ -1,0 +1,75 @@
+<!--
+	Ex.25 - Documento web, utilizando padrões HTML5 contendo:
+		- Construção de Formulário;
+    
+	Obs.: Uso de CSS externo.
+    
+	Este documento é uma aproximação em um exercício visual. A diferença é que para
+	o posicionamento ser eficiente utilizamos <div>s para controlar seu espaço e
+	localização, bem como o posicionamento do seu conteúdo, podendo este, ser inserido
+	em outra <div> com a utilização de classes e ids para gerir os recursos de
+	comportamentos.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Ex.: 25 </title>
+	<link rel="stylesheet" href="./24.css">
+</head>
+
+<body>
+	<h1>form 3</h1>
+
+	<form action="" method="POST" enctype="multipart/form-data">
+		<fieldset>
+			<legend>article</legend> <br>
+
+			<div class="row">
+				<div class="coll">
+					<label for="aligna">title</label> <br>
+				</div>
+
+				<div class="colr">
+					<input type="text" class="righted"> <br>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="coll">
+					<label for="aligna">publish date</label>
+				</div>
+
+				<div class="colr">
+					<input type="date" class="righted"> <br>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="coll">
+					<label for="aligna">keywords</label>
+				</div>
+
+				<div class="colr">
+					<textarea name="keywords" cols="20" rows="5"></textarea> <br>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="coll">
+					<label for="" id="upld">upload (pdf, &lt;50kb)</label>
+				</div>
+
+				<div class="colr">
+					<input type="file" name="uploadedfiles" class="righteddiff"><br> <br>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<button type="submit" name="submit">submit article</button>
+</body>
+
+</html>
