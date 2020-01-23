@@ -1,0 +1,60 @@
+/* Fonte Remota */
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+body {
+  font-family: 'Cinzel', serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cabeçalho */
+header h1 {
+  text-align: center;
+  box-shadow: 0 0 30px #888888;
+  width: 100%;
+  background-color: #888888;
+  margin: 0;
+}
+
+/* Elemento Especial */
+#titulolista {
+  text-align: center;
+}
+
+/* Lista Ordenada */
+ol.nivel1 {
+  list-style-type: upper-latin;
+  border: 1px solid #888888;
+  width: 300px;
+  margin: auto;
+  background-image: url('./img/black.jpg');
+  color: #888888;
+  background-repeat: no-repeat;
+}
+
+/* Imagem Flutuada à direita */
+.img1 {
+  float: right;
+  padding-left: 30px;
+}
+
+/* Ultimo parágrafo */
+.justify {
+  text-align: justify;
+}
+
+/* Segundo paragrafo */
+#colored {
+  color: #521b86;
+}
+
+/* Link */
+a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+  background-color: #888888;
+}

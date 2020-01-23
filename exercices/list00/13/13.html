@@ -1,0 +1,81 @@
+<!--
+	Ex.14 - Criação de uma página da web que seja um documento
+	HTML5 válido com:
+		- Um cabeçalho <h1> como título;
+		- Listas Ordenadas utilizando tag <p> para o título da lista (numerador externo via css externo - classe: ol.nivel1);
+		- Imagem (local ou remota);
+		- Parágrafos de texto;
+		- Um link qualquer;
+	Para os estilos:
+		- Fonte de toda a página importada do Google;
+		- Texto do cabeçalho centralizado na página;
+		- Sombra ao redor dos quatro lados do cabeçalho;
+		- Largura definida para <h1> = Largura da tela;
+		- Cor de fundo para o cabeçalho <h1>;
+		- Medidas ajustadas para a posição do cabeçalho;
+		- Texto do Título da lista centralizado;
+		- Tipo de numerador e borda da lista mais externa
+		- Largura da lista mais externa definida;
+		- Lista externa centralizada;
+		- Lista externa com imagem de fundo;
+		- Imagem flutuada à direita para que o texto suba;
+		- Imagem afastada do texto em 30px;
+		- Texto do último parágrafo (somente) justificado;
+		- Cor alterada da fonte do segundo parágrafo (por ID);
+		- Link estilizado sem sublinhado;
+		- Link estilizado para o estado Hover: sublinhado e cor de fundo;
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title> Ex.: 13 </title>
+	<link rel="stylesheet" href="13.css">
+</head>
+
+<body>
+	<header class="shadow">
+		<h1>Header Title</h1>
+	</header>
+
+	<p id="titulolista">List Title</p>
+
+	<ol class="nivel1">
+		<li>List Level 1
+			<ol>
+				<li>List Level 2</li>
+				<li>List Level 2</li>
+			</ol>
+		</li>
+
+		<li>List Level 1
+			<ol>
+				<li>List Level 2</li>
+				<li>List Level 2</li>
+			</ol>
+		</li>
+	</ol>
+
+	<img class="img1" src="./img/black.jpg" alt="Metallica Album Cover" title="Black Album">
+
+	<p id="colored">
+		Lorem ipsum dolor sit, amet consectetur adipisicing
+		elit. Quasi fugit animi, tempore magni doloribus
+		magnam unde repudiandae minus incidunt soluta vero
+		dolor in cumque architecto molestiae adipisci accusamus,
+		praesentium impedit!
+	</p>
+
+	<p class="justify">
+		Lorem ipsum dolor sit, amet consectetur adipisicing
+		elit. Quasi fugit animi, tempore magni doloribus
+		magnam unde repudiandae minus incidunt soluta vero
+		dolor in cumque architecto molestiae adipisci accusamus,
+		praesentium impedit!
+	</p>
+
+	<a href="../14/14.html" title="Next Exercice">Next Exercice</a>
+</body>
+
+</html>
