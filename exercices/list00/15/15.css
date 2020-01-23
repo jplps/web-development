@@ -1,0 +1,27 @@
+header,
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#head1 {
+  color: #555;
+}
+
+#head2 {
+  color: #0000ff;
+}
+
+header,
+p,
+h2 {
+  border: 2px solid #555;
+  background-color: #c2c25c;
+}
+
+p.changed {
+  height: 400px;
+  padding: 20px;
+  border-right: 2px inset #0000ff;
+  border-left: 5px solid #ff0000;
+  padding-top: 50px;
+}
