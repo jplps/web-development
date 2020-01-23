@@ -1,4 +1,4 @@
-/*Global*/
+/* Global */
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -14,11 +14,7 @@ h2 {
   padding-bottom: 10px;
 }
 
-/*Especificos:
-  Tabela centralizada horizontalmente na página;
-  Tabela com largura de 80%;
-  Borda de 3px;
-  Cor da borda externa em azul;*/
+/* Específicos */
 table {
   height: 10em;
   display: flex;
@@ -34,7 +30,7 @@ table {
   padding-bottom: 20px;
 }
 
-/*Linhas internas de 3px de grossura;*/
+/* Linhas Internas */
 td,
 th {
   border: 3px dotted #000;
@@ -45,12 +41,12 @@ th {
   text-align: center;
 }
 
-/*Cor de fundo qualquer para linhas de cabeçalho;*/
+/* Cabeçalhos de Tabela */
 th {
   background-color: #b2b2b2;
 }
 
-/*Imagem de fundo para a célula cujo conteúdo é "31%";*/
+/* Imagem de Fundo de Célula */
 #photoed {
   background-image: url('./sublime.jpg');
   background-size: 100%;

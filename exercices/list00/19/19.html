@@ -1,0 +1,51 @@
+<!--
+	Ex.20 - Documento web, utilizando padrões HTML5 contendo:
+		- Construção de Tabelas;
+		- Tabela centralizada horizontalmente na página;
+  	- Tabela com largura de 80%;
+  	- Borda de 3px;
+		- Cor da borda externa em azul;
+		- Linhas internas de 3px de grossura;
+		- Cor de fundo qualquer para linhas de cabeçalho;
+		- Imagem de fundo para célula;
+
+	Obs.: Uso de CSS externo.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Ex.: 20 </title>
+	<link rel="stylesheet" href="./19.css">
+</head>
+
+<body>
+	<h2>table 3</h2>
+
+	<table>
+		<tr>
+			<th colspan="3">anual growth</th>
+		</tr>
+
+		<tr>
+			<th>name</th>
+			<th>2008</th>
+			<th>2009 pred.</th>
+		</tr>
+
+		<tr class="linhas">
+			<td>internet</td>
+			<td class="centered">what%</td>
+			<td rowspan="2" class="centered" id="photoed">who%</td>
+		</tr>
+
+		<tr class="linhas">
+			<td>low cost pc's</td>
+			<td class="centered">when%</td>
+		</tr>
+	</table>
+</body>
+
+</html>
