@@ -1,4 +1,4 @@
-/*Global*/
+/* Global */
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -14,7 +14,7 @@ h2 {
   padding-bottom: 10px;
 }
 
-/*Especificos*/
+/* Especifico */
 table {
   border-spacing: 0;
 }

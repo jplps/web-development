@@ -1,0 +1,97 @@
+<!--
+	Ex.24 - Documento web, utilizando padrões HTML5 contendo:
+		- Demonstração de Construção de Formulário;
+		- Estilização à gosto;
+
+	Obs.: Uso de CSS externo.
+
+	Este documento é uma aproximação em um exercício visual. A diferença é que para
+	o posicionamento ser eficiente utilizamos <div>s para controlar seu espaço e
+	localização, bem como o posicionamento do seu conteúdo, podendo este, ser inserido
+	em outra <div> com a utilização de classes e ids para gerir os recursos de
+	comportamentos.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Ex.: 24 </title>
+	<link rel="stylesheet" href="./23.css">
+</head>
+
+<body>
+	<h1>form 2</h1>
+
+	<form action="" method="POST" enctype="multipart/form-data">
+		<fieldset class="left">
+			<legend>sign up</legend><br>
+
+			<div class="heightdef">
+				<div class="row">
+					<div class="coll">
+						<label for="aligna">client code</label> <br>
+					</div>
+
+					<div class="colr">
+						<input type="number" class="righted"> <br>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="coll">
+						<label for="aligna">value ($)</label>
+					</div>
+
+					<div class="colr">
+						<input type="number" class="righted"> <br>
+					</div>
+				</div>
+
+				<div class="clearer">
+					<br> <label for="aligna">selected equip.:</label> <br>
+					<input type="radio" name="seleq"> printer <br>
+					<input type="radio" name="notebook"> notebook <br>
+					<input type="radio" name="smartphone"> smartphone
+				</div>
+			</div>
+
+			<br>
+
+			<button type="submit" name="submit">submit buy</button>
+		</fieldset>
+
+		<fieldset class="right">
+			<legend>change info</legend> <br>
+
+			<div class="heightdef">
+				<div class="row">
+					<div class="coll">
+						<label for="aligna">client code (search)</label>
+					</div>
+
+					<div class="colr">
+						<input type="number" class="righted"> <br>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="coll">
+						<label for="aligna">new value ($)</label>
+					</div>
+
+					<div class="colr">
+						<input type="number" class="righted"> <br>
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+			<button type="submit" name="submit" class="clearer">submit change</button>
+		</fieldset>
+	</form>
+</body>
+
+</html>

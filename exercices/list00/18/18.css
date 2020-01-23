@@ -1,4 +1,4 @@
-/*Global*/
+/* Global */
 body {
   margin: 0;
   text-transform: capitalize;
@@ -12,7 +12,7 @@ h2 {
   border-bottom: 2px ridge #000;
 }
 
-/*Específicos*/
+/* Específico */
 table {
   border: 1px ridge #000;
   margin: auto;

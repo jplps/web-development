@@ -1,4 +1,4 @@
-/*Global*/
+/* Global */
 body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -32,7 +32,7 @@ div {
   padding-bottom: 20px;
 }
 
-/*Especificos*/
+/* Especifico */
 caption {
   text-align: right;
   background-color: #fff;
