@@ -95,8 +95,9 @@ Separando estilo e significado semântico, o CSS ajuda no tamanho e complexidade
 
 	- Para cada tipo de seletor, pode-se utilizar dois tipos principais de atributos: classe e id, separando os estilos de acordo com a necessidade. Regras básicas: comunicação pura, sem começar com dígitos, sem espaços em branco ou carácteres especiais (ç, ã...). Com relação ao atributo ID, só é possível existir um único elemento atribuído à especificação (identidade única).
 
-	.html						.css
-	`<p class="centraliza">`...			p.centraliza{...}
+	Do html para o .css:
+
+	`<p class="centraliza">`...			p.centraliza{...}  
 	`<p id="id001">`...				#id001 {...}
 
 - CORES:	
@@ -105,21 +106,21 @@ Separando estilo e significado semântico, o CSS ajuda no tamanho e complexidade
 	Ex.: rgb(22,117,49); ou rgb(45%,125,10%);
 	
 	- Hexadecimal
-		D			H
-		0			0
-		1			1
-		2			2
-		...			...
-		9			9
-		10			A
-		11			B
-		12			C
-		13			D
-		14			E
-		15			F
-		...			...
-		255			FF
-	Ex.: #1CA71A
+			D			H
+			0			0
+			1			1
+			2			2
+			...			...
+			9			9
+			10			A
+			11			B
+			12			C
+			13			D
+			14			E
+			15			F
+			...			...
+			255			FF
+		Ex.: #1CA71A
 	
 	- RGBA - A = Opacidade entre 0 ~ 1.
 	Ex.: rgba(12,200,99,0.6); ou rgba(12,200,99,60%);
