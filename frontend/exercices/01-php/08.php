@@ -1,191 +1,170 @@
+<?php
+  //Criando matriz (tridimensional arrays) para armazenar dados:
+  $accounts["1010-x1"] = ["Joana de Almeida", 6800];
+  $accounts["1010-x2"] = ["Genésio de  Ataíde", 15300];
+  $accounts["1010-x3"] = ["Maria das Graças", 4100.12];
+  $accounts["1010-x4"] = ["Calorine Prado", 2300.76];
+
+  // //Referência:
+  // echo "<pre>";
+  // print_r($accounts);
+  // echo "</pre>";
+?>
 <!DOCTYPE html>
 <html lang="en">
-	<!--
-		Notas:
-		Diretório geral em debian-based distros: /var/www/html;
-		Endereço http://localhost/path/to/file.php para acessar a aplicação;
-		Ex.: 5 - Arrays & PHP
-	-->
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Notas:
+    Diretório geral em debian-based distros: /var/www/html;
+    Endereço http://localhost/path/to/file.php para acessar a aplicação;
+    Ex.: 9 - Arrays & PHP
+  -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>PRW 805</title>
+    <title>PRW 806</title>
 
-		<style>
-			body{width: 80%; color: #666; margin: auto;}
-			h1{border-bottom: 2px solid #666; margin: auto; padding: 10px;
-			text-transform: capitalize; text-align: center;}
-			fieldset{margin: 20px auto;}
-			span{font-weight: bold; font-size: 150%;}
-			table{width: 50%; margin: auto; border: 1px solid #666; border-collapse: collapse;}
-			caption{text-align: left; font-style: italic; margin-bottom: 5px;}
-			th{background: #999;}
-			td{padding-left: 10px;}
-			td.centralize, p{text-align: center;}
-			td, th{border: 1px solid #b1b1b1;}
-			input, button {margin: 5px 0;}
-		</style>
-	</head>
+    <style>
+			body{width:66.6%; color:#666; margin: auto;}
+			h1{border-bottom:2px solid #666; margin:auto; padding:10px;
+			text-transform:capitalize; text-align:center; position:sticky; top:0;}
+			fieldset{margin-top:20px;}
+			input{margin:5px;}
+			p{float:right;}
+      table{margin: auto; border: 1px solid #666; border-collapse: collapse;}
+      caption{text-align: left; font-style: italic; margin-bottom: 5px;}
+      th{background: #999;}
+      td{padding-left: 10px;}
+      td.centralize, p{text-align: center;}
+      td, th{min-width:70px;border: 1px solid #b1b1b1;}
+    </style>
+  </head>
 
-	<body>
-		<h1>php arrays 5</h1>
+  <body>
+    <h1>php arrays 6</h1>
 
-		<form id="form" action="" method="post">
-			<fieldset id="product1">
-				<legend>Product Registration 1</legend>
+    <form id="form" action="" method="post">
+      <fieldset>
+        <legend>Data Process</legend>
 
-				<label for="">Code:</label>
-				<input type="text" name="code1" autofocus>
-				<br/>
+        <label for="">Account:</label>
+        <input type="text" name="account" id="">
 
-				<label for="">In Stock:</label>
-				<input type="number" name="stock1" min="0">
-				<br/>
+        <br/>
 
-				<label for="">Un Price:</label>
-				<input type="number" name="price1" min="0" step="0.01">
-				<br/>
-			</fieldset>
+        <label for="">Value:</label>
+        <input type="text" name="value" id="">
 
-			<fieldset id="product2">
-				<legend>Product Registration 2</legend>
+        <br/>
 
-				<label for="">Code:</label>
-				<input type="text" name="code2" autofocus>
-				<br/>
+        <input type="radio" name="operation" value="0"/>Outcome<br/>
+        <input type="radio" name="operation" value="1"/>Income<br/>
+      </fieldset>
 
-				<label for="">In Stock:</label>
-				<input type="number" name="stock2" min="0">
-				<br/>
+      <fieldset>
+        <legend>Options</legend>
 
-				<label for="">Un Price:</label>
-				<input type="number" name="price2" min="0" step="0.01">
-				<br/>
-			</fieldset>
+        <select name="option" id="">
+          <option value="0">Update</option>
+          <option value="1">Higher</option>
+          <option value="2">See Added</option>
+        </select>
+        
+        <button type="submit" form="form" name="send">Execute</button>
+      </fieldset>
+    </form>
 
-			<fieldset id="product3">
-				<legend>Product Registration 3</legend>
+    <?php
+      if(isset($_POST["send"])){
+        $opt = $_POST["option"];
 
-				<label for="">Code:</label>
-				<input type="text" name="code3" autofocus>
-				<br/>
+        if($opt == "0"){
+          if(isset($_POST["operation"])){
+            $ccn = $_POST["account"];
+            $valn = $_POST["value"];
+            $opr = $_POST["operation"];
 
-				<label for="">In Stock:</label>
-				<input type="number" name="stock3" min="0">
-				<br/>
+            foreach($accounts as $cc => $specs)
+              if($cc == $ccn)
+                if($opr == 0){
+                  $specs[1] -= $valn;
+                }
+                else
+                  $specs[1] += $valn;
 
-				<label for="">Un Price:</label>
-				<input type="number" name="price3" min="0" step="0.01">
-				<br/>
-			</fieldset>
+          //Mostrar os dados ordenados em table:
+          echo "<table>
+          <caption>All</caption>
 
-			<fieldset id="operations1">				
-				<label for="">Code to Search</label>
-				<input type="text" name="searchcode" id="" />
+          <tr>
+            <th>CC</th>
+            <th>NAME</th>
+            <th>AVAIBLE</th>
+          </tr>";
 
-				<br/>
-				
-				<legend>Product Operations</legend>
-				<button type="submit" form="form" name="register">Register</button>
-			</fieldset>
-		</form>
+        foreach ($accounts as $cc => $specs){
+          echo "<tr>
+            <td>$cc</td>
+            <td>",$specs[0],"</td>
+            <td>",$specs[1],"</td>
+          </tr>";
+        }
 
-		<?php
-			if(isset($_POST["register"])){
-				//Recebe dados e insere em matriz:
-				for ($i=1; $i <= 3; $i++) { 
-					//Concatenando nome da variável:
-					$cod = "code" . $i;
-					//Atribuindo de fato:
-					$cod = $_POST[$cod];
-					
-					$stock = "stock" . $i;
-					$stock = $_POST[$stock];
+        echo "</table>";
+          }
 
-					$price = "price" . $i;
-					$price = $_POST[$price];
+          else
+            echo "<p>
+              Choose Outcome or Income please...
+            </p>";
+        }
 
-					//Guardando em matriz:
-					$products[$cod] = array($stock, $price);
-				}
+        if($opt == "1"){
+          $highername = "";
+          $higherpay = 0;
+  
+          foreach ($accounts as $cpf => $specs){
+            if ($higherpay == 0){
+              $higherpay = $specs[1];
+              $highername = $specs[0];
+            }
 
-				//Construir impressão:
-				echo "
-					<table>
-						<caption>Registered Products</caption>
+            else if ($specs[1] > $higherpay){
+              $higherpay = $specs[1];
+              $highername = $specs[0];
+            }
+          }
 
-						<tr>
-							<th>Code</th>
-							<th>Price</th>
-							<th>In Stock</th>
-						</tr>";
+          echo "<p>
+            The higher pay is $higherpay by $highername.
+          </p>";
+        }
 
-				foreach ($products as $cod => $v) {
-					echo "
-						<tr>
-							<td>$cod</td>
-							<td>$v[1]</td>
-							<td>$v[0]</td>
-						</tr>
-					";
-				}
+        else if($opt == "2"){
+          $accounts["1010-x5"] = ["Arthur de Castro", 200];
+          $accounts["1010-x6"] = ["Anselmo de  Andrade", 15840];
 
-				echo "</table>";
+          //Mostrar os dados ordenados em table:
+          echo "<table>
+            <caption>All</caption>
 
+            <tr>
+              <th>CC</th>
+              <th>NAME</th>
+              <th>AVAIBLE</th>
+            </tr>";
 
-				//O Mestre do Estoque:
-				$stockmaster = 0;
+          foreach ($accounts as $cc => $specs){
+            echo "<tr>
+              <td>$cc</td>
+              <td>",$specs[0],"</td>
+              <td>",$specs[1],"</td>
+            </tr>";
+          }
 
-				foreach ($products as $cod => $v) {
-					if($v[0] >= $stockmaster){
-						$codmaster = $cod;
-						$pricemaster = $v[1];
-						$stockmaster = $v[0];
-					}
-				}
-
-				//Construir impressão:
-				echo "<p>
-					Stock Master Data: <br/><br/>
-					Code: $codmaster <br/>
-					Price: $pricemaster <br/>
-					In Stock: $stockmaster <br/>
-				</p>";
-
-
-				//Faturamento:
-				$sum = 0;
-
-				foreach ($products as $cod => $v) {
-					$sum = $sum + $v[0] * $v[1];
-				}
-
-				$sumed = number_format($sum, 2, ".", ",");
-
-				echo "<p>
-					Total Income from Stock is: $sumed
-				</p>";
-
-
-				//
-				$searchcode = $_POST["searchcode"];
-
-				if(array_key_exists($searchcode, $products)){
-					echo "<p>
-						Inquire: <br/><br/>
-
-						Search Code: $searchcode <br/>
-						In Stock: ", $products[$searchcode][0],"<br/>
-						Price: ", $products[$searchcode][1],"
-					</p>";
-				}
-
-				else
-					echo "<p>
-						The inputed code doesn't exist!!!
-					</p>";
-			}
-		?>
-	</body>
+          echo "</table>";
+        }
+      }
+    ?> 
+  </body>
 </html>

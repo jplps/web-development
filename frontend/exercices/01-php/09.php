@@ -1,36 +1,26 @@
-<?php
-  //Criando matriz (tridimensional arrays) para armazenar dados:
-  $accounts["1010-x1"] = ["Joana de Almeida", 6800];
-  $accounts["1010-x2"] = ["Genésio de  Ataíde", 15300];
-  $accounts["1010-x3"] = ["Maria das Graças", 4100.12];
-  $accounts["1010-x4"] = ["Calorine Prado", 2300.76];
-
-  // //Referência:
-  // echo "<pre>";
-  // print_r($accounts);
-  // echo "</pre>";
-?>
 <!DOCTYPE html>
 <html lang="en">
-  <!--
-    Notas:
-    Diretório geral em debian-based distros: /var/www/html;
-    Endereço http://localhost/path/to/file.php para acessar a aplicação;
-    Ex.: 6 - Arrays & PHP
-  -->
   <head>
+    <!--
+      Notas:
+      Diretório geral em debian-based distros: /var/www/html;
+      Endereço http://localhost/path/to/file.php para acessar a aplicação;
+      Ex.: 10 - Arrays & PHP
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PRW 806</title>
+    <title>PRW 807</title>
 
     <style>
-			body{width:66.6%; color:#666; margin: auto;}
+			body{width:66.6%; color:#666; margin:0 auto 40px;}
 			h1{border-bottom:2px solid #666; margin:auto; padding:10px;
 			text-transform:capitalize; text-align:center; position:sticky; top:0;}
-			fieldset{margin-top:20px;}
-			input{margin:5px;}
+			fieldset{margin: 40px auto 40px;}
+			button{display:block;margin:5px auto;}
+			input, select{padding:5px;margin:5px;}
 			p{float:right;}
+      span{font-weight: bold; font-size: 150%;}
       table{margin: auto; border: 1px solid #666; border-collapse: collapse;}
       caption{text-align: left; font-style: italic; margin-bottom: 5px;}
       th{background: #999;}
@@ -41,130 +31,167 @@
   </head>
 
   <body>
-    <h1>php arrays 6</h1>
+    <h1>php arrays 7</h1>
 
     <form id="form" action="" method="post">
       <fieldset>
-        <legend>Data Process</legend>
+        <legend>First ONE</legend>
 
-        <label for="">Account:</label>
-        <input type="text" name="account" id="">
-
+        <label for="">CPF</label>
+        <input type="text" name="cpf0" id="">
         <br/>
 
-        <label for="">Value:</label>
-        <input type="text" name="value" id="">
-
+        <label for="">NAME</label>
+        <input type="text" name="name0" id="">
         <br/>
 
-        <input type="radio" name="operation" value="0"/>Outcome<br/>
-        <input type="radio" name="operation" value="1"/>Income<br/>
+        <label for="">BUY</label>
+        <input type="number" name="buy0" step="0.01" id="">
+        <br/>
+
+        <label for="">PAYMENT</label>
+        <select name="payment0" id="">
+          <option value="CARD">CARD</option>
+          <option value="MONEY">MONEY</option>
+          <option value="OTHER">OTHER</option>
+        </select>
       </fieldset>
 
       <fieldset>
-        <legend>Options</legend>
+        <legend>Second ONE</legend>
 
-        <select name="option" id="">
-          <option value="0">Update</option>
-          <option value="1">Higher</option>
-          <option value="2">See Added</option>
+        <label for="">CPF</label>
+        <input type="text" name="cpf1" id="">
+        <br/>
+
+        <label for="">NAME</label>
+        <input type="text" name="name1" id="">
+        <br/>
+
+        <label for="">BUY</label>
+        <input type="number" name="buy1" step="0.01" id="">
+        <br/>
+
+        <label for="">PAYMENT</label>
+        <select name="payment1" id="">
+          <option value="CARD">CARD</option>
+          <option value="MONEY">MONEY</option>
+          <option value="OTHER">OTHER</option>
         </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Operations</legend>
         
-        <button type="submit" form="form" name="send">Execute</button>
+        <button type="submit" form="form" name="send">SEND YOUR DATA</button>
       </fieldset>
     </form>
 
     <?php
       if(isset($_POST["send"])){
-        $opt = $_POST["option"];
+        //Adicionando Primeiro:
+        $cpf = $_POST["cpf0"];
+        $name = $_POST["name0"];
+        $buy = $_POST["buy0"];
 
-        if($opt == "0"){
-          if(isset($_POST["operation"])){
-            $ccn = $_POST["account"];
-            $valn = $_POST["value"];
-            $opr = $_POST["operation"];
+        //Recebe matrícula do select:
+        $payment = $_POST["payment0"];
 
-            foreach($accounts as $cc => $specs)
-              if($cc == $ccn)
-                if($opr == 0){
-                  $specs[1] -= $valn;
-                }
-                else
-                  $specs[1] += $valn;
+        //Criando matriz (tridimensional arrays) para armazenar dados:
+        $clients[$cpf] = [$name, $buy, $payment];
 
-          //Mostrar os dados ordenados em table:
-          echo "<table>
-          <caption>All</caption>
+        //Adicionando Segundo:
+        $cpf = $_POST["cpf1"];
+        $name = $_POST["name1"];
+        $buy = $_POST["buy1"];
+
+        //Recebe matrícula do select:
+        $payment = $_POST["payment1"];
+
+        //Criando matriz (tridimensional arrays) para armazenar dados:
+        $clients[$cpf] = [$name, $buy, $payment];
+
+// //Referência:
+// echo "<pre>";
+// print_r($clients);
+// echo "</pre>";
+
+        $lowestname = "";
+        $lowestbuy = 0;
+
+        foreach ($clients as $cpf => $specs){
+          if ($lowestbuy == 0)
+            $lowestbuy = $specs[1];
+
+          else if ($specs[1] < $lowestbuy)
+            $lowestbuy = $specs[1];
+            $lowestname = $specs[0];
+        }
+
+        echo "<p>
+          The lowest buy was $lowestbuy by $lowestname.
+        </p>";
+
+        //Mostrar os dados ordenados em table:
+        echo "<table>
+          <caption>Card / Money Buys</caption>
 
           <tr>
-            <th>CC</th>
+            <th>CPF</th>
             <th>NAME</th>
-            <th>AVAIBLE</th>
+            <th>BUY</th>
+            <th>PAYMENT</th>
           </tr>";
-
-        foreach ($accounts as $cc => $specs){
-          echo "<tr>
-            <td>$cc</td>
-            <td>",$specs[0],"</td>
-            <td>",$specs[1],"</td>
-          </tr>";
-        }
+          foreach ($clients as $cpf => $specs) {
+            if ($specs[2] == "CARD" || $specs[2] == "MONEY")
+              echo "<tr>
+                <td>$cpf</td>
+                <td>",$specs[0],"</td>
+                <td>",$specs[1],"</td>
+                <td>",$specs[2],"</td>
+              </tr>";
+          }
 
         echo "</table>";
-          }
 
-          else
-            echo "<p>
-              Choose Outcome or Income please...
-            </p>";
+        //Conversão de Dotz:
+        foreach ($clients as $cpf => $specs){
+          if ($specs[2] == "CARD" || $specs[2] == "MONEY"){
+            $dotz = $specs[1] / 2;
+            $dclients[$cpf] = [$specs[0], $dotz];
+          }
+          else if ($specs[2] == "OTHER"){
+            $dotz = $specs[1] / 4;
+            $dclients[$cpf] = [$specs[0], $dotz];
+          }
         }
 
-        if($opt == "1"){
-          $highername = "";
-          $higherpay = 0;
-  
-          foreach ($accounts as $cpf => $specs){
-            if ($higherpay == 0){
-              $higherpay = $specs[1];
-              $highername = $specs[0];
-            }
+// //Referência:
+// echo "<pre>";
+// print_r($dclients);
+// echo "</pre>";
 
-            else if ($specs[1] > $higherpay){
-              $higherpay = $specs[1];
-              $highername = $specs[0];
-            }
-          }
+        //Mostrar os dados ordenados em table:
+        echo "<table>
+        <caption>Dotz Converted</caption>
 
-          echo "<p>
-            The higher pay is $higherpay by $highername.
-          </p>";
-        }
+        <tr>
+            <th>CPF</th>
+            <th>NAME</th>
+            <th>DOTZ</th>
+        </tr>";
 
-        else if($opt == "2"){
-          $accounts["1010-x5"] = ["Arthur de Castro", 200];
-          $accounts["1010-x6"] = ["Anselmo de  Andrade", 15840];
-
-          //Mostrar os dados ordenados em table:
-          echo "<table>
-            <caption>All</caption>
-
+        foreach ($dclients as $dcpf => $specs)
+          echo "
             <tr>
-              <th>CC</th>
-              <th>NAME</th>
-              <th>AVAIBLE</th>
-            </tr>";
-
-          foreach ($accounts as $cc => $specs){
-            echo "<tr>
-              <td>$cc</td>
+              <td>$dcpf</td>
               <td>",$specs[0],"</td>
               <td>",$specs[1],"</td>
-            </tr>";
-          }
+            </tr>
+            ";
 
-          echo "</table>";
-        }
+        echo "</table>";
       }
-    ?> 
+    ?>
   </body>
 </html>

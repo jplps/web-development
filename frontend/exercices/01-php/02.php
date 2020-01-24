@@ -1,52 +1,40 @@
+<!--
+	Diretório geral em debian-based distros: /var/www/html;
+	Endereço http://localhost/path/to/file.php para acessar a aplicação;
+
+	Ex.: 3 - Formulários & PHP.
+-->
 <!DOCTYPE html>
-<html lang="en">
-    <!--
-        Notas:
-        Diretório geral em debian-based distros: /var/www/html;
-        Endereço http://localhost/path/to/file.php para acessar a aplicação;
-        Ex.: 2 - Formulários & PHP (excs12).
-    -->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>PRW 702</title>
+	<title>Ex.: 03</title>
 
-        <style>
-            body{text-align: center;}
-            h1{width: 60%; border-bottom: 2px solid #000; margin: auto; padding: 10px;
-            text-transform: capitalize;}
-            fieldset{width: 40%; margin: auto;}
-            input{width: 20%; align: left;}
-            span{font-weight: bold; font-size: 150%;}
-            .align{width: 50%; text-align: right; display: block;}
-        </style>
-    </head>
+	<style>
+		body{text-align: center;}
+		h1{width: 60%; border-bottom: 2px solid #000; margin: auto; padding: 10px;
+		text-transform: capitalize;}
+		fieldset{width: 40%; margin: auto;}
+		input{width: 20%; align: left;}
+		span{font-weight: bold; font-size: 150%;}
+	</style>
+</head>
 
-    <body>
-        <h1>php form 2</h1>
+<body>
+	<h1>php form</h1>
+	<br/><br/>
 
-        <br/><br/>
+	<fieldset>
+		<form id="form" action="02.php" method="post">
+			<label for="">Sale's Total </label>
+			<input type="number" name="salestotal" min="0"/>
+		</form>
 
-        <fieldset>
-            <form id="form" action="702bprw.php" method="post">
-                <label class="align" for="">Distancy (km) </label>
-                <input type="number" name="distancy" min="0"/>
+		<br/>
 
-                <br/>
-
-                <label class="align" for="">Consumption (km/L)</label>
-                <input type="number" name="consumption" min="0"/>
-
-                <br/>
-
-                <label class="align" for="">Price (L)</label>
-                <input type="number" name="price" step="0.01" min="0"/>
-            </form>
-
-            <br/>
-
-            <button type="submit" form="form" value="submit">Submit</button>
-        </fieldset>
-    </body>
+		<button type="submit" form="form" value="submit">Submit to Result</button>
+	</fieldset>
+</body>
 </html>
