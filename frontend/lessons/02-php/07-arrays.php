@@ -45,7 +45,7 @@
 </head>
 
 <body>
-	<h1>PHP Arrays</h1>
+	<h1>PHP arrays</h1>
 	<br/><br/>
 
 	<form id="form" action="" method="post">

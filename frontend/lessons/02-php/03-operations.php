@@ -23,7 +23,7 @@
 </head>
 
 <body>
-	<h1>PHP Operations</h1>
+	<h1>PHP operations</h1>
 
 	<?php
 		// Criação de Variáveis:

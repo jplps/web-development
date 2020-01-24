@@ -25,7 +25,7 @@
 </head>
 
 <body>
-	<h1>PHP Arrays</h1>
+	<h1>PHP arrays</h1>
 
 	<form id="form" action="" method="post">
 		<fieldset id="field01">

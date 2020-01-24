@@ -2,7 +2,7 @@
 	Diretório geral em debian-based distros: /var/www/html;
 	Endereço http://localhost/path/to/file.php para acessar a aplicação;
 
-	10 - Arrays & PHP.
+	10 - Multidimensional Arrays & PHP.
 -->
 <?php
 	// Criando matriz (tridimensional arrays) para armazenar dados:
@@ -34,7 +34,7 @@
 </head>
 
 <body>
-	<h1>PHP Array</h1>
+	<h1>PHP multidimensional arrays</h1>
 
 	<form id="form" action="" method="post">
 		<fieldset>

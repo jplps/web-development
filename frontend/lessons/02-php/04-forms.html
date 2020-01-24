@@ -2,7 +2,7 @@
 	Diretório geral em debian-based distros: /var/www/html;
 	Endereço http://localhost/path/to/file.php para acessar a aplicação;
 
-	6 - Formulários & PHP: O método corresponde aos vetores $_POST e $_GET, 
+	5 - Formulários & PHP: O método corresponde aos vetores $_POST e $_GET, 
 	já existentes no PHP, utilizando os "name"s para ordená-los, e guardando 
 	os dados fornecidos em cada input em seus respectivos endereços.
 -->
@@ -13,7 +13,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>php 6</title>
+	<title>php 5</title>
 
 	<style>
 		body {
@@ -46,27 +46,28 @@
 </head>
 
 <body>
-	<h1>The PHP Form</h1>
+	<h1>the PHP form</h1>
 	<br>
 
-	<form action="05.php" method="POST">
+	<!-- Método POST -->
+	<form action="./04.php" method="POST">
 		<fieldset>
-			<legend>taking the data in, again</legend>
+			<legend>taking the data in</legend>
 
-			<label for="">real/float:</label>
+			<label for="">give me any number:</label>
 			<input type="number" name="num1" autofocus step="any">
 			<br>
 
-			<label for="">integer:</label>
-			<input type="number" name="num2" autofocus>
+			<label for="">give me other number:</label>
+			<input type="number" name="num2" autofocus step="any">
 			<br>
 
-			<label for="">second integer constant:</label>
-			<input type="number" name="num3" autofocus>
+			<label for="">give me just one more number:</label>
+			<input type="number" name="num3" autofocus step="any">
 			<br>
 			<br>
 
-			<button type="submit" name="send">process it bro</button>
+			<button type="submit" name="send">process it</button>
 		</fieldset>
 	</form>
 </body>
