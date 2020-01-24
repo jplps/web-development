@@ -12,7 +12,7 @@ Siga as lições em ordem numeral, ou escolha a que deseja, abra o arquivo em se
 
 HACK IT ALL.
 
-*Consulte: http://hdam.pro.br/
+*Consulte: http://hdam.pro.br/  
 @LPS
 	
 ## Contexto
