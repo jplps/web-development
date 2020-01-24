@@ -1,7 +1,7 @@
-# Front-end Web Development
+# Web Development
 
 Este repositório tem por objetivo acompanhar o desenvolvimento do aprendizado
-introdutório ao avançado em Front-end Web Development.
+introdutório ao avançado em desenvolvimento de aplicações para web.
 
 	- Os códigos estão comentados descrevendo o fluxo do programa e a descrição narrativa da problemática;
 	- Os que não estão comentados servem de exercício de leitura da linguagem em questão.
