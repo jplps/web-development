@@ -42,19 +42,20 @@
 		// Operação (php converte os valores para decimal e opera):
 		$finalBank = $bank + $income * ($incomeHEXA / $incomeOCTA);
 		
-		echo "<p>
-			Outcome of the process: <br><br>
-			Name: $name <br>
-			Age: $age <br>
-			Bank: $bank <br><br>
+		echo "<p>Outcome of the process: 
+			<br><br>
+			Name: $name 
+			<br>
+			Age: $age 
+			<br>
+			Bank: $bank 
+			<br><br>
 
 			<!-- Descrição da Operação: -->
 			$finalBank = $bank + $income * ($incomeHEXA / $incomeOCTA)
 		</p>";
 
-		echo '<p>
-			Final Amount Value: $$finalBank
-		</p>';
+		echo '<p>Final Amount Value: $$finalBank</p>';
 	?>
 </body>
 

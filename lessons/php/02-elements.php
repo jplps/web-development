@@ -39,8 +39,7 @@
 		// Saída para tela (nota-se o uso dentro e foras das aspas entre constantes e variáveis):
 		echo
 			// Se as aspas do comando "echo" forem simples, o php reproduzirá literalmente o nome das variáveis (então, o uso torna-se o mesmo das constantes).
-			"<p>
-				Checkout the info we have on you!!!<br><br><br>
+			"<p>Checkout the info we have on you!!!<br><br><br>
 				The Name: ",id,"<br>
 				The Age: ",age,"<br>
 				The Car: ",car,"<br><br>

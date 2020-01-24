@@ -25,7 +25,7 @@
 </head>
 
 <body>
-	<h1>php form</h1>
+	<h1>The PHP Form</h1>
 	<br/><br/>
 
 	<fieldset>

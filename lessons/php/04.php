@@ -7,7 +7,7 @@
 	os dados fornecidos em cada input em seus respectivos endereços.
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,8 +32,7 @@
 		
 		$xpression = ($num1 - $num2) * $num3;
 
-		echo "<p>
-			Your soul is now submmited.
+		echo "<p>Your soul is now submmited.
 			<br><br>
 
 			<!-- A contrabarra cancela caracteres especiais: -->
