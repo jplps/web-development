@@ -101,8 +101,8 @@ Separando estilo e significado semântico, o CSS ajuda no tamanho e complexidade
 	`<p id="id001">`...				#id001 {...}
 
 - CORES:	
-	- RGB - Red Green Blue - (0 ~ 255, 0 ~ 255, 0 ~ 255). Isso leva à:
-	256 * 256 * 256 = 2⁸ * 2⁸ * 2⁸ = 2^24 ~ 17 milhões de possibilidades.
+	- RGB - Red Green Blue - (0 ~ 255, 0 ~ 255, 0 ~ 255). Isso leva à:  
+	256 * 256 * 256 = 2⁸ * 2⁸ * 2⁸ = 2^24 ~ 17 milhões de possibilidades.  
 	Ex.: rgb(22,117,49); ou rgb(45%,125,10%);
 	
 	- Hexadecimal
