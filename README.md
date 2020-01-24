@@ -1,24 +1,21 @@
-# Frontend Development
+# Front-end Web Development
 
 Este repositório tem por objetivo acompanhar o desenvolvimento do aprendizado
-introdutório ao avançado em Web Development.
+introdutório ao avançado em Front-end Web Development.
 
-	- O arquivo .txt contém a matéria explicada em detalhes;
 	- Os códigos estão comentados descrevendo o fluxo do programa e a descrição narrativa da problemática;
 	- Os que não estão comentados servem de exercício de leitura da linguagem em questão.
-
-Obs.: A sequência (Level01... LevelN) parte dos arquivos 101prw.html em
-diante, sempre atentos aos comentários dentro dos códigos. A partir da sequência
-Level06 considere a pilha de tecnologias AMP (Apache, Mysql e Php), bem como:
-
 	- Diretório geral em debian-based distros: /var/www/html;
 	- Endereço http://localhost/path/to/file.php para acessar a aplicação do navegador de preferência;
 
+Siga as lições em ordem numeral, ou escolha a que deseja, abra o arquivo em seu editor de texto e leia atentamente o arquivo!
+
+HACK IT ALL.
+
+*Consulte: http://hdam.pro.br/
 @LPS
 	
 ## Contexto
-
-Repo: http://hdam.pro.br/
 
 ### Aplicações para Web
 
