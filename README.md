@@ -43,8 +43,8 @@ HTML é a abreviação em inglês do termo HyperText Markup Language, ou em port
 Todo o documento criado pode ser finalizado com a extensão .html fazendo com que a aplicação correta interprete o arquivo da forma desejada.
 
 - REGRAS:
-	- Tags completas devem ser fechadas (<p>Parágrafo...</p>);
-	- Tags vazias (void) não devem ser fechadas (<img ...>);
+	- Tags completas devem ser fechadas (`<p>`Parágrafo...`</p>`);
+	- Tags vazias (void) não devem ser fechadas (`<img ...>`);
 	- Nomes de tags e atributos sempre em MINÚSCULO;
 	- Tags aninhadas (filhas) são fechadas na ordem em que foram abertas;
 	- Identação é o uso de espaços para facilitar a visão de relação entre  diferentes estruturas;
@@ -97,8 +97,8 @@ Separando estilo e significado semântico, o CSS ajuda no tamanho e complexidade
 	- Para cada tipo de seletor, pode-se utilizar dois tipos principais de atributos: classe e id, separando os estilos de acordo com a necessidade. Regras básicas: comunicação pura, sem começar com dígitos, sem espaços em branco ou carácteres especiais (ç, ã...). Com relação ao atributo ID, só é possível existir um único elemento atribuído à especificação (identidade única).
 
 	.html						.css
-	<p class="centraliza">...			p.centraliza{...}
-	<p id="id001">...				#id001 {...}
+	`<p class="centraliza">`...			p.centraliza{...}
+	`<p id="id001">`...				#id001 {...}
 
 - CORES:	
 	- RGB - Red Green Blue - (0 ~ 255, 0 ~ 255, 0 ~ 255). Isso leva à:
