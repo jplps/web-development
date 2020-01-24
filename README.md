@@ -77,15 +77,15 @@ Separando estilo e significado semântico, o CSS ajuda no tamanho e complexidade
 	- É a unidade básica de uma folha de estilo. Entenda-se por unidade básica a menor porção de código capaz de estilizar determinado elemento HTML. Veja, abaixo, os principais componentes de uma regra CSS. O agrupamento de diversas regras CSS compõem o que chamamos de folha de estilo.
 
 	p {  
-		color: #aabbcc;				`- Cor da letra  
-		background-color: #ff0;		`- Cor do fundo  
-		font-style: italic;			`- Fonte estilizada  
-		text-align: right;			`- Alinhamento de texto  
-		width: 300px;				`- Largura do seletor  
-		font-size: 1,5cm;			`- Tamanho de fonte  
+		color: #aabbcc;				(Cor da letra)  
+		background-color: #ff0;		(Cor do fundo)  
+		font-style: italic;			(Fonte estilizada)  
+		text-align: right;			(Alinhamento de texto)  
+		width: 300px;				(Largura do seletor)  
+		font-size: 1,5cm;			(Tamanho de fonte)  
 	}
 	
-		Ou, com mais de um seletor:
+		Ou, com mais de um seletor (h1, p e ul):
 	
 	h1, p, ul {  
 		color: #aabbcc;  
