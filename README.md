@@ -56,7 +56,6 @@ Esqueleto básico html utilizado nos exemplos:
 		<head> 
 			<title>	Título do Documento </title> 
 		</head> 
-		
 		<body> 
 			<h1> Título mais Importante </h1>
 			<p> Uma página muito simples. </p> 
@@ -77,21 +76,21 @@ Separando estilo e significado semântico, o CSS ajuda no tamanho e complexidade
 - REGRA:
 	- É a unidade básica de uma folha de estilo. Entenda-se por unidade básica a menor porção de código capaz de estilizar determinado elemento HTML. Veja, abaixo, os principais componentes de uma regra CSS. O agrupamento de diversas regras CSS compõem o que chamamos de folha de estilo.
 
-	p {
-		color: #aabbcc;				/*Cor da letra*/
-		background-color: #ff0;		/*Cor do fundo*/
-		font-style: italic;			/*Fonte estilizada*/
-		text-align: right;			/*Alinhamento de texto*/
-		width: 300px;				/*Largura do seletor*/
-		font-size: 1,5cm;			/*Tamanho de fonte*/
+	p {  
+		color: #aabbcc;				/*Cor da letra*/  
+		background-color: #ff0;		/*Cor do fundo*/  
+		font-style: italic;			/*Fonte estilizada*/  
+		text-align: right;			/*Alinhamento de texto*/  
+		width: 300px;				/*Largura do seletor*/  
+		font-size: 1,5cm;			/*Tamanho de fonte*/  
 	}
 	
 		Ou, com mais de um seletor:
 	
-	h1, p, ul {
-		color: #aabbcc;
-		font-style: italic;
-		text-align: right;
+	h1, p, ul {  
+		color: #aabbcc;  
+		font-style: italic;  
+		text-align: right;  
 	}
 
 	- Para cada tipo de seletor, pode-se utilizar dois tipos principais de atributos: classe e id, separando os estilos de acordo com a necessidade. Regras básicas: comunicação pura, sem começar com dígitos, sem espaços em branco ou carácteres especiais (ç, ã...). Com relação ao atributo ID, só é possível existir um único elemento atribuído à especificação (identidade única).
