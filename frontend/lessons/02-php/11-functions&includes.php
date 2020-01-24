@@ -1,6 +1,7 @@
 <!--
 	Diretório geral em debian-based distros: /var/www/html;
 	Endereço http://localhost/path/to/file.php para acessar a aplicação;
+	
 	12 - Function, Include & PHP.
 
 	Existem dois tipos de utilização de bibliotecas externas, contendo as funções
@@ -15,7 +16,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>PRW 902</title>
+	<title>php 12</title>
 
 	<style>
 		body{width:66.6%; color:#666; margin: auto;}
@@ -30,7 +31,7 @@
 </head>
 
 <body>
-	<h1>php function & include 2</h1>
+	<h1>PHP functions & includes</h1>
 
 	<form id="form" action="" method="post">
 		<fieldset>

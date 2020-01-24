@@ -1,3 +1,16 @@
+<!--
+	Notas:
+	Diretório geral em debian-based distros: /var/www/html;
+	Endereço http://localhost/path/to/file.php para acessar a aplicação;
+	
+	13 - Function, Include & PHP.
+
+	Existem dois tipos de utilização de bibliotecas externas, contendo as funções
+	desejadas:
+
+	include/					require/
+	include_once			require_once
+-->
 <?php
   $months = [
     "Janeiro" => 31,
@@ -15,25 +28,12 @@
   ];
 ?>
 <!DOCTYPE html>
-<html lang="en">
-	<!--
-		Notas:
-		Diretório geral em debian-based distros: /var/www/html;
-		Endereço http://localhost/path/to/file.php para acessar a aplicação;
-		Ex.: 3 - Function & Include
-
-		Existem dois tipos de utilização de bibliotecas externas, contendo as funções
-		desejadas:
-
-		include/					require/
-		include_once			require_once
-
-	-->
+<html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>PRW 903</title>
+		<title>php 13</title>
 
 		<style>
 			body{width:66.6%; color:#666; margin: auto;}
@@ -48,7 +48,7 @@
 	</head>
 
 	<body>
-		<h1>php function & include 3</h1>
+		<h1>PHP functions & includes</h1>
 
 		<form id="form" action="" method="post">
 			<fieldset>
