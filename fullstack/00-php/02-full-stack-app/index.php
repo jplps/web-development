@@ -57,7 +57,6 @@
 					<option value="1">Average</option>
 					<option value="2">Best(s)</option>
 				</select>
-
 				<br/>
 
 				<button type="send">Send Your DaTA</button>
