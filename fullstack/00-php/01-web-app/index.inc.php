@@ -1,10 +1,10 @@
 <?php
-  function doit(){
-    if(isset($_POST["submit"])){
-      for($i=0; $i < 2; $i++){
+  function doit() {
+    if(isset($_POST["submit"])) {
+      for($i=0; $i < 2; $i++) {
         $loc = "loc" . $i;
 
-        if($i > 0){
+        if($i > 0) {
           $i = 2;
         }
 
@@ -24,11 +24,11 @@
     }
   }
 
-  function showme($temps){
+  function showme($temps) {
     echo "<p>";
       foreach ($temps as $loc => $intern) {
-        echo "Localidade: ",$loc,"<br/>
-        Temperatura Média: ",$intern[2],"<br/>";
+        echo "Location: ",$loc,"<br/>
+        Average Temp.: ",$intern[2],"<br/>";
       }
     echo "</p>";
   }

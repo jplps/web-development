@@ -1,16 +1,16 @@
+<!--
+	Diretório geral em debian-based distros: /var/www/html;
+	Endereço http://localhost/path/to/file.php para acessar a aplicação;
+	
+	3 - POO + SQL
+-->
 <!DOCTYPE html>
-<html lang="en">
-	<!--
-		Notas:
-		Diretório geral em debian-based distros: /var/www/html;
-		Endereço http://localhost/path/to/file.php para acessar a aplicação;
-		Ex.: 1 - POO + SQL
-	-->
+<html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>PRW + SQL 1</title>
+		<title>php & sql 1</title>
 
 		<style>
 			body{width:66.6%; color:#666; margin: auto;}
@@ -30,7 +30,7 @@
 	</head>
 
 	<body>
-		<h1>php + sql 1</h1>
+		<h1>PHP & SQL</h1>
 
 		<form name="form" action="" method="post">
 			<fieldset>

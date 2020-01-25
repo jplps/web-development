@@ -1,17 +1,23 @@
+<!--
+	Diretório geral em debian-based distros: /var/www/html;
+	Endereço http://localhost/path/to/file.php para acessar a aplicação;
+	
+	2 - POO + SQL
+-->
 <!DOCTYPE html>
-<!-- Reproduction Test April 2nd -->
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>php & poo 2</title>
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <h1>Agrocooperativa AAA - controle de temperaturas com matrizes em PHP</h1>
+		<h1>PHP & OOP</h1>
+
+    <h2>Agrocooperative AAA - temperature control with 3d arryas in PHP</h2>
     
     <form method='post'>
       <?php
@@ -30,22 +36,22 @@
 
             echo "
 
-            <label class='align'>Forneça a primeira temperatura:</label>
+            <label class='align'>first temperature:</label>
             <input type='number' name='t$i' id='' /><br/>
 
-            <label class='align'>Forneça a segunda temperatura:</label>
+            <label class='align'>second temperature:</label>
             <input type='number' name='t",$i+1,"' id='' />
           </fieldset>
         ";
       }
       ?>
       <div class="buttons">
-        <button class="center" type="submit" name="submit">Calcular média de temperaturas</button>
+        <button class="center" type="submit" name="submit">Temperature Average</button>
       </div>
     </form>
 
     <?php
-      require "avtmp.inc.php";
+      require "./index.inc.php";
 
       doit();
     ?>

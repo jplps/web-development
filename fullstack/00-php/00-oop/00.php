@@ -1,16 +1,16 @@
+<!--
+	Diretório geral em debian-based distros: /var/www/html;
+	Endereço http://localhost/path/to/file.php para acessar a aplicação;
+	
+	1 - POO + PHP (orientação a objetos).
+-->
 <!DOCTYPE html>
-<html lang="en">
-	<!--
-		Notas:
-		Diretório geral em debian-based distros: /var/www/html;
-		Endereço http://localhost/path/to/file.php para acessar a aplicação;
-		Ex.: 1 - POO + PHP
-	-->
+<html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>PRW + POO 2</title>
+		<title>php & poo 1</title>
 
 		<style>
 			body{width:66.6%; color:#666; margin: auto;}
@@ -21,11 +21,11 @@
 	</head>
 
 	<body>
-		<h1>php + poo 2</h1>
+		<h1>PHP & OOP</h1>
 
     <?php
       //Inclusão da classe:
-      require_once "1002prw.inc.php";
+      require_once "00.inc.php";
 
       //Criação de objetos:
       $curso1 = new Curso("Informática", 3);
@@ -38,7 +38,6 @@
       echo "<p>
         Courses & Categories:
 				<br/><br/>
-				
         $nome1 / ",$curso1->classify()," & $nome2 / ",$curso2->classify(),"
       </p>";
     ?>
