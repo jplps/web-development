@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +19,30 @@
   </head>
 
   <body>
-    <h1>js vectors</h1>
+    <h1>js checkbox handler</h1>
     
-    <form method="post">
+    <!-- Utilizando JS para determinar o número de checkbox marcados -->
+    <form method="post" id="form" novalidate>
       <fieldset>
-        <legend>creating vector</legend>
+        <legend>programming langs</legend>
+        
+        <label class="align">choose languages</label>
+        <br />
+        <input type="checkbox" value="java" id="java">java
+        <br />
+        <input type="checkbox" value="javascript" id="javascript">javascript
+        <br />
+        <input type="checkbox" value="php" id="php">php
+        <br />
+        <input type="checkbox" value="python" id="python">python
+        <br />
+        <input type="checkbox" value="cpp" id="cpp">cpp
+        <br />
 
-        <button type="button" id="btn">create me</button>
+        <button type="submit">register</button>
       </fieldset>
     </form>
 
-    <script src="1303prw.js"></script>
+    <script src="./01.js"></script>
   </body>
 </html>
