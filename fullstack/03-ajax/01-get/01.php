@@ -1,13 +1,13 @@
 <?php
-  //Recebendo dados via PHP
-  $name = $_POST["name"];
-  $weight = $_POST["weight"];
-  $height = $_POST["height"];
+  // Recebendo dados via PHP
+  $name = $_GET["name"];
+  $weight = $_GET["weight"];
+  $height = $_GET["height"];
 
-  //Calcular o IMC
+  // Calcular o IMC
   $imc = $weight / pow($height, 2);
 
-  //Definir situação
+  // Definir situação
   if($imc < 17) $situation = "Extreme Under Weight";
   elseif($imc < 18.5) $situation = "Under Weight";
   elseif($imc < 25) $situation = "Regular Weight";
@@ -16,9 +16,9 @@
   elseif($imc < 40) $situation = "Obesity II";
   else $situation = "Obesity III";
 
-  //Formatar número
+  // Formatar número
   $imc = number_format($imc, 1, ",", ".");
   
-  //Tag <em> destaca com ênfase seu conteúdo em itálico
+  // Tag <em> destaca com ênfase seu conteúdo em itálico
   echo "User <em>$name</em>:\n\tIMC: <em>$imc</em>\n\tSituation: <em>$situation</em>";
 ?>

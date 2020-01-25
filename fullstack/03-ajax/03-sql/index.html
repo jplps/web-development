@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>PRW + SQL + AJAX</title>
+
+	<style>
+		body {
+			width: 66.6%;
+			color: #666;
+			margin: auto;
+		}
+
+		h1 {
+			border-bottom: 2px solid #666;
+			margin: auto;
+			padding: 10px;
+			text-transform: capitalize;
+			text-align: center;
+			position: sticky;
+			top: 0;
+		}
+
+		fieldset {
+			margin-top: 20px;
+		}
+
+		.align {
+			display: inline-block;
+			width: 100px;
+		}
+
+		input {
+			margin: 5px;
+			width: 150px;
+		}
+
+		button,
+		select {
+			margin-top: 10px;
+		}
+
+		table {
+			margin: auto;
+			border: 1px solid #666;
+			border-collapse: collapse;
+		}
+
+		caption {
+			text-align: left;
+			font-style: italic;
+			margin-bottom: 5px;
+		}
+
+		th {
+			background: #999;
+		}
+
+		td {
+			padding-left: 10px;
+		}
+
+		td.centralize,
+		p {
+			text-align: center;
+		}
+
+		td,
+		th {
+			min-width: 70px;
+			border: 1px solid #b1b1b1;
+		}
+
+		div#DivReturn {
+			display: none;
+		}
+
+		.showme {
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>php + sql</h1>
+
+	<!-- 
+			Mesmo que o usuário desabilite o JS em seu navegador, o formulário
+			obedecerá as funções de acordo com o atributo passado em action:
+		 -->
+	<form name="myform" action="./server.php" method="post">
+		<fieldset>
+			<label class="align">Registry</label>
+			<input type="varchar" name="reg" />
+			<br />
+
+			<label class="align">UC</label>
+			<input type="varchar" name="uc" />
+			<br />
+
+			<label class='align'>Grade 1</label>
+			<input type='number' name='g0' step='0.01' />
+			<br />
+
+			<label class='align'>Grade 2</label>
+			<input type='number' name='g1' step='0.01' />
+			<br />
+
+			<select name="operation" id="">
+				<option value="0">Registry</option>
+				<option value="1">Average</option>
+				<option value="2">Best(s)</option>
+			</select>
+			<br />
+
+			<button type="submit" name="submit">Send Your DaTA</button>
+	</form>
+
+	<div id="DivReturn"></div>
+
+	<script src="./ajax.js"></script>
+</body>
+
+</html>

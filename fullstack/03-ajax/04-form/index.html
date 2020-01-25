@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>PHP + SQL</title>
+
+	<style>
+		body {
+			width: 66.6%;
+			color: #666;
+			margin: auto;
+		}
+
+		h1 {
+			border-bottom: 2px solid #666;
+			margin: auto;
+			padding: 10px;
+			text-transform: capitalize;
+			text-align: center;
+			position: sticky;
+			top: 0;
+		}
+
+		fieldset {
+			margin-top: 20px;
+		}
+
+		.align {
+			display: inline-block;
+			width: 150px;
+		}
+
+		input {
+			margin: 5px;
+			width: 150px;
+		}
+
+		button,
+		select {
+			margin-top: 10px;
+		}
+
+		div#DivReturn {
+			display: none;
+		}
+
+		.showme {
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>php + sql form fields</h1>
+
+	<form name="myform" action="#" method="post">
+		<fieldset>
+			<legend>paycheck data</legend>
+
+			<label class='align'>select employee</label>
+			<select name="employees">
+				<option value=""></option>
+			</select>
+			<br />
+
+			<button type="button" name="fulfill">fulfill select</button>
+			<button type="submit" name="submit">show paycheck</button>
+		</fieldset>
+	</form>
+
+	<div id="DivReturn"></div>
+
+	<script src="get-employees.js"></script>
+	<script src="show-paycheck.js"></script>
+</body>
+
+</html>
