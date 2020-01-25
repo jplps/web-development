@@ -65,7 +65,7 @@
 
     <?php
       //Inclusões:
-			require "con-data.inc.php";
+			require "conn-data.inc.php";
 			require "connect.inc.php";
 			require "create-db.inc.php";
 			require "select-db.inc.php";
