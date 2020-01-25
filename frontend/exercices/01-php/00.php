@@ -27,19 +27,17 @@
 		PHP, utilizando os "name"s para ordená-los, e guardando os dados
 		fornecidos em cada input em seus respectivos endereços:
 	-->
-	<h1>php form</h1>
+	<h1>PHP form</h1>
 	<br/><br/>
 
 	<fieldset>
 		<form id="firstForm" action="./00.php" method="post">
 			<label for="">Nota 1:</label>
 			<input type="number" name="num1" step="0.01"/>
-
 			<br/>
 
 			<label for="">Nota 2:</label>
 			<input type="number" name="num2" step="0.01"/>
-
 			<br/>
 
 			<label for="">Nota 3:</label>

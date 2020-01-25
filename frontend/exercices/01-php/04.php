@@ -1,5 +1,4 @@
 <!--
-	Notas:
 	Diretório geral em debian-based distros: /var/www/html;
 	Endereço http://localhost/path/to/file.php para acessar a aplicação;
 	
@@ -24,7 +23,7 @@
 </head>
 
 <body>
-	<h1>php form</h1>
+	<h1>PHP form</h1>
 	<br/><br/>
 
 	<form id="form" action="04.php" method="post">
@@ -47,9 +46,7 @@
 			$celsed = number_format($cels, 2);
 
 			//Imprimindo resultado na tela do navegador:
-			echo "<p>
-				$fahr °Fahrenheit = $celsed °Celsius
-			</p>";
+			echo "<p>$fahr °Fahrenheit = $celsed °Celsius</p>";
 			?>
 	</form>
 </body>

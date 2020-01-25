@@ -23,7 +23,7 @@
 </head>
 
 <body>
-	<h1>php form</h1>
+	<h1>PHP form</h1>
 	<br/><br/>
 
 	<fieldset>
@@ -31,7 +31,6 @@
 			<label for="">Positive Real Number (x)</label>
 			<input type="number" name="num" min="0" step="any"/>
 		</form>
-
 		<br/>
 
 		<button type="submit" form="form" value="submit">Submit to Result</button>

@@ -24,19 +24,17 @@
 </head>
 
 <body>
-	<h1>php form</h1>
+	<h1>PHP form</h1>
 	<br/><br/>
 
 	<fieldset>
 		<form id="form" action="01.php" method="post">
 			<label class="align" for="">Distancy (km) </label>
 			<input type="number" name="distancy" min="0"/>
-
 			<br/>
 
 			<label class="align" for="">Consumption (km/L)</label>
 			<input type="number" name="consumption" min="0"/>
-
 			<br/>
 
 			<label class="align" for="">Price (L)</label>
