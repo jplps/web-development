@@ -8,7 +8,7 @@ introdutório ao avançado em desenvolvimento de aplicações para web.
 	- Diretório geral em debian-based distros: /var/www/html;
 	- Endereço http://localhost/path/to/file.php para acessar a aplicação do navegador de preferência;
 
-Siga as lições em ordem numeral, ou escolha a que deseja, abra o arquivo em seu editor de texto e leia atentamente o arquivo!
+Siga as lições em ordem numeral, ou escolha a que deseja, abra o arquivo em seu editor de texto e leia-o atentamente!
 
 HACK IT ALL.
 
