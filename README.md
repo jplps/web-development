@@ -77,7 +77,7 @@ CSS não é uma linguagem de programação, há divergências sobre aspectos de 
 		font-size: 1,5cm;			(Tamanho de fonte)  
 	}
 
-- MULTIPLOS SELETORES (h1, p e ul)
+Multiplos seletores
 	
 	h1, p, ul {  
 		color: #aabbcc;  
@@ -93,32 +93,36 @@ Para cada tipo de seletor, pode-se utilizar dois tipos principais de atributos: 
 	`<p id="id001">`...				#id001 {...}
 
 - CORES
-	- RGB: Red Green Blue (0 ~ 255, 0 ~ 255, 0 ~ 255). Isso leva à: 256 * 256 * 256 = 2⁸ * 2⁸ * 2⁸ = 2^24 ~ 17 milhões de possibilidades.
+	- RGB
+	
+	Red Green Blue (0 ~ 255, 0 ~ 255, 0 ~ 255). Isso leva à: 256 * 256 * 256 = 2⁸ * 2⁸ * 2⁸ = 2^24 ~ 17 milhões de possibilidades.
 
-	Ex.: rgb(22,117,49); ou rgb(45%,125,10%);
+		Ex.: rgb(22,117,49); ou rgb(45%,125,10%);
 	
 	- Hexadecimal
 
-	D			H  
-	0			0  
-	1			1  
-	2			2  
-	...			...  
-	9			9  
-	10			A  
-	11			B  
-	12			C  
-	13			D  
-	14			E  
-	15			F  
-	...			...  
-	255			FF  
+		D			H  
+		0			0  
+		1			1  
+		2			2  
+		...			...  
+		9			9  
+		10			A  
+		11			B  
+		12			C  
+		13			D  
+		14			E  
+		15			F  
+		...			...  
+		255			FF  
+		
+		Ex.: #1CA71A
 	
-	Ex.: #1CA71A
+	- RGBA
 	
-	- RGBA: A = Opacidade entre 0 ~ 1
+	A = Opacidade entre 0 ~ 1
 
-	Ex.: rgba(12,200,99,0.6); ou rgba(12,200,99,60%);
+		Ex.: rgba(12,200,99,0.6); ou rgba(12,200,99,60%);
 
 ## Aplicações para WEB
 
