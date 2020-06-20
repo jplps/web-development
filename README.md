@@ -64,9 +64,9 @@ CSS é a abreviação em inglês do termo Cascading	Style Sheet, ou, em portugu�
 
 CSS não é uma linguagem de programação, há divergências sobre aspectos de linguagem por diferentes autores, porém existe um conjunto de regras e sintaxes para dar sentido aos dados escritos. Sendo assim, pode ser considerada também uma linguagem de marcação. Separando estilo e significado semântico, o CSS ajuda no tamanho e complexidade de um arquivo .html.
 
-- SELETOR:
+- SELETOR
 
-É a unidade básica de uma folha de estilo. Entenda-se por unidade básica a menor porção de código capaz de estilizar determinado elemento HTML. Veja, abaixo, os principais componentes de uma regra CSS. O agrupamento de diversas regras CSS compõem o que chamamos de folha de estilo:
+É a unidade básica de uma folha de estilo. Entenda-se por unidade básica a menor porção de código capaz de estilizar determinado elemento HTML. Veja, abaixo, os principais componentes de uma regra CSS. O agrupamento de diversas regras CSS compõem o que chamamos de folha de estilo
 
 	p {  
 		color: #aabbcc;				(Cor da letra)  
@@ -77,22 +77,22 @@ CSS não é uma linguagem de programação, há divergências sobre aspectos de 
 		font-size: 1,5cm;			(Tamanho de fonte)  
 	}
 
-- MULTIPLOS SELETORES (h1, p e ul):
+- MULTIPLOS SELETORES (h1, p e ul)
 	
 	h1, p, ul {  
 		color: #aabbcc;  
 		font-style: italic;  
 		text-align: right;  
-		}
+	}
 
 Para cada tipo de seletor, pode-se utilizar dois tipos principais de atributos: classe e id, separando os estilos de acordo com a necessidade. Regras básicas: comunicação pura, sem começar com dígitos, sem espaços em branco ou carácteres especiais (ç, ã...). Com relação ao atributo ID, só é possível existir um único elemento atribuído à especificação (identidade única).
 
-	Do html para o .css:
+	Do html para o .css
 
 	`<p class="centraliza">`...			p.centraliza{...}  
 	`<p id="id001">`...				#id001 {...}
 
-- CORES:	
+- CORES
 	- RGB: Red Green Blue (0 ~ 255, 0 ~ 255, 0 ~ 255). Isso leva à: 256 * 256 * 256 = 2⁸ * 2⁸ * 2⁸ = 2^24 ~ 17 milhões de possibilidades.
 
 	Ex.: rgb(22,117,49); ou rgb(45%,125,10%);
@@ -116,7 +116,7 @@ Para cada tipo de seletor, pode-se utilizar dois tipos principais de atributos: 
 	
 	Ex.: #1CA71A
 	
-	- RGBA: A = Opacidade entre 0 ~ 1.
+	- RGBA: A = Opacidade entre 0 ~ 1
 
 	Ex.: rgba(12,200,99,0.6); ou rgba(12,200,99,60%);
 
