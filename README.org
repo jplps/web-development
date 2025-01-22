@@ -1,0 +1,106 @@
+* Web Development
+  100% hands-on course on web application development.
+
+** Concept
+   This repository aims to support learning progression from introductory to advanced levels in web application development. Follow the lessons in numerical order, or choose the one you wish, open the file in your text editor, and read it carefully!
+
+   1. Comments in the code describe the program's flow and the narrative description of the problem.
+   2. Uncommented code serves as a reading exercise for the language in question.
+   3. General directory in Debian-based distributions: /var/www/html
+   4. Access your application in your preferred browser using `http://localhost/path/to/file.php`
+
+** Context
+*** Web Applications
+    A program designed for the internet requires communication with web browsers in addition to computational systems. The user initiates actions through the browser.
+
+*** Dynamic Application vs. Static Document
+    A static application does not exist: documents are parts of the applications that do not change. A page can be static, and manual editing does not count as dynamism, only changes concerning user interactions.
+
+*** Markup Languages
+    Basic technology, fundamental language with markup elements that guide the browser, including tables, paragraphs, links, buttons, images, forms, etc. HTML5 currently has around 150 markers (as of 2018). Hypertext is synonymous with text in link format (connection, reference). The browser does not compile, interpret, or execute the code but renders it instead. XML (Extensible Markup Language) is a newer markup language highly demanded in the market.
+
+    - `CSS / HTML` -> Static Document (graphical interface)
+
+** HTML5
+   HTML stands for HyperText Markup Language. It comprises elements called "tags," which define how the browser renders information on the web page.
+
+   "The browser is the most important software for displaying and rendering an HTML document." This language handles text, images, audio, and video and is standardized by the W3C.
+
+   Any document can end with a .html extension, allowing for correct interpretation by the application.
+
+*** RULES
+    - Complete tags must be closed (`<p>`Paragraph...`</p>`)
+    - Void tags should not be closed (`<img ...>`)
+    - Tag and attribute names should always be lowercase
+    - Nested tags (child) are closed in the order they were opened
+    - Indentation is the use of spaces to facilitate visualization of relationships between different structures
+
+    Basic HTML skeleton example:
+    #+begin_example
+    <!DOCTYPE html>
+    <html>
+      <head>
+	<title>Document Title</title>
+      </head>
+      <body>
+	<h1>Most Important Title</h1>
+	<p>A very simple page.</p>
+      </body>
+    </html>
+    #+end_example
+
+** CSS
+   CSS stands for Cascading Style Sheets. A "cascading style sheet is a simple mechanism for adding styles (fonts, colors, spacing, etc.) to an HTML document." It affects everything from font colors, types, sizes, opacities, transparencies, to complex element layouts (positions and content layers - x, y, z axes) on the same page.
+
+   CSS isn't a programming language; however, it possesses a set of rules and syntax for making data meaningful. This means it can be considered a markup language, aiding in managing the size and complexity of an .html file.
+
+*** SELECTOR
+    A selector is the basic unit of a style sheet. It is the smallest portion of code capable of styling a specific HTML element. Various CSS rules make up what we call a style sheet.
+
+    #+begin_example
+    p {
+      color: #aabbcc; /* Font color */
+      background-color: #ff0; /* Background color */
+      font-style: italic; /* Font style */
+      text-align: right; /* Text alignment */
+      width: 300px; /* Width of the selector */
+      font-size: 1.5cm; /* Font size */
+    }
+    #+end_example
+
+    Multiple selectors:
+
+    #+begin_example
+    h1, p, ul {
+      color: #aabbcc;
+      font-style: italic;
+      text-align: right;
+    }
+    #+end_example
+
+    For each type of selector, two primary attribute types can be used: class and id, separating styles as needed. Basic rules avoid starting with digits and using spaces or special characters (ç, ã...). There can only be one unique identifier for a given element with the ID attribute.
+
+    HTML to .css mapping:
+
+    HTML: `<p class="center">`... maps to
+    CSS: `p.center {...}`
+
+    HTML: `<p id="id001">`... maps to
+    CSS: `#id001 {...}`
+
+*** COLORS
+    - RGB: Red Green Blue (0 ~ 255). This results in: 256³ = ~ 17 million possibilities.
+      - Example: `rgb(22,117,49);` or `rgb(45%,125,10%);`
+    - Hexadecimal color system maps each decimal value to its hex equivalent.
+      - Example: `#1CA71A`
+    - RGBA: A represents opacity, ranging between 0 and 1.
+      - Example: `rgba(12,200,99,0.6);` or `rgba(12,200,99,60%);`
+
+** Web Applications
+   Based on HTML content and CSS styling, dynamic changes in these elements render the design dynamic, while static designs remain unchanged. Communication protocols, primarily HTTP, are fundamental for web applications. Understanding user interaction, whether client-side or server-side, is crucial.
+
+   - Client vs. Server: 
+   Languages are interpreted line by line, requiring continuous data fetching, unlike Compiled languages that convert all code lines into executable binary.
+
+*** PHP - Personal Home Page
+    Originally developed by a Finnish precursor to intermediate data on web pages, the name was later changed. With these tools (Apache, MySql, PHP) working together with computing technology, they form a Development Station (DevStation).
