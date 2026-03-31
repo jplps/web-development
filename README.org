@@ -1,74 +1,100 @@
 * Web Development
-  100% hands-on course on web application development.
+  A hands-on course on web application development, from fundamentals to full-stack.
 
 ** Concept
-   This repository aims to support learning progression from introductory to advanced levels in web application development. Follow the lessons in numerical order, or choose the one you wish, open the file in your text editor, and read it carefully!
+   This repository supports learning progression from introductory to advanced levels in web development. Follow the lessons in numerical order, or jump to any topic you need.
 
-   1. Comments in the code describe the program's flow and the narrative description of the problem.
+   1. Comments in the code describe the program's flow and the reasoning behind each step.
    2. Uncommented code serves as a reading exercise for the language in question.
-   3. General directory in Debian-based distributions: /var/www/html
-   4. Access your application in your preferred browser using `http://localhost/path/to/file.php`
+   3. Default web root on Debian-based distributions: =/var/www/html=
+   4. Access your application in the browser at =http://localhost/path/to/file=
+
+** Repository Structure
+
+   #+begin_example
+   frontend/
+     lessons/
+       00-html5/          HTML5 fundamentals
+       01-css3/           CSS3 styling
+       02-php/            PHP basics (variables, arrays, functions, forms, includes)
+     exercises/
+       00-html5-css3/     26 progressive exercises (00-25)
+       01-php/            10 PHP exercises (00-09)
+
+   fullstack/
+     00-php/              OOP, web apps, full-stack apps with MySQL
+     01-ecma/             JavaScript fundamentals (DOM, events, functions)
+     02-ecma&php/         JavaScript + PHP integration (regex, vectors)
+     03-ajax/             Asynchronous requests (GET, POST, SQL, forms)
+   #+end_example
+
+** Prerequisites
+   - A web server (e.g. Apache)
+   - PHP interpreter
+   - MySQL/MariaDB (for full-stack lessons)
+   - A text editor
+   - A web browser
 
 ** Context
 *** Web Applications
-    A program designed for the internet requires communication with web browsers in addition to computational systems. The user initiates actions through the browser.
+    A web application is a program that runs over the internet. It communicates with the user's browser via HTTP, processing requests and returning responses. The user initiates actions through the browser, and the application responds with content generated on the server, on the client, or both.
 
-*** Dynamic Application vs. Static Document
-    A static application does not exist: documents are parts of the applications that do not change. A page can be static, and manual editing does not count as dynamism, only changes concerning user interactions.
+*** Static vs. Dynamic Content
+    A *static* page is one whose content does not change in response to user interaction. It is written once and served as-is (e.g. a plain HTML document). Manual editing by the developer does not count as dynamism.
+
+    A *dynamic* page changes its content based on user input, database queries, or other runtime conditions. This can happen server-side (PHP generating HTML) or client-side (JavaScript manipulating the DOM).
 
 *** Markup Languages
-    Basic technology, fundamental language with markup elements that guide the browser, including tables, paragraphs, links, buttons, images, forms, etc. HTML5 currently has around 150 markers (as of 2018). Hypertext is synonymous with text in link format (connection, reference). The browser does not compile, interpret, or execute the code but renders it instead. XML (Extensible Markup Language) is a newer markup language highly demanded in the market.
+    Markup languages use tags to structure and describe content for the browser to render. HTML is the foundational markup language of the web. The browser *renders* HTML and CSS but does not execute them the way it executes JavaScript.
 
-    - `CSS / HTML` -> Static Document (graphical interface)
+    XML (Extensible Markup Language) is a related standard used for structured data exchange (e.g. APIs, configuration files). Unlike HTML, XML does not have predefined tags.
 
 ** HTML5
-   HTML stands for HyperText Markup Language. It comprises elements called "tags," which define how the browser renders information on the web page.
+   HTML (HyperText Markup Language) structures web content using elements called *tags*. "HyperText" refers to text containing hyperlinks -- references that connect documents to one another.
 
-   "The browser is the most important software for displaying and rendering an HTML document." This language handles text, images, audio, and video and is standardized by the W3C.
+   HTML handles text, images, audio, and video. It is standardized by the W3C. Any file with the =.html= extension will be interpreted as an HTML document by the browser.
 
-   Any document can end with a .html extension, allowing for correct interpretation by the application.
+*** Rules
+    - Complete tags must be closed: =<p>= ... =</p>=
+    - Void tags are self-closing and must not have a closing tag: =<img>=, =<br>=, =<input>=
+    - Tag and attribute names should be lowercase
+    - Nested tags are closed in reverse order (last opened, first closed)
+    - Use indentation to make the nesting structure visible
 
-*** RULES
-    - Complete tags must be closed (`<p>`Paragraph...`</p>`)
-    - Void tags should not be closed (`<img ...>`)
-    - Tag and attribute names should always be lowercase
-    - Nested tags (child) are closed in the order they were opened
-    - Indentation is the use of spaces to facilitate visualization of relationships between different structures
-
-    Basic HTML skeleton example:
+    Basic HTML skeleton:
     #+begin_example
     <!DOCTYPE html>
     <html>
       <head>
-	<title>Document Title</title>
+        <title>Document Title</title>
       </head>
       <body>
-	<h1>Most Important Title</h1>
-	<p>A very simple page.</p>
+        <h1>Main Heading</h1>
+        <p>A simple page.</p>
       </body>
     </html>
     #+end_example
 
-** CSS
-   CSS stands for Cascading Style Sheets. A "cascading style sheet is a simple mechanism for adding styles (fonts, colors, spacing, etc.) to an HTML document." It affects everything from font colors, types, sizes, opacities, transparencies, to complex element layouts (positions and content layers - x, y, z axes) on the same page.
+** CSS3
+   CSS (Cascading Style Sheets) controls the visual presentation of HTML documents: fonts, colors, spacing, layout, positioning, and layering of elements.
 
-   CSS isn't a programming language; however, it possesses a set of rules and syntax for making data meaningful. This means it can be considered a markup language, aiding in managing the size and complexity of an .html file.
+   CSS is not a programming language and not a markup language. It is a *style sheet language* with its own rule-based syntax. Separating style from structure keeps HTML files focused on content and makes designs easier to maintain.
 
-*** SELECTOR
-    A selector is the basic unit of a style sheet. It is the smallest portion of code capable of styling a specific HTML element. Various CSS rules make up what we call a style sheet.
+*** Selectors
+    A selector targets one or more HTML elements and applies a set of style declarations to them.
 
     #+begin_example
     p {
-      color: #aabbcc; /* Font color */
-      background-color: #ff0; /* Background color */
-      font-style: italic; /* Font style */
-      text-align: right; /* Text alignment */
-      width: 300px; /* Width of the selector */
-      font-size: 1.5cm; /* Font size */
+      color: #aabbcc;
+      background-color: #ff0;
+      font-style: italic;
+      text-align: right;
+      width: 300px;
+      font-size: 1.5em;
     }
     #+end_example
 
-    Multiple selectors:
+    Multiple selectors can share the same declarations:
 
     #+begin_example
     h1, p, ul {
@@ -78,29 +104,61 @@
     }
     #+end_example
 
-    For each type of selector, two primary attribute types can be used: class and id, separating styles as needed. Basic rules avoid starting with digits and using spaces or special characters (ç, ã...). There can only be one unique identifier for a given element with the ID attribute.
+    Elements are targeted by tag name, class, or id:
 
-    HTML to .css mapping:
+    | HTML                           | CSS Selector   |
+    |--------------------------------+----------------|
+    | =<p class="center">=           | =p.center=     |
+    | =<p id="id001">=               | =#id001=       |
 
-    HTML: `<p class="center">`... maps to
-    CSS: `p.center {...}`
+    Rules: IDs must be unique per page. Class and ID names should not start with a digit or contain spaces or special characters.
 
-    HTML: `<p id="id001">`... maps to
-    CSS: `#id001 {...}`
+*** Colors
+    - *RGB*: =rgb(22, 117, 49)= -- each channel ranges from 0 to 255 (256^3 = ~16.7 million combinations).
+    - *Hexadecimal*: =#1CA71A= -- shorthand for RGB values in base 16.
+    - *RGBA*: =rgba(12, 200, 99, 0.6)= -- adds an alpha channel (0 = transparent, 1 = opaque).
 
-*** COLORS
-    - RGB: Red Green Blue (0 ~ 255). This results in: 256³ = ~ 17 million possibilities.
-      - Example: `rgb(22,117,49);` or `rgb(45%,125,10%);`
-    - Hexadecimal color system maps each decimal value to its hex equivalent.
-      - Example: `#1CA71A`
-    - RGBA: A represents opacity, ranging between 0 and 1.
-      - Example: `rgba(12,200,99,0.6);` or `rgba(12,200,99,60%);`
+** JavaScript (ECMAScript)
+   JavaScript is the programming language of the browser. It enables dynamic, interactive behavior on the client side: responding to events, manipulating the DOM, validating forms, and communicating with servers asynchronously.
 
-** Web Applications
-   Based on HTML content and CSS styling, dynamic changes in these elements render the design dynamic, while static designs remain unchanged. Communication protocols, primarily HTTP, are fundamental for web applications. Understanding user interaction, whether client-side or server-side, is crucial.
+   Despite the name, JavaScript is unrelated to Java. It follows the ECMAScript specification (hence the =01-ecma= directory name).
 
-   - Client vs. Server: 
-   Languages are interpreted line by line, requiring continuous data fetching, unlike Compiled languages that convert all code lines into executable binary.
+   Topics covered in this repository:
+   - Variables, data types, and type conversions
+   - DOM manipulation (=innerHTML=, element selection)
+   - Events and =this= context
+   - Functions (declarations and literal/anonymous functions)
+   - Pop-ups (=alert=, =confirm=, =prompt=)
+   - Regular expressions
+   - Client-server interaction
 
-*** PHP - Personal Home Page
-    Originally developed by a Finnish precursor to intermediate data on web pages, the name was later changed. With these tools (Apache, MySql, PHP) working together with computing technology, they form a Development Station (DevStation).
+** AJAX
+   AJAX (Asynchronous JavaScript and XML) allows a web page to exchange data with a server *without reloading the entire page*. This enables smoother, more responsive user interfaces.
+
+   Despite the name, AJAX commonly uses JSON rather than XML in modern practice. The core mechanism is the =XMLHttpRequest= object (or the newer =fetch= API).
+
+   Topics covered:
+   - Dynamic page updates without reload
+   - GET and POST requests
+   - Server-side SQL operations via AJAX
+   - Form submission and processing
+
+** PHP
+   PHP (originally "Personal Home Page," now "PHP: Hypertext Preprocessor") is a server-side scripting language. Code written in PHP is executed on the server, and the resulting HTML is sent to the browser.
+
+   PHP was created by Rasmus Lerdorf in 1994. Combined with Apache (web server) and MySQL (database), it forms a classic development stack (LAMP on Linux, or equivalent).
+
+   Topics covered:
+   - Syntax fundamentals and data types
+   - Operators and control structures
+   - Arrays (indexed, associative, multidimensional)
+   - Functions and includes
+   - Form handling (GET/POST)
+   - Object-oriented programming
+   - Database interaction (MySQL)
+
+** Client-Side vs. Server-Side
+   - *Client-side* code (HTML, CSS, JavaScript) runs in the user's browser. The browser downloads the files and processes them locally.
+   - *Server-side* code (PHP, Python, etc.) runs on the web server. The server processes the code and sends the result (usually HTML) to the browser.
+
+   This distinction is independent of whether a language is interpreted or compiled. PHP is interpreted on the server; JavaScript is interpreted in the browser. Both are interpreted, but they run in different environments.
